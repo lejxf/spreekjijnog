@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  /* SpreekJijNog kleurpalet — warm, papier, retro maar fris */
+  --background: #faf6ee;       /* roomwit / oud papier */
+  --foreground: #2a2620;       /* warm zwart */
+  --muted: #6b5f4f;            /* zachte tekst */
+  --accent: #b85c3e;           /* warm oranje-rood */
+  --accent-soft: #f0d9c8;      /* zachte achtergrond accent */
+  --border: #e6dcc8;           /* lijntjes */
+  --card: #ffffff;             /* kaarten */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}

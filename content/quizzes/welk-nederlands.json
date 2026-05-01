@@ -1,0 +1,38 @@
+{
+  "id": "welk-nederlands",
+  "title": "Welk Nederlands spreek jij?",
+  "description": "Vijftien woorden, drie minuten, één archetype op generatie, regio en register.",
+  "questions": [
+    {
+      "id": "q1_skeer",
+      "type": "multiple_choice",
+      "prompt": "Wat betekent 'skeer'?",
+      "options": [
+        {
+          "label": "Geen geld hebben",
+          "tags": { "generation": 2018, "region": null, "register": "straat" },
+          "correct": true
+        },
+        { "label": "Snel rennen", "tags": null },
+        { "label": "Een beetje saai", "tags": null },
+        { "label": "Klaagachtig", "tags": null }
+      ]
+    },
+    {
+      "id": "q2_houdoe",
+      "type": "multiple_choice",
+      "prompt": "Wie zegt 'houdoe' tegen je als je de winkel uitloopt?",
+      "options": [
+        {
+          "label": "Een Brabander",
+          "tags": { "region": "noord-brabant", "register": "informeel" },
+          "correct": true
+        },
+        { "label": "Een Limburger", "tags": null },
+        { "label": "Een Amsterdammer", "tags": null },
+        { "label": "Een Drent", "tags": null }
+      ]
+    }
+  ],
+  "_note": "Placeholder met 2 voorbeeldvragen. In fase 2 uitbreiden naar 30, in fase 3 naar 200-300."
+}
