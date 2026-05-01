@@ -1,38 +1,357 @@
 {
   "id": "welk-nederlands",
   "title": "Welk Nederlands spreek jij?",
-  "description": "Vijftien woorden, drie minuten, één archetype op generatie, regio en register.",
+  "description": "Dertig woorden, drie minuten, één archetype op generatie, regio en register.",
   "questions": [
     {
       "id": "q1_skeer",
-      "type": "multiple_choice",
       "prompt": "Wat betekent 'skeer'?",
       "options": [
-        {
-          "label": "Geen geld hebben",
-          "tags": { "generation": 2018, "region": null, "register": "straat" },
-          "correct": true
-        },
-        { "label": "Snel rennen", "tags": null },
-        { "label": "Een beetje saai", "tags": null },
-        { "label": "Klaagachtig", "tags": null }
+        { "label": "Geen geld hebben", "tags": { "generation": 2018, "register": "straat" } },
+        { "label": "Snel rennen" },
+        { "label": "Een beetje saai" },
+        { "label": "Klaagachtig" }
       ]
     },
     {
       "id": "q2_houdoe",
-      "type": "multiple_choice",
-      "prompt": "Wie zegt 'houdoe' tegen je als je de winkel uitloopt?",
+      "prompt": "Wat zou jij zeggen tegen iemand die de winkel uitloopt?",
       "options": [
-        {
-          "label": "Een Brabander",
-          "tags": { "region": "noord-brabant", "register": "informeel" },
-          "correct": true
-        },
-        { "label": "Een Limburger", "tags": null },
-        { "label": "Een Amsterdammer", "tags": null },
-        { "label": "Een Drent", "tags": null }
+        { "label": "Doei", "tags": { "region": "hollands", "register": "informeel", "generation": 1990 } },
+        { "label": "Hoi", "tags": { "region": "hollands", "register": "informeel", "generation": 1985 } },
+        { "label": "Houdoe", "tags": { "region": "noord-brabant", "register": "informeel" } },
+        { "label": "Tot ziens", "tags": { "register": "formeel", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q3_moi",
+      "prompt": "'Moi' is een groet uit...",
+      "options": [
+        { "label": "Groningen of Friesland", "tags": { "region": "groningen", "register": "dialect" } },
+        { "label": "Limburg" },
+        { "label": "Brabant" },
+        { "label": "Drenthe" }
+      ]
+    },
+    {
+      "id": "q4_goesting",
+      "prompt": "Wat betekent 'goesting'?",
+      "options": [
+        { "label": "Zin in iets", "tags": { "region": "vlaams", "register": "informeel" } },
+        { "label": "Honger" },
+        { "label": "Verdriet" },
+        { "label": "Nieuwsgierigheid" }
+      ]
+    },
+    {
+      "id": "q5_lit",
+      "prompt": "Wanneer gebruik je 'lit'?",
+      "options": [
+        { "label": "Als iets mega is", "tags": { "generation": 2017, "register": "straat" } },
+        { "label": "Als iets brandt" },
+        { "label": "Als je dronken bent" },
+        { "label": "Als iets droog is" }
+      ]
+    },
+    {
+      "id": "q6_geen_tijd",
+      "prompt": "Een vriend zegt 'ik ben helemaal volgepland'. Wat zou jij antwoorden?",
+      "options": [
+        { "label": "Dat is balen, kan ik me voorstellen", "tags": { "register": "neutraal", "generation": 1980 } },
+        { "label": "Ach, een gekkenhuis hier ook", "tags": { "register": "informeel", "generation": 1975 } },
+        { "label": "No worries, ik check je later wel", "tags": { "generation": 2010, "register": "informeel" } },
+        { "label": "Kom op zeg, vroeger had je gewoon tijd", "tags": { "generation": 1955, "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q7_formeel_brief",
+      "prompt": "Hoe begin jij liefst een mail aan iemand die je niet kent?",
+      "options": [
+        { "label": "Geachte heer/mevrouw,", "tags": { "register": "formeel", "generation": 1960 } },
+        { "label": "Beste...", "tags": { "register": "neutraal" } },
+        { "label": "Hoi!", "tags": { "register": "informeel", "generation": 1995 } },
+        { "label": "Hee...", "tags": { "register": "informeel", "generation": 2010 } }
+      ]
+    },
+    {
+      "id": "q8_jonges",
+      "prompt": "Iemand zegt 'jonges' tegen een groep vrienden. Hij is...",
+      "options": [
+        { "label": "Brabander", "tags": { "region": "noord-brabant", "register": "informeel" } },
+        { "label": "Limburger" },
+        { "label": "Drent" },
+        { "label": "Amsterdammer" }
+      ]
+    },
+    {
+      "id": "q9_wallahi",
+      "prompt": "Een vriend roept 'wallahi'. Wat denk je?",
+      "options": [
+        { "label": "Hij is jong en/of stadskind", "tags": { "generation": 2015, "register": "straat" } },
+        { "label": "Hij is moslim, simpel" },
+        { "label": "Hij overdrijft" },
+        { "label": "Hij vraagt om een gunst" }
+      ]
+    },
+    {
+      "id": "q10_drukke_dag",
+      "prompt": "Hoe omschrijf je een knetterdrukke werkdag?",
+      "options": [
+        { "label": "Werkelijk overspoeld", "tags": { "register": "formeel", "generation": 1965 } },
+        { "label": "Gekkenhuis", "tags": { "register": "informeel", "generation": 1985 } },
+        { "label": "Echt skeer aan tijd", "tags": { "generation": 2018, "register": "straat" } },
+        { "label": "Spuugzat van het hollen", "tags": { "generation": 1970, "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q11_bonafide",
+      "prompt": "'Bonafide' betekent in het Nederlands?",
+      "options": [
+        { "label": "Te goeder trouw, betrouwbaar", "tags": { "register": "formeel", "generation": 1970 } },
+        { "label": "Lui en sloom" },
+        { "label": "Streng, kritisch" },
+        { "label": "Verlegen of nerveus" }
+      ]
+    },
+    {
+      "id": "q12_eind",
+      "prompt": "'Ik ben helemaal aan de eind' — hoe komt dat over?",
+      "options": [
+        { "label": "Vlaamse roots of Vlaamse partner", "tags": { "region": "vlaams" } },
+        { "label": "Brabantse afkomst" },
+        { "label": "Hagenees in een rare bui" },
+        { "label": "Onhandige tikfout" }
+      ]
+    },
+    {
+      "id": "q13_mooie_ochtend",
+      "prompt": "Hoe reageer je op een prachtige zonnige ochtend?",
+      "options": [
+        { "label": "Wat een prachtige dag", "tags": { "register": "formeel", "generation": 1965 } },
+        { "label": "Lekker dagje, hè", "tags": { "register": "informeel", "generation": 1980 } },
+        { "label": "No cap, dit is fris", "tags": { "generation": 2019, "register": "straat" } },
+        { "label": "Goh, wat een ochtend", "tags": { "generation": 1960, "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q14_boude",
+      "prompt": "'Boude' is dialect voor 'buiten' uit...",
+      "options": [
+        { "label": "Achterhoek of Twente", "tags": { "region": "achterhoek", "register": "dialect" } },
+        { "label": "Brabant" },
+        { "label": "Drenthe" },
+        { "label": "Limburg" }
+      ]
+    },
+    {
+      "id": "q15_eens_kijken",
+      "prompt": "Iemand zegt rustig 'eens kijken hoor' voor hij iets doet. Hij is waarschijnlijk...",
+      "options": [
+        { "label": "Drent, Groninger of Fries", "tags": { "region": "noord", "register": "informeel" } },
+        { "label": "Brabander" },
+        { "label": "Limburger" },
+        { "label": "Belg" }
+      ]
+    },
+    {
+      "id": "q16_no_cap",
+      "prompt": "'No cap' staat voor...",
+      "options": [
+        { "label": "Geen leugen, eerlijk", "tags": { "generation": 2019, "register": "straat" } },
+        { "label": "Geen pet" },
+        { "label": "Geen limiet" },
+        { "label": "Geen filter op" }
+      ]
+    },
+    {
+      "id": "q17_tabe",
+      "prompt": "'Tabee' of 'tabe' afscheid wordt gezegd in...",
+      "options": [
+        { "label": "Achterhoek/Twente vooral", "tags": { "region": "achterhoek/twente", "register": "dialect", "generation": 1960 } },
+        { "label": "Limburg" },
+        { "label": "Brabant" },
+        { "label": "Vlaanderen" }
+      ]
+    },
+    {
+      "id": "q18_chat",
+      "prompt": "Wat zou jij in een chat schrijven om hard te lachen?",
+      "options": [
+        { "label": "haha", "tags": { "register": "neutraal" } },
+        { "label": "lol", "tags": { "generation": 2005, "register": "informeel" } },
+        { "label": "lmaooo", "tags": { "generation": 2015, "register": "straat" } },
+        { "label": "Amusant!", "tags": { "register": "formeel", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q19_jeetje",
+      "prompt": "Wanneer zeg jij 'jeetje'?",
+      "options": [
+        { "label": "Als iets je verbaast", "tags": { "generation": 1965, "register": "informeel" } },
+        { "label": "Als je teleurgesteld bent" },
+        { "label": "Als je iets vies vindt" },
+        { "label": "Ik gebruik dit woord nooit" }
+      ]
+    },
+    {
+      "id": "q20_krek",
+      "prompt": "'Krek' betekent...",
+      "options": [
+        { "label": "Precies, in oud-Hollands of Fries", "tags": { "region": "friesland", "generation": 1955, "register": "dialect" } },
+        { "label": "Krap aan" },
+        { "label": "Moeilijk" },
+        { "label": "Gemeen" }
+      ]
+    },
+    {
+      "id": "q21_patatje",
+      "prompt": "'Patatje speciaal' eet je het meest bij...",
+      "options": [
+        { "label": "Een Hollandse snackbar", "tags": { "region": "hollands", "register": "informeel", "generation": 1980 } },
+        { "label": "Een Belgische frituur" },
+        { "label": "Een Limburgse kraam" },
+        { "label": "Geen idee, ik eet geen patat" }
+      ]
+    },
+    {
+      "id": "q22_aanspreken",
+      "prompt": "Hoe spreek je iemand aan op de markt die je niet kent?",
+      "options": [
+        { "label": "Mevrouw / meneer", "tags": { "register": "formeel", "generation": 1960 } },
+        { "label": "Hè, mag ik even?", "tags": { "register": "informeel", "generation": 1985 } },
+        { "label": "Sorry hoor, momentje", "tags": { "register": "neutraal", "generation": 1980 } },
+        { "label": "Ey, mag ik wat vragen?", "tags": { "generation": 2015, "register": "straat" } }
+      ]
+    },
+    {
+      "id": "q23_tof",
+      "prompt": "Wat past het best bij 'tof'?",
+      "options": [
+        { "label": "Een algemeen positief woord", "tags": { "generation": 1975, "register": "informeel" } },
+        { "label": "Specifiek voor mooie spullen" },
+        { "label": "Specifiek voor lieve mensen" },
+        { "label": "Negatief sarcastisch bedoeld" }
+      ]
+    },
+    {
+      "id": "q24_ge_zijt",
+      "prompt": "'Ge zijt zot' — wie zegt dit?",
+      "options": [
+        { "label": "Een Vlaming of Limburger", "tags": { "region": "vlaams/limburg", "register": "dialect" } },
+        { "label": "Een Hagenees" },
+        { "label": "Een Amsterdammer" },
+        { "label": "Een Drent" }
+      ]
+    },
+    {
+      "id": "q25_vergissing",
+      "prompt": "Iemand maakt een fout. Wat zeg jij?",
+      "options": [
+        { "label": "Ach welnee", "tags": { "generation": 1965, "register": "informeel" } },
+        { "label": "Geen probleem joh", "tags": { "register": "neutraal" } },
+        { "label": "Maakt niks uit", "tags": { "register": "informeel", "generation": 1985 } },
+        { "label": "Geheel begrijpelijk", "tags": { "register": "formeel", "generation": 1960 } }
+      ]
+    },
+    {
+      "id": "q26_skiplezen",
+      "prompt": "'Skiplezen' is...",
+      "options": [
+        { "label": "Snel doorlezen", "tags": { "generation": 1995, "register": "neutraal" } },
+        { "label": "Skien terwijl je leest" },
+        { "label": "Een soort kwis" },
+        { "label": "Stiekem plagiaat plegen" }
+      ]
+    },
+    {
+      "id": "q27_zus",
+      "prompt": "'Zus' (in plaats van 'zo') gebruik je vooral als je...",
+      "options": [
+        { "label": "Limburger of Brabander bent", "tags": { "region": "limburg/noord-brabant", "register": "dialect" } },
+        { "label": "Hollander bent" },
+        { "label": "Drent bent" },
+        { "label": "Belg bent" }
+      ]
+    },
+    {
+      "id": "q28_aura",
+      "prompt": "Gen-Z zegt iets als 'die aura is min 1000'. Wat bedoelen ze?",
+      "options": [
+        { "label": "Iemands vibe op dat moment", "tags": { "generation": 2024, "register": "straat" } },
+        { "label": "Hun batterijniveau" },
+        { "label": "Hun zonneklimaat" },
+        { "label": "Een soort thee-merk" }
+      ]
+    },
+    {
+      "id": "q29_grap_mis",
+      "prompt": "Iemand vertelt een grap die niet aanslaat. Wat zeg jij?",
+      "options": [
+        { "label": "Krijg nou de tering", "tags": { "generation": 1960, "register": "informeel" } },
+        { "label": "Nice try, ehm", "tags": { "generation": 2010, "register": "informeel" } },
+        { "label": "Dat was niet mijn intentie", "tags": { "register": "formeel", "generation": 1965 } },
+        { "label": "Was niet erg hoor", "tags": { "register": "neutraal", "generation": 1980 } }
+      ]
+    },
+    {
+      "id": "q30_hoor",
+      "prompt": "Wie eindigt zinnen vaak met 'hoor'?",
+      "options": [
+        { "label": "Hollanders, vooral oudere generatie", "tags": { "region": "hollands", "generation": 1965, "register": "informeel" } },
+        { "label": "Brabanders" },
+        { "label": "Limburgers" },
+        { "label": "Belgen" }
       ]
     }
   ],
-  "_note": "Placeholder met 2 voorbeeldvragen. In fase 2 uitbreiden naar 30, in fase 3 naar 200-300."
+  "archetypes": [
+    {
+      "id": "bourgondische-boekhouder",
+      "name": "Bourgondische Boekhouder",
+      "description": "Woont in Tilburg of Eindhoven, kookt zelf op zondag voor zijn ouders. Werkt netjes en op tijd, maar als hij eens losgaat is hij verwoestend. Zegt 'jonges' tegen zijn voetbalmaten zonder ironie.",
+      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel" }
+    },
+    {
+      "id": "hagenese-hipster",
+      "name": "Hagenese Hipster",
+      "description": "Werkt iets met design of strategie, woont in een appartement met witte muren en één Charles Eames-stoel. Mengt formele uitdrukkingen met losse jongerentaal alsof dat normaal is. En het is ook normaal, blijkbaar.",
+      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel" }
+    },
+    {
+      "id": "achterhoekse-academicus",
+      "name": "Achterhoekse Academicus",
+      "description": "Geboren ergens tussen Doetinchem en Winterswijk, gestudeerd in Nijmegen, sindsdien grotendeels terug bij de familie. Leest drie boeken tegelijk. Zegt nooit 'doei' maar 'tot ziens'. Heeft een sterke mening over wat de provinciale weg vroeger was.",
+      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel" }
+    },
+    {
+      "id": "belgisch-geinfecteerd",
+      "name": "Belgisch Geïnfecteerd",
+      "description": "Zegt 'goesting' zonder ironie. Was misschien een paar jaar in Antwerpen of had ooit een Vlaamse vriend(in) van wie de zinsbouw bleef hangen. Reageert verbaasd als iemand opmerkt dat dat eigenlijk niet Hollands is.",
+      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel" }
+    },
+    {
+      "id": "amsterdams-modieus",
+      "name": "Amsterdams Modieus",
+      "description": "Zit op TikTok, kent woorden die haar moeder niet kent, soms is dat het hele punt. Wisselt 'no cap' en 'wallahi' af met 'gewoon eerlijk'. Werkt iets met content of social media. Eet havermout 's ochtends en patat 's avonds. Geen oordeel.",
+      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat" }
+    },
+    {
+      "id": "drentse-trompetterik",
+      "name": "Drentse Trompetterik",
+      "description": "Woont buiten op een paar kilometer van het dichtstbijzijnde dorp. Zegt weinig, maar wat hij zegt klopt. Gebruikt soms een woord dat al sinds 1880 hetzelfde betekent. Heeft een hond die hem volkomen aanvoelt.",
+      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/friesland/noord", "register": "dialect" }
+    },
+    {
+      "id": "limburgse-bourgondier",
+      "name": "Limburgse Bourgondiër",
+      "description": "Zegt 'hoi doelf' tegen iedereen onder de zestig en 'mijnheer' tegen iedereen erboven. Carnaval is geen optie maar religie. Eet vier maaltijden per dag minimaal en vindt dat melk een volwassen drank is.",
+      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect" }
+    },
+    {
+      "id": "stadskind-van-niemand",
+      "name": "Stadskind van Niemand",
+      "description": "Hollands geboren, niet specifiek genoeg om ergens vandaan te komen, niet jong genoeg om TikTok helemaal te begrijpen, niet oud genoeg om dialect te onthouden. Spreekt het Nederlands van NPO Radio 1. Onmisbaar in elk team, onopvallend in elke menigte.",
+      "axes": { "generation_min": 1980, "generation_max": 2005, "region": "hollands", "register": "neutraal" }
+    }
+  ]
 }

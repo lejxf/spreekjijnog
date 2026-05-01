@@ -1,0 +1,85 @@
+// Quiz content types — used for both content authoring and runtime scoring.
+
+export type Register = "formeel" | "neutraal" | "informeel" | "straat" | "dialect";
+
+export type Region =
+  | "noord-brabant"
+  | "limburg"
+  | "noord-holland"
+  | "zuid-holland"
+  | "utrecht"
+  | "gelderland"
+  | "achterhoek"
+  | "twente"
+  | "drenthe"
+  | "groningen"
+  | "friesland"
+  | "zeeland"
+  | "flevoland"
+  | "vlaams"
+  | "hollands"
+  | "noord";
+
+export interface OptionTags {
+  /** Year representing the generational marker. e.g. 2018 = late-2010s slang, 1965 = boomer parlance. */
+  generation?: number;
+  /** One or more regions, slash-separated for multi-region words. */
+  region?: Region | string;
+  register?: Register;
+}
+
+export interface QuizOption {
+  label: string;
+  tags?: OptionTags;
+}
+
+export interface QuizQuestion {
+  id: string;
+  prompt: string;
+  options: QuizOption[];
+}
+
+export interface ArchetypeProfile {
+  /** Min/max generation that maps to this archetype. */
+  generation_min?: number;
+  generation_max?: number;
+  /** Preferred region(s) for this archetype, slash-separated for matching. */
+  region?: string;
+  register?: Register;
+}
+
+export interface Archetype {
+  id: string;
+  name: string;
+  description: string;
+  axes: ArchetypeProfile;
+}
+
+export interface Quiz {
+  id: string;
+  title: string;
+  description: string;
+  questions: QuizQuestion[];
+  archetypes: Archetype[];
+}
+
+/** Computed profile based on user's answers. */
+export interface UserProfile {
+  /** Average generation marker (year), or null if no signal. */
+  avgGeneration: number | null;
+  /** Most-picked region, or null. */
+  dominantRegion: string | null;
+  /** Most-picked register, or null. */
+  dominantRegister: Register | null;
+  /** How dominant the region is (0-100), based on share of region-tagged answers. */
+  regionStrength: number;
+  /** How dominant the register is (0-100). */
+  registerStrength: number;
+  /** Position on generation axis (0 = oldest, 100 = youngest), based on avg gen. */
+  generationStrength: number;
+}
+
+export interface QuizResult {
+  profile: UserProfile;
+  archetype: Archetype;
+}
