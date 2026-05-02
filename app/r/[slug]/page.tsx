@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import quizData from "@/content/quizzes/welk-nederlands.json";
 import type { Quiz, Register } from "@/lib/quiz-types";
-import { formatRegion, formatRegister } from "@/lib/scoring";
+import {
+  formatRegion,
+  formatRegister,
+  generationSummary,
+  regionSummary,
+  registerSummary,
+  type AxisSummary,
+} from "@/lib/scoring";
 import ShareButtons from "./ShareButtons";
 
 interface Props {
@@ -166,29 +173,29 @@ export default async function ResultPage({ params, searchParams }: Props) {
             {arch.description}
           </p>
 
-          {/* Big percentage stats */}
+          {/* Three labelled axis cards */}
           <div
-            className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t fade-up"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t fade-up"
             style={{
               animationDelay: "0.55s",
               borderColor: `${colors.accent}40`,
             }}
           >
-            <BigStat
-              label="Generatie"
-              value={g}
+            <AxisCard
+              eyebrow="Generatie"
+              summary={generationSummary(g)}
               accent={colors.accent}
               text={colors.text}
             />
-            <BigStat
-              label={region ? formatRegion(region) : "Regio"}
-              value={r}
+            <AxisCard
+              eyebrow="Regio"
+              summary={regionSummary(region, r)}
               accent={colors.accent}
               text={colors.text}
             />
-            <BigStat
-              label={register ? formatRegister(register) : "Register"}
-              value={rg}
+            <AxisCard
+              eyebrow="Register"
+              summary={registerSummary(register, rg)}
               accent={colors.accent}
               text={colors.text}
             />
@@ -216,31 +223,42 @@ export default async function ResultPage({ params, searchParams }: Props) {
   );
 }
 
-function BigStat({
-  label,
-  value,
+function AxisCard({
+  eyebrow,
+  summary,
   accent,
   text,
 }: {
-  label: string;
-  value: number;
+  eyebrow: string;
+  summary: AxisSummary;
   accent: string;
   text: string;
 }) {
   return (
     <div className="flex flex-col">
       <span
-        className="text-[0.65rem] sm:text-xs uppercase font-medium mb-2"
-        style={{ letterSpacing: "0.2em", color: text, opacity: 0.6 }}
+        className="text-[0.65rem] sm:text-xs uppercase font-medium mb-3"
+        style={{ letterSpacing: "0.2em", color: accent, opacity: 0.85 }}
       >
-        {label}
+        {eyebrow}
       </span>
       <span
-        className="display text-4xl sm:text-6xl leading-none"
-        style={{ color: accent, letterSpacing: "-0.02em" }}
+        className="display text-2xl sm:text-3xl leading-tight mb-2"
+        style={{ color: text, letterSpacing: "-0.01em" }}
       >
-        {value}
-        <span style={{ fontSize: "0.5em", opacity: 0.7 }}>%</span>
+        {summary.label}
+      </span>
+      <span
+        className="text-xs sm:text-sm italic mb-3"
+        style={{ color: text, opacity: 0.55, fontFamily: "var(--font-fraunces)" }}
+      >
+        {summary.detail}
+      </span>
+      <span
+        className="text-xs sm:text-sm leading-snug"
+        style={{ color: text, opacity: 0.7 }}
+      >
+        {summary.comparison}
       </span>
     </div>
   );

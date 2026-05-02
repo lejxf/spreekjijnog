@@ -1,7 +1,12 @@
 import { ImageResponse } from "next/og";
 import quizData from "@/content/quizzes/welk-nederlands.json";
 import type { Quiz, Register } from "@/lib/quiz-types";
-import { formatRegion, formatRegister } from "@/lib/scoring";
+import {
+  generationSummary,
+  regionSummary,
+  registerSummary,
+  type AxisSummary,
+} from "@/lib/scoring";
 
 export const runtime = "edge";
 
@@ -165,29 +170,29 @@ export async function GET(
         {/* Spacer */}
         <div style={{ flex: 1, display: "flex" }} />
 
-        {/* Bottom row: big percentage stats */}
+        {/* Bottom row: three labelled axis stats */}
         <div
           style={{
             display: "flex",
-            gap: 40,
-            alignItems: "flex-end",
+            gap: 28,
+            alignItems: "flex-start",
           }}
         >
-          <Stat
-            label="Generatie"
-            value={g}
+          <AxisStat
+            eyebrow="Generatie"
+            summary={generationSummary(g)}
             accent={colors.accent}
             text={colors.text}
           />
-          <Stat
-            label={region ? formatRegion(region) : "Regio"}
-            value={r}
+          <AxisStat
+            eyebrow="Regio"
+            summary={regionSummary(region, r)}
             accent={colors.accent}
             text={colors.text}
           />
-          <Stat
-            label={register ? formatRegister(register) : "Register"}
-            value={rg}
+          <AxisStat
+            eyebrow="Register"
+            summary={registerSummary(register, rg)}
             accent={colors.accent}
             text={colors.text}
           />
@@ -219,14 +224,14 @@ export async function GET(
   );
 }
 
-function Stat({
-  label,
-  value,
+function AxisStat({
+  eyebrow,
+  summary,
   accent,
   text,
 }: {
-  label: string;
-  value: number;
+  eyebrow: string;
+  summary: AxisSummary;
   accent: string;
   text: string;
 }) {
@@ -240,32 +245,43 @@ function Stat({
     >
       <span
         style={{
-          fontSize: 16,
+          fontSize: 14,
           letterSpacing: 3,
           textTransform: "uppercase",
-          color: text,
-          opacity: 0.6,
+          color: accent,
           fontFamily: "system-ui, sans-serif",
-          fontWeight: 500,
-          marginBottom: 4,
+          fontWeight: 600,
+          marginBottom: 8,
           display: "flex",
         }}
       >
-        {label}
+        {eyebrow}
       </span>
       <span
         style={{
-          fontSize: 80,
+          fontSize: 30,
           fontWeight: 700,
-          color: accent,
+          color: text,
           fontFamily: "Georgia, serif",
-          lineHeight: 1,
-          letterSpacing: -2,
+          lineHeight: 1.05,
+          letterSpacing: -0.5,
+          marginBottom: 8,
           display: "flex",
         }}
       >
-        {value}
-        <span style={{ fontSize: 40, opacity: 0.7, marginLeft: 4 }}>%</span>
+        {summary.label}
+      </span>
+      <span
+        style={{
+          fontSize: 14,
+          color: text,
+          opacity: 0.6,
+          fontFamily: "system-ui, sans-serif",
+          lineHeight: 1.35,
+          display: "flex",
+        }}
+      >
+        {summary.comparison}
       </span>
     </div>
   );
