@@ -22,7 +22,10 @@ function getArchetype(slug: string) {
   return quiz.archetypes.find((a) => a.id === slug);
 }
 
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const { slug } = await params;
   const sp = await searchParams;
   const archetype = getArchetype(slug);
@@ -70,7 +73,6 @@ export default async function ResultPage({ params, searchParams }: Props) {
   if (!archetype) {
     notFound();
   }
-  // After notFound() returns never, archetype is non-null. Re-bind for TS.
   const arch = archetype;
 
   const g = parseInt(sp.g ?? "50", 10);
@@ -80,51 +82,84 @@ export default async function ResultPage({ params, searchParams }: Props) {
   const register = (sp.rs as Register) || null;
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-10 sm:py-16">
-      <div className="text-center mb-8">
-        <p className="text-sm uppercase tracking-widest text-[var(--muted)] mb-3">
-          Jouw archetype
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-4 text-[var(--foreground)]">
-          {arch.name}
+    <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
+      {/* Issue marker */}
+      <div className="flex items-center justify-between mb-12 pb-4 border-b border-[var(--rule)]">
+        <span className="eyebrow">Uitkomst · Editie van vandaag</span>
+        <span className="eyebrow text-[var(--ink-faint)]">15 vragen</span>
+      </div>
+
+      {/* Eyebrow */}
+      <div className="section-rule eyebrow mb-8">
+        <span>Jij bent</span>
+      </div>
+
+      {/* Archetype headline */}
+      <div className="mb-10 text-center sm:text-left">
+        <h1
+          className="display text-5xl sm:text-7xl text-[var(--ink)] mb-2 stamp-in"
+          style={{ animationDelay: "0.1s" }}
+        >
+          {arch.name.split(" ").map((word, i) => (
+            <span key={i} className={i === 1 ? "display-italic text-[var(--stamp)]" : ""}>
+              {word}
+              {i < arch.name.split(" ").length - 1 && " "}
+            </span>
+          ))}
         </h1>
-        <p className="text-lg text-[var(--muted)] leading-relaxed max-w-xl mx-auto">
+        <p
+          className="text-lg sm:text-xl text-[var(--ink-soft)] leading-relaxed mt-6 fade-up"
+          style={{ animationDelay: "0.4s" }}
+        >
           {arch.description}
         </p>
       </div>
 
-      {/* Profile axes */}
-      <div className="bg-[var(--card)] rounded-2xl p-6 sm:p-8 mb-8 border border-[var(--border)]">
-        <h2 className="text-xs uppercase tracking-widest text-[var(--muted)] mb-6">
-          Jouw taalprofiel
-        </h2>
-        <div className="space-y-5">
-          <AxisRow label="Generatie" value={g} leftLabel="Ouder" rightLabel="Jonger" />
+      {/* Profile axes — magazine-style infographic */}
+      <div
+        className="border-y border-[var(--rule)] py-8 my-12 fade-up"
+        style={{ animationDelay: "0.55s" }}
+      >
+        <div className="section-rule eyebrow mb-6">
+          <span>Jouw taalprofiel</span>
+        </div>
+        <div className="space-y-7">
           <AxisRow
-            label={`Regio${region ? `: ${formatRegion(region)}` : ""}`}
-            value={r}
-            leftLabel="Wisselend"
-            rightLabel="Sterk"
+            label="Generatie"
+            value={g}
+            leftLabel="Ouder Nederlands"
+            rightLabel="Jonger Nederlands"
           />
           <AxisRow
-            label={`Register${register ? `: ${formatRegister(register)}` : ""}`}
+            label={`Regio${region ? ` · ${formatRegion(region)}` : ""}`}
+            value={r}
+            leftLabel="Geen sterke streek"
+            rightLabel="Sterke streek"
+          />
+          <AxisRow
+            label={`Register${register ? ` · ${formatRegister(register)}` : ""}`}
             value={rg}
             leftLabel="Wisselend"
-            rightLabel="Sterk"
+            rightLabel="Eén toon dominant"
           />
         </div>
       </div>
 
       {/* Share */}
-      <ShareButtons archetype={arch} slug={slug} searchParams={sp} />
+      <div className="fade-up" style={{ animationDelay: "0.7s" }}>
+        <div className="section-rule eyebrow mb-6">
+          <span>Stuur door</span>
+        </div>
+        <ShareButtons archetype={arch} slug={slug} searchParams={sp} />
+      </div>
 
-      {/* Try again / try other quiz */}
-      <div className="text-center mt-12">
+      {/* Try again */}
+      <div className="text-center mt-16 pt-8 border-t border-[var(--rule)]">
         <a
           href="/quiz/welk-nederlands"
-          className="text-[var(--accent)] underline hover:no-underline text-sm"
+          className="editorial-link text-sm"
         >
-          Doe de quiz nog een keer
+          Probeer het nog een keer →
         </a>
       </div>
     </div>
@@ -144,17 +179,17 @@ function AxisRow({
 }) {
   return (
     <div>
-      <div className="flex justify-between mb-2 text-sm">
-        <span className="font-medium">{label}</span>
-        <span className="text-[var(--muted)]">{value}%</span>
+      <div className="flex justify-between items-baseline mb-3">
+        <span className="eyebrow text-[var(--ink)]">{label}</span>
+        <span className="display text-2xl text-[var(--stamp)]">{value}%</span>
       </div>
-      <div className="relative h-2 bg-[var(--border)] rounded-full overflow-hidden">
+      <div className="relative h-px bg-[var(--rule)] mb-2">
         <div
-          className="absolute inset-y-0 left-0 bg-[var(--accent)] rounded-full"
-          style={{ width: `${value}%` }}
+          className="absolute inset-y-[-2px] left-0 bg-[var(--stamp)]"
+          style={{ width: `${value}%`, height: "5px", top: "-2px" }}
         />
       </div>
-      <div className="flex justify-between text-xs text-[var(--muted)] mt-1">
+      <div className="flex justify-between text-xs text-[var(--ink-faint)]">
         <span>{leftLabel}</span>
         <span>{rightLabel}</span>
       </div>

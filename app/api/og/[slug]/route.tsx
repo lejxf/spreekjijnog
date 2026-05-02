@@ -26,6 +26,9 @@ export async function GET(
     ? archetype.description.split(".")[0] + "."
     : "Doe de quiz om te zien wat jij bent.";
 
+  // Split name into words to italicise the second word as accent
+  const nameWords = archetypeName.split(" ");
+
   return new ImageResponse(
     (
       <div
@@ -34,76 +37,119 @@ export async function GET(
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#faf6ee",
-          padding: "70px 80px",
-          fontFamily: "system-ui, sans-serif",
-          color: "#2a2620",
+          background: "#f4ede0",
+          padding: "60px 70px",
+          fontFamily: "Georgia, 'Times New Roman', serif",
+          color: "#1a1612",
+          position: "relative",
         }}
       >
+        {/* Top eyebrow with rules */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            marginBottom: 40,
-            color: "#6b5f4f",
-            fontSize: 22,
+            marginBottom: 28,
+            fontSize: 18,
             letterSpacing: 4,
             textTransform: "uppercase",
+            color: "#5a4d3e",
+            fontFamily: "system-ui, sans-serif",
+            fontWeight: 500,
           }}
         >
-          <span>SpreekJijNog</span>
+          <span>SpreekJijNog · Nº 01</span>
           <span>spreekjijnog.nl</span>
         </div>
 
+        {/* Top rule */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            flex: 1,
+            height: 1,
+            background: "#cbc1a9",
+            marginBottom: 50,
+          }}
+        />
+
+        {/* Eyebrow label */}
+        <div
+          style={{
+            display: "flex",
+            fontSize: 18,
+            letterSpacing: 4,
+            textTransform: "uppercase",
+            color: "#5a4d3e",
+            fontFamily: "system-ui, sans-serif",
+            fontWeight: 500,
+            marginBottom: 16,
           }}
         >
-          <div
-            style={{
-              fontSize: 28,
-              color: "#6b5f4f",
-              marginBottom: 10,
-              display: "flex",
-            }}
-          >
-            Ik ben een
-          </div>
-          <div
-            style={{
-              fontSize: 96,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              color: "#b85c3e",
-              marginBottom: 30,
-              display: "flex",
-            }}
-          >
-            {archetypeName}
-          </div>
-          <div
-            style={{
-              fontSize: 30,
-              lineHeight: 1.4,
-              color: "#2a2620",
-              maxWidth: 1000,
-              display: "flex",
-            }}
-          >
-            {tagline}
-          </div>
+          Ik ben een
         </div>
 
+        {/* Archetype name — display serif */}
+        <div
+          style={{
+            fontSize: 110,
+            fontWeight: 700,
+            lineHeight: 0.95,
+            color: "#1a1612",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 18,
+            marginBottom: 28,
+            letterSpacing: -1.5,
+          }}
+        >
+          {nameWords.map((word, i) => (
+            <span
+              key={i}
+              style={{
+                fontStyle: i === 1 ? "italic" : "normal",
+                color: i === 1 ? "#c84a32" : "#1a1612",
+                display: "flex",
+              }}
+            >
+              {word}
+            </span>
+          ))}
+        </div>
+
+        {/* Tagline */}
         <div
           style={{
             display: "flex",
-            gap: 20,
-            marginTop: 40,
+            fontSize: 26,
+            lineHeight: 1.35,
+            color: "#5a4d3e",
+            maxWidth: 900,
+            fontFamily: "system-ui, sans-serif",
+            marginBottom: 40,
+          }}
+        >
+          {tagline}
+        </div>
+
+        {/* Spacer */}
+        <div style={{ flex: 1, display: "flex" }} />
+
+        {/* Bottom rule */}
+        <div
+          style={{
+            display: "flex",
+            height: 1,
+            background: "#cbc1a9",
+            marginBottom: 24,
+          }}
+        />
+
+        {/* Three axes */}
+        <div
+          style={{
+            display: "flex",
+            gap: 32,
           }}
         >
           <Bar label="Generatie" value={g} />
@@ -113,6 +159,17 @@ export async function GET(
             value={rg}
           />
         </div>
+
+        {/* Decorative stamp number top-right */}
+        <div
+          style={{
+            position: "absolute",
+            top: 60,
+            right: 70,
+            fontSize: 0,
+            display: "flex",
+          }}
+        />
       </div>
     ),
     { width: 1200, height: 630 },
@@ -126,26 +183,44 @@ function Bar({ label, value }: { label: string; value: number }) {
         flex: 1,
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: 8,
       }}
     >
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          fontSize: 18,
-          color: "#6b5f4f",
+          alignItems: "baseline",
         }}
       >
-        <span>{label}</span>
-        <span>{value}%</span>
+        <span
+          style={{
+            fontSize: 16,
+            letterSpacing: 3,
+            textTransform: "uppercase",
+            color: "#1a1612",
+            fontFamily: "system-ui, sans-serif",
+            fontWeight: 500,
+          }}
+        >
+          {label}
+        </span>
+        <span
+          style={{
+            fontSize: 32,
+            fontWeight: 700,
+            color: "#c84a32",
+            fontFamily: "Georgia, serif",
+          }}
+        >
+          {value}%
+        </span>
       </div>
       <div
         style={{
-          height: 8,
+          height: 4,
           width: "100%",
-          background: "#e6dcc8",
-          borderRadius: 4,
+          background: "#cbc1a9",
           display: "flex",
         }}
       >
@@ -153,8 +228,7 @@ function Bar({ label, value }: { label: string; value: number }) {
           style={{
             height: "100%",
             width: `${value}%`,
-            background: "#b85c3e",
-            borderRadius: 4,
+            background: "#c84a32",
           }}
         />
       </div>

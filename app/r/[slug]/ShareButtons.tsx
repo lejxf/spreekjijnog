@@ -25,7 +25,7 @@ export default function ShareButtons({ archetype, slug, searchParams }: Props) {
     return qs ? `${base}?${qs}` : base;
   }
 
-  const shareText = `Ik ben een ${archetype.name} volgens SpreekJijNog 😅 Wat ben jij? `;
+  const shareText = `Ik ben een ${archetype.name} volgens SpreekJijNog. Wat ben jij? `;
 
   async function handleNativeShare() {
     const url = getUrl();
@@ -37,7 +37,7 @@ export default function ShareButtons({ archetype, slug, searchParams }: Props) {
           url,
         });
       } catch {
-        // user cancelled, ignore
+        // user cancelled
       }
     } else {
       handleCopy();
@@ -74,43 +74,36 @@ export default function ShareButtons({ archetype, slug, searchParams }: Props) {
     <div>
       <button
         onClick={handleNativeShare}
-        className="w-full bg-[var(--accent)] text-white px-6 py-4 rounded-full text-lg font-medium hover:bg-[#9d4d34] transition-colors active:scale-[0.98] mb-4"
+        className="group w-full bg-[var(--ink)] text-[var(--paper)] px-6 py-4 text-base font-medium hover:bg-[var(--stamp)] transition-colors mb-3 flex items-center justify-center gap-3"
       >
-        Deel je resultaat
+        <span>Deel je uitslag</span>
+        <span className="transition-transform group-hover:translate-x-1">→</span>
       </button>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-2">
-        <a
-          href={platformUrl("whatsapp")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-center px-3 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-sm font-medium"
-        >
-          WhatsApp
-        </a>
-        <a
-          href={platformUrl("facebook")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-center px-3 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-sm font-medium"
-        >
-          Facebook
-        </a>
-        <a
-          href={platformUrl("linkedin")}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-center px-3 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-sm font-medium"
-        >
-          LinkedIn
-        </a>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <ShareLink href={platformUrl("whatsapp")} label="WhatsApp" />
+        <ShareLink href={platformUrl("facebook")} label="Facebook" />
+        <ShareLink href={platformUrl("linkedin")} label="LinkedIn" />
         <button
           onClick={handleCopy}
-          className="px-3 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-sm font-medium"
+          className="px-4 py-2.5 border border-[var(--rule)] bg-[var(--paper-light)] hover:border-[var(--ink)] text-sm text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors"
         >
-          {copied ? "Gekopieerd!" : "Kopieer link"}
+          {copied ? "Gekopieerd ✓" : "Kopieer link"}
         </button>
       </div>
     </div>
+  );
+}
+
+function ShareLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2.5 border border-[var(--rule)] bg-[var(--paper-light)] hover:border-[var(--ink)] text-sm text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors text-center"
+    >
+      {label}
+    </a>
   );
 }

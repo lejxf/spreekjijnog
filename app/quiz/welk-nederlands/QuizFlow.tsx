@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { scoreQuiz } from "@/lib/scoring";
-import type { Quiz } from "@/lib/quiz-types";
+import type { Quiz, QuizQuestion } from "@/lib/quiz-types";
 
 interface Props {
   quiz: Quiz;
@@ -14,25 +14,41 @@ interface Answer {
   optionIndex: number;
 }
 
+const QUESTIONS_PER_SESSION = 15;
+
+function shuffle<T>(arr: T[]): T[] {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 export default function QuizFlow({ quiz }: Props) {
   const router = useRouter();
+
+  // Pick 15 random questions per session — pool stays at 30 in JSON
+  const sessionQuestions = useMemo<QuizQuestion[]>(
+    () => shuffle(quiz.questions).slice(0, QUESTIONS_PER_SESSION),
+    [quiz.questions],
+  );
+
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [animatingOut, setAnimatingOut] = useState<number | null>(null);
   const currentIndex = answers.length;
-  const totalQuestions = quiz.questions.length;
+  const totalQuestions = sessionQuestions.length;
   const isComplete = currentIndex >= totalQuestions;
-  const currentQuestion = quiz.questions[currentIndex];
+  const currentQuestion = sessionQuestions[currentIndex];
   const teaserIndex = Math.floor(totalQuestions / 2);
 
-  // Compute mid-quiz teaser archetype on the fly
   const teaserArchetype = useMemo(() => {
     if (answers.length < 5) return null;
-    return scoreQuiz(quiz, answers).archetype;
-  }, [answers, quiz]);
+    return scoreQuiz({ ...quiz, questions: sessionQuestions }, answers).archetype;
+  }, [answers, quiz, sessionQuestions]);
 
   function handleSelect(optionIndex: number) {
     if (animatingOut !== null) return;
-
     setAnimatingOut(optionIndex);
 
     setTimeout(() => {
@@ -44,8 +60,10 @@ export default function QuizFlow({ quiz }: Props) {
       setAnimatingOut(null);
 
       if (newAnswers.length >= totalQuestions) {
-        // Complete: compute result and navigate
-        const result = scoreQuiz(quiz, newAnswers);
+        const result = scoreQuiz(
+          { ...quiz, questions: sessionQuestions },
+          newAnswers,
+        );
         const params = new URLSearchParams({
           g: String(result.profile.generationStrength),
           r: String(result.profile.regionStrength),
@@ -55,31 +73,40 @@ export default function QuizFlow({ quiz }: Props) {
         });
         router.push(`/r/${result.archetype.id}?${params.toString()}`);
       }
-    }, 350);
+    }, 320);
   }
 
   if (isComplete) {
     return (
-      <div className="text-center py-20">
-        <p className="text-lg text-[var(--muted)]">Resultaat berekenen...</p>
+      <div className="text-center py-32">
+        <p className="eyebrow text-[var(--ink-soft)]">Resultaat berekenen…</p>
       </div>
     );
   }
 
-  const progress = ((currentIndex + (animatingOut !== null ? 1 : 0)) / totalQuestions) * 100;
+  const progress = (currentIndex / totalQuestions) * 100;
   const showTeaser = currentIndex === teaserIndex && teaserArchetype;
+  const questionNumber = String(currentIndex + 1).padStart(2, "0");
+  const totalNumber = String(totalQuestions).padStart(2, "0");
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-10 sm:py-16">
-      {/* Progress bar */}
-      <div className="mb-10">
-        <div className="flex justify-between text-xs text-[var(--muted)] mb-2 uppercase tracking-wider">
-          <span>Vraag {currentIndex + 1} van {totalQuestions}</span>
-          <span>{Math.round(progress)}%</span>
+    <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
+      {/* Progress: editorial newspaper-style */}
+      <div className="mb-12">
+        <div className="flex justify-between items-baseline mb-3">
+          <div className="eyebrow flex items-baseline gap-1">
+            <span className="display text-base text-[var(--ink)]">
+              {questionNumber}
+            </span>
+            <span className="text-[var(--ink-faint)]">/ {totalNumber}</span>
+          </div>
+          <span className="eyebrow text-[var(--ink-faint)]">
+            Welk Nederlands
+          </span>
         </div>
-        <div className="h-1 bg-[var(--border)] rounded-full overflow-hidden">
+        <div className="h-px bg-[var(--rule)] relative overflow-hidden">
           <div
-            className="h-full bg-[var(--accent)] transition-all duration-500 ease-out"
+            className="absolute inset-y-0 left-0 bg-[var(--stamp)] transition-all duration-500 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -87,10 +114,18 @@ export default function QuizFlow({ quiz }: Props) {
 
       {/* Mid-quiz teaser */}
       {showTeaser && teaserArchetype && (
-        <div className="mb-8 p-4 bg-[var(--accent-soft)] rounded-xl text-center text-sm">
-          <span className="text-[var(--muted)]">Tot nu toe neig je naar </span>
-          <strong className="text-[var(--foreground)]">{teaserArchetype.name}</strong>
-          <span className="text-[var(--muted)]">. Nog {totalQuestions - currentIndex} vragen.</span>
+        <div className="mb-10 fade-up">
+          <div className="section-rule eyebrow mb-4">
+            <span>Tussenstand</span>
+          </div>
+          <p className="text-base sm:text-lg text-[var(--ink-soft)] leading-relaxed">
+            Je neigt richting{" "}
+            <strong className="display display-italic text-[var(--stamp)] text-xl">
+              {teaserArchetype.name}
+            </strong>
+            . Nog {totalQuestions - currentIndex} vragen om te bevestigen of om
+            te draaien.
+          </p>
         </div>
       )}
 
@@ -101,29 +136,39 @@ export default function QuizFlow({ quiz }: Props) {
         }`}
         key={currentQuestion.id}
       >
-        <h1 className="text-2xl sm:text-3xl font-semibold mb-8 leading-snug">
+        <h1 className="display text-3xl sm:text-4xl md:text-5xl mb-10 leading-tight text-[var(--ink)]">
           {currentQuestion.prompt}
         </h1>
 
         <div className="flex flex-col gap-3">
           {currentQuestion.options.map((option, i) => {
             const isSelected = animatingOut === i;
+            const letter = String.fromCharCode(65 + i);
             return (
               <button
                 key={i}
                 onClick={() => handleSelect(i)}
                 disabled={animatingOut !== null}
-                className={`
-                  text-left px-5 py-4 rounded-xl border-2 transition-all
+                className={`group text-left px-5 py-4 sm:px-6 sm:py-5 border transition-all flex items-baseline gap-4
                   ${
                     isSelected
-                      ? "bg-[var(--accent)] text-white border-[var(--accent)] scale-[0.98]"
-                      : "bg-[var(--card)] border-[var(--border)] hover:border-[var(--accent)] active:scale-[0.98]"
+                      ? "bg-[var(--ink)] text-[var(--paper)] border-[var(--ink)] scale-[0.99]"
+                      : "bg-[var(--paper-light)] border-[var(--rule)] hover:border-[var(--ink)] hover:bg-[var(--paper)] active:scale-[0.99]"
                   }
-                  disabled:cursor-not-allowed
-                `}
+                  disabled:cursor-not-allowed`}
               >
-                <span className="text-base sm:text-lg leading-snug">{option.label}</span>
+                <span
+                  className={`eyebrow flex-shrink-0 ${
+                    isSelected
+                      ? "text-[var(--paper)]/60"
+                      : "text-[var(--ink-faint)] group-hover:text-[var(--stamp)]"
+                  }`}
+                >
+                  {letter}
+                </span>
+                <span className="text-base sm:text-lg leading-snug">
+                  {option.label}
+                </span>
               </button>
             );
           })}
