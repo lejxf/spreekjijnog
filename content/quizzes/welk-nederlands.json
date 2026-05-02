@@ -402,6 +402,36 @@
         { "label": "Stoofschotel met de partner voor SBS6", "tags": { "vibe": "huiselijk", "register": "informeel" } },
         { "label": "TikTok scrollen tot ik in slaap val", "tags": { "vibe": "single", "generation": 2020 } }
       ]
+    },
+    {
+      "id": "q41_ochtend",
+      "prompt": "Wat doe jij om 6:30 's ochtends?",
+      "options": [
+        { "label": "Hardlopen met de boys", "tags": { "vibe": "sport", "generation": 1992, "region": "hollands" } },
+        { "label": "Mediteren met de Calm-app", "tags": { "vibe": "wellness", "generation": 2015 } },
+        { "label": "ChatGPT-prompts voor de dag", "tags": { "vibe": "online", "generation": 1985 } },
+        { "label": "Slapen, ik ben geen ochtendmens", "tags": { "vibe": "vintage", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q42_app",
+      "prompt": "Welke app is jouw heilige graal deze maand?",
+      "options": [
+        { "label": "Strava voor mijn rondjes", "tags": { "vibe": "sport", "generation": 1995 } },
+        { "label": "ChatGPT voor letterlijk alles", "tags": { "vibe": "online", "register": "informeel" } },
+        { "label": "Mijn online cursus-platform", "tags": { "vibe": "online", "generation": 1990 } },
+        { "label": "Aldi-app voor de bonus-aanbiedingen", "tags": { "vibe": "vintage", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q43_verkoop",
+      "prompt": "Als jij iets zou verkopen, wat dan?",
+      "options": [
+        { "label": "Een 12-weekse online cursus", "tags": { "vibe": "online", "register": "informeel", "generation": 1990 } },
+        { "label": "Hardloop-coaching plannen", "tags": { "vibe": "sport" } },
+        { "label": "Vintage spullen op Vinted", "tags": { "vibe": "vintage", "generation": 1995 } },
+        { "label": "Niks, dat is niet voor mij", "tags": { "vibe": "huiselijk", "register": "informeel" } }
+      ]
     }
   ],
   "archetypes": [
@@ -516,6 +546,27 @@
       "description": "Drie jaar geleden voor het eerst ge-swiped, nu nog steeds bezig. Ironisch over de hele toestand maar net niet ironisch genoeg om er echt af te zijn. Noemt zichzelf 'the catch you missed in 2019'. Boekhandel-date als second move altijd. Kent alle Amsterdamse tweede-date-bars.",
       "axes": { "generation_min": 1985, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "single" },
       "colors": { "bg": "#3a0e2a", "accent": "#f3c896", "text": "#fbf0e0" }
+    },
+    {
+      "id": "run-club-hardloper",
+      "name": "Run Club Hardloper",
+      "description": "Garmin Forerunner aan de pols, Strava op het scherm voor het ontbijt. WhatsApp-groep heet 'De Boys 🏃'. Schopt zich uit bed om 6:30 ondanks de regen. Decopolo gel als zaterdagse lange duurloop. Kent alle Vondelpark-rondjes en hun precieze afstanden. Eerste vraag op verjaardag: 'wanneer heb jij voor het laatst gelopen?'",
+      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "hollands/noord-holland", "register": "informeel", "vibe": "sport" },
+      "colors": { "bg": "#0d3530", "accent": "#bef264", "text": "#ffffff" }
+    },
+    {
+      "id": "ai-bestie",
+      "name": "AI-Bestie",
+      "description": "Heeft ChatGPT op de eerste plek in het dock. Schrijft sollicitatiemails, plant vakanties, ontwerpt jeugdfeestjes — alles met AI. Zegt 'ik heb het er met ChatGPT over gehad' alsof dat een collega is. LinkedIn-post over hoe AI zijn workflow heeft veranderd minstens een keer per maand. Spreekt het woord 'promptje' tegenwoordig zonder twijfel.",
+      "axes": { "generation_min": 1980, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "online" },
+      "colors": { "bg": "#0a1830", "accent": "#22d3ee", "text": "#ffffff" }
+    },
+    {
+      "id": "insta-goeroe",
+      "name": "Insta-Goeroe",
+      "description": "Begon als 'echte' professional, ontdekte vier jaar geleden dat hij beter geld verdient door anderen iets te leren. Verkoopt cursus '12 weken naar financiële vrijheid'. Zes Instagram-stories per dag met motivational quotes vanaf rooftop pool in Bali of Dubai. Mastermind-community op Telegram met 800 leden. Gebruikt 'mindset' minstens drie keer per dag. WhatsApp-status: 'Are you ready to transform your life?'",
+      "axes": { "generation_min": 1985, "generation_max": 1995, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
+      "colors": { "bg": "#15101e", "accent": "#f4c542", "text": "#ffffff" }
     }
   ]
 }

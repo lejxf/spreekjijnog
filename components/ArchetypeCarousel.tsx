@@ -82,6 +82,18 @@ const DEMO_VALUES: Record<string, DemoValues> = {
     g: 72, r: 44, rg: 58, region: "Amsterdam", register: "Single",
     essence: "Drie jaar swipen, ironisch maar net niet, boekhandel-date als second move.",
   },
+  "run-club-hardloper": {
+    g: 70, r: 56, rg: 78, region: "Holland", register: "Sport",
+    essence: "Garmin aan, Strava open, halve marathon op het programma. WhatsApp 'De Boys 🏃'.",
+  },
+  "ai-bestie": {
+    g: 65, r: 51, rg: 72, region: "Holland", register: "Online",
+    essence: "ChatGPT op plek 1 in het dock. Spreekt 'promptje' zonder twijfel. LinkedIn over AI-workflow.",
+  },
+  "insta-goeroe": {
+    g: 68, r: 49, rg: 80, region: "Amsterdam", register: "Online",
+    essence: "Verkoopt cursus '12 weken naar financiële vrijheid'. Bali rooftop pool. 'Mindset' 3× per dag.",
+  },
 };
 
 const CYCLE_MS = 3800;
