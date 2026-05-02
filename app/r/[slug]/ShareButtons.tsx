@@ -12,6 +12,15 @@ interface Props {
 export default function ShareButtons({ archetype, slug, searchParams }: Props) {
   const [copied, setCopied] = useState(false);
 
+  // Sanitize same way as result page does
+  const rawName = searchParams.n ?? "";
+  const userName =
+    rawName
+      .trim()
+      .slice(0, 40)
+      .replace(/[^\p{L}\s'\-]/gu, "")
+      .trim() || null;
+
   function getUrl() {
     const params = new URLSearchParams();
     Object.entries(searchParams).forEach(([k, v]) => {
@@ -25,14 +34,17 @@ export default function ShareButtons({ archetype, slug, searchParams }: Props) {
     return qs ? `${base}?${qs}` : base;
   }
 
-  const shareText = `Ik ben een ${archetype.name} volgens SpreekJijNog. Wat ben jij? `;
+  const subjectPhrase = userName
+    ? `${userName} is een ${archetype.name}`
+    : `Ik ben een ${archetype.name}`;
+  const shareText = `${subjectPhrase} volgens SpreekJijNog. Wat ben jij? `;
 
   async function handleNativeShare() {
     const url = getUrl();
     if (typeof navigator !== "undefined" && "share" in navigator) {
       try {
         await navigator.share({
-          title: `Ik ben een ${archetype.name}`,
+          title: subjectPhrase,
           text: shareText,
           url,
         });

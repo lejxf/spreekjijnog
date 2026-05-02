@@ -25,12 +25,22 @@ export async function GET(
   const region = searchParams.get("reg") ?? "";
   const register = (searchParams.get("rs") as Register | null) ?? null;
 
+  // Sanitize user name for OG image (max 40 chars, letters/space/-/' only)
+  const rawName = searchParams.get("n") ?? "";
+  const userName =
+    rawName
+      .trim()
+      .slice(0, 40)
+      .replace(/[^\p{L}\s'\-]/gu, "")
+      .trim() || null;
+
   const archetypeName = archetype?.name ?? "Onbekend Type";
   const tagline = archetype
     ? archetype.description.split(".")[0] + "."
     : "Doe de quiz om te zien wat jij bent.";
 
   const nameWords = archetypeName.split(" ");
+  const eyebrowLabel = userName ? `${userName} is een` : "Ik ben een";
 
   return new ImageResponse(
     (
@@ -105,7 +115,7 @@ export async function GET(
             marginBottom: 10,
           }}
         >
-          Ik ben een
+          {eyebrowLabel}
         </div>
 
         {/* Archetype name — display serif */}

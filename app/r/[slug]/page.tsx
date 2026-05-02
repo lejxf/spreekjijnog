@@ -13,7 +13,17 @@ interface Props {
     rg?: string;
     reg?: string;
     rs?: string;
+    n?: string;
   }>;
+}
+
+function sanitizeName(raw: string | undefined): string | null {
+  if (!raw) return null;
+  const trimmed = raw.trim().slice(0, 40);
+  if (!trimmed) return null;
+  // Strip anything that's not letter, space, hyphen, apostrophe (allows Dutch names)
+  const cleaned = trimmed.replace(/[^\p{L}\s'\-]/gu, "");
+  return cleaned.trim() || null;
 }
 
 const quiz = quizData as Quiz;
@@ -31,7 +41,10 @@ export async function generateMetadata({
   const archetype = getArchetype(slug);
   if (!archetype) return {};
 
-  const title = `Ik ben een ${archetype.name}`;
+  const name = sanitizeName(sp.n);
+  const title = name
+    ? `${name} is een ${archetype.name}`
+    : `Ik ben een ${archetype.name}`;
   const description = archetype.description.split(".")[0] + ".";
 
   const ogQuery = new URLSearchParams({
@@ -41,6 +54,7 @@ export async function generateMetadata({
     reg: sp.reg ?? "",
     rs: sp.rs ?? "",
   });
+  if (name) ogQuery.set("n", name);
 
   return {
     title,
@@ -81,6 +95,7 @@ export default async function ResultPage({ params, searchParams }: Props) {
   const rg = parseInt(sp.rg ?? "0", 10);
   const region = sp.reg || null;
   const register = (sp.rs as Register) || null;
+  const userName = sanitizeName(sp.n);
 
   const nameWords = arch.name.split(" ");
 
@@ -123,7 +138,7 @@ export default async function ResultPage({ params, searchParams }: Props) {
             className="eyebrow mb-3 stamp-in"
             style={{ animationDelay: "0.05s", color: colors.accent }}
           >
-            Ik ben een
+            {userName ? `${userName} is een` : "Ik ben een"}
           </p>
 
           {/* Archetype headline */}

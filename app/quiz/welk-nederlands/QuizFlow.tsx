@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { scoreQuiz } from "@/lib/scoring";
-import type { Quiz, QuizQuestion } from "@/lib/quiz-types";
+import type { Quiz, QuizQuestion, QuizResult } from "@/lib/quiz-types";
 
 interface Props {
   quiz: Quiz;
@@ -25,10 +25,11 @@ function shuffle<T>(arr: T[]): T[] {
   return copy;
 }
 
+type Stage = "quiz" | "name-capture" | "navigating";
+
 export default function QuizFlow({ quiz }: Props) {
   const router = useRouter();
 
-  // Pick 15 random questions per session — pool stays at 30 in JSON
   const sessionQuestions = useMemo<QuizQuestion[]>(
     () => shuffle(quiz.questions).slice(0, QUESTIONS_PER_SESSION),
     [quiz.questions],
@@ -36,9 +37,12 @@ export default function QuizFlow({ quiz }: Props) {
 
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [animatingOut, setAnimatingOut] = useState<number | null>(null);
+  const [stage, setStage] = useState<Stage>("quiz");
+  const [name, setName] = useState("");
+  const [pendingResult, setPendingResult] = useState<QuizResult | null>(null);
+
   const currentIndex = answers.length;
   const totalQuestions = sessionQuestions.length;
-  const isComplete = currentIndex >= totalQuestions;
   const currentQuestion = sessionQuestions[currentIndex];
   const teaserIndex = Math.floor(totalQuestions / 2);
 
@@ -64,19 +68,93 @@ export default function QuizFlow({ quiz }: Props) {
           { ...quiz, questions: sessionQuestions },
           newAnswers,
         );
-        const params = new URLSearchParams({
-          g: String(result.profile.generationStrength),
-          r: String(result.profile.regionStrength),
-          rg: String(result.profile.registerStrength),
-          reg: result.profile.dominantRegion ?? "",
-          rs: result.profile.dominantRegister ?? "",
-        });
-        router.push(`/r/${result.archetype.id}?${params.toString()}`);
+        setPendingResult(result);
+        setStage("name-capture");
       }
     }, 320);
   }
 
-  if (isComplete) {
+  function navigateToResult(includeName: boolean) {
+    if (!pendingResult) return;
+    setStage("navigating");
+
+    const params = new URLSearchParams({
+      g: String(pendingResult.profile.generationStrength),
+      r: String(pendingResult.profile.regionStrength),
+      rg: String(pendingResult.profile.registerStrength),
+      reg: pendingResult.profile.dominantRegion ?? "",
+      rs: pendingResult.profile.dominantRegister ?? "",
+    });
+
+    const trimmedName = name.trim().slice(0, 40);
+    if (includeName && trimmedName) {
+      params.set("n", trimmedName);
+    }
+
+    router.push(`/r/${pendingResult.archetype.id}?${params.toString()}`);
+  }
+
+  // ─── Stage: name capture ───────────────────────────────────────────
+  if (stage === "name-capture" && pendingResult) {
+    return (
+      <div className="max-w-xl mx-auto px-6 py-12 sm:py-20">
+        <div className="fade-up">
+          <div className="section-rule eyebrow mb-8">
+            <span>Bijna klaar</span>
+          </div>
+
+          <h1 className="display text-3xl sm:text-5xl leading-tight mb-4">
+            Hoe heet jij{" "}
+            <span className="display-italic text-[var(--stamp)]">eigenlijk</span>?
+          </h1>
+          <p className="text-base sm:text-lg text-[var(--ink-soft)] leading-relaxed mb-8">
+            Vul je voornaam in en die komt op je deelkaart te staan. Optioneel
+            — niets wordt opgeslagen.
+          </p>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              navigateToResult(true);
+            }}
+            className="space-y-4"
+          >
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Bijvoorbeeld: Lisa"
+              autoFocus
+              maxLength={40}
+              className="w-full px-5 py-4 text-lg bg-[var(--paper-light)] border border-[var(--rule)] focus:border-[var(--ink)] focus:outline-none transition-colors"
+            />
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                type="submit"
+                disabled={!name.trim()}
+                className="group inline-flex items-center justify-center gap-3 bg-[var(--ink)] text-[var(--paper)] px-7 py-4 text-base font-medium hover:bg-[var(--stamp)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                <span>Toon mijn resultaat</span>
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => navigateToResult(false)}
+                className="text-sm text-[var(--ink-soft)] hover:text-[var(--ink)] underline-offset-4 hover:underline self-center sm:self-auto px-3"
+              >
+                Sla over
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // ─── Stage: navigating ─────────────────────────────────────────────
+  if (stage === "navigating") {
     return (
       <div className="text-center py-32">
         <p className="eyebrow text-[var(--ink-soft)]">Resultaat berekenen…</p>
@@ -84,6 +162,7 @@ export default function QuizFlow({ quiz }: Props) {
     );
   }
 
+  // ─── Stage: quiz ───────────────────────────────────────────────────
   const progress = (currentIndex / totalQuestions) * 100;
   const showTeaser = currentIndex === teaserIndex && teaserArchetype;
   const questionNumber = String(currentIndex + 1).padStart(2, "0");
@@ -91,7 +170,6 @@ export default function QuizFlow({ quiz }: Props) {
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
-      {/* Progress: editorial newspaper-style */}
       <div className="mb-12">
         <div className="flex justify-between items-baseline mb-3">
           <div className="eyebrow flex items-baseline gap-1">
@@ -112,7 +190,6 @@ export default function QuizFlow({ quiz }: Props) {
         </div>
       </div>
 
-      {/* Mid-quiz teaser */}
       {showTeaser && teaserArchetype && (
         <div className="mb-10 fade-up">
           <div className="section-rule eyebrow mb-4">
@@ -129,7 +206,6 @@ export default function QuizFlow({ quiz }: Props) {
         </div>
       )}
 
-      {/* Question */}
       <div
         className={`transition-opacity duration-300 ${
           animatingOut !== null ? "opacity-0" : "opacity-100"
