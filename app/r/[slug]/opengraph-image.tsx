@@ -119,7 +119,7 @@ export default async function Image({ params, searchParams }: Props) {
             value={r}
           />
           <Bar
-            label={register ? formatRegister(register) : "Register"}
+            label={register ? formatRegister(register) : "Toon"}
             value={rg}
           />
         </div>

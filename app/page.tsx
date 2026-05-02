@@ -78,7 +78,7 @@ export default function Home() {
           />
           <Pillar
             number="III"
-            title="Register"
+            title="Toon"
             text="Formele kantoor-Nederlands, ontspannen kantine-toon of straat-mengtaal? Eén zinnetje verraadt al wat."
           />
         </div>
