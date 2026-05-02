@@ -1,4 +1,9 @@
 import Link from "next/link";
+import quizData from "@/content/quizzes/welk-nederlands.json";
+import type { Quiz } from "@/lib/quiz-types";
+import ArchetypeCarousel from "@/components/ArchetypeCarousel";
+
+const quiz = quizData as Quiz;
 
 export default function Home() {
   return (
@@ -54,11 +59,13 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Archetype carousel — visual trailer */}
+        <div className="fade-up" style={{ animationDelay: "0.5s" }}>
+          <ArchetypeCarousel archetypes={quiz.archetypes} />
+        </div>
+
         {/* Editorial — what's it about */}
-        <div
-          className="fade-up grid sm:grid-cols-3 gap-8 sm:gap-12 mt-24 pt-12 border-t border-[var(--rule)]"
-          style={{ animationDelay: "0.5s" }}
-        >
+        <div className="grid sm:grid-cols-3 gap-8 sm:gap-12 pt-12 border-t border-[var(--rule)]">
           <Pillar
             number="I"
             title="Generatie"
@@ -77,10 +84,7 @@ export default function Home() {
         </div>
 
         {/* Editorial pull quote */}
-        <div
-          className="fade-up mt-20 mb-8"
-          style={{ animationDelay: "0.65s" }}
-        >
+        <div className="mt-20 mb-8">
           <div className="section-rule eyebrow mb-6">
             <span>Een korte introductie</span>
           </div>
@@ -90,6 +94,20 @@ export default function Home() {
             spreekt. Tot blijkt dat een Brabander helemaal niet hetzelfde
             Nederlands spreekt als een Drent. Of als je dochter.
           </p>
+        </div>
+
+        {/* Second CTA at the bottom */}
+        <div className="mt-12 pt-12 border-t border-[var(--rule)] text-center">
+          <p className="eyebrow mb-4 text-[var(--ink-soft)]">Klaar voor je profiel?</p>
+          <Link
+            href="/quiz/welk-nederlands"
+            className="group inline-flex items-center gap-3 bg-[var(--stamp)] text-[var(--paper)] px-8 py-4 text-base font-medium hover:bg-[var(--stamp-deep)] transition-colors"
+          >
+            <span>Doe de quiz</span>
+            <span className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </Link>
         </div>
       </div>
     </div>
