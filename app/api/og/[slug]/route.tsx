@@ -191,7 +191,7 @@ export async function GET(
             text={colors.text}
           />
           <AxisStat
-            eyebrow="Register"
+            eyebrow="Toon"
             summary={registerSummary(register, rg)}
             accent={colors.accent}
             text={colors.text}

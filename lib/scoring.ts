@@ -308,7 +308,7 @@ export function registerSummary(
   if (!register || strength < 25) {
     return {
       label: "Wisselende toon",
-      detail: "Schakelt tussen registers",
+      detail: "Schakelt tussen tonen",
       comparison: "Minder consistent dan 60% van Nederland",
     };
   }

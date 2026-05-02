@@ -194,7 +194,7 @@ export default async function ResultPage({ params, searchParams }: Props) {
               text={colors.text}
             />
             <AxisCard
-              eyebrow="Register"
+              eyebrow="Toon"
               summary={registerSummary(register, rg)}
               accent={colors.accent}
               text={colors.text}
