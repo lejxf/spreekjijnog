@@ -4,10 +4,12 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import type { Archetype } from "@/lib/quiz-types";
 
-interface DemoArchetype {
-  archetype: Archetype;
-  /** Sample percentages that match the archetype's profile, for visual demo */
-  demo: { g: number; r: number; rg: number; region: string; register: string };
+interface DemoValues {
+  g: number;
+  r: number;
+  rg: number;
+  region: string;
+  register: string;
   essence: string;
 }
 
@@ -15,49 +17,37 @@ interface Props {
   archetypes: Archetype[];
 }
 
-// Sample percentages per archetype — visualises a realistic taalprofiel
-const DEMO_VALUES: Record<
-  string,
-  Omit<DemoArchetype, "archetype"> & { archetypeId: string }
-> = {
+const DEMO_VALUES: Record<string, DemoValues> = {
   "bourgondische-boekhouder": {
-    archetypeId: "bourgondische-boekhouder",
-    demo: { g: 42, r: 78, rg: 64, region: "Brabant", register: "Informeel" },
+    g: 42, r: 78, rg: 64, region: "Brabant", register: "Informeel",
     essence: "Werkt netjes en op tijd, maar gaat los als de rosé op tafel komt.",
   },
   "hagenese-hipster": {
-    archetypeId: "hagenese-hipster",
-    demo: { g: 68, r: 52, rg: 58, region: "Holland", register: "Informeel" },
+    g: 68, r: 52, rg: 58, region: "Holland", register: "Informeel",
     essence: "Mengt formeel en straat alsof dat normaal is. En het is normaal, blijkbaar.",
   },
   "achterhoekse-academicus": {
-    archetypeId: "achterhoekse-academicus",
-    demo: { g: 32, r: 71, rg: 76, region: "Achterhoek", register: "Formeel" },
+    g: 32, r: 71, rg: 76, region: "Achterhoek", register: "Formeel",
     essence: "Leest drie boeken tegelijk en zegt nooit 'doei' maar 'tot ziens'.",
   },
   "belgisch-geinfecteerd": {
-    archetypeId: "belgisch-geinfecteerd",
-    demo: { g: 55, r: 67, rg: 54, region: "Vlaanderen", register: "Informeel" },
+    g: 55, r: 67, rg: 54, region: "Vlaanderen", register: "Informeel",
     essence: "Zegt 'goesting' zonder ironie en 'na' aan het einde van zinnen.",
   },
   "amsterdams-modieus": {
-    archetypeId: "amsterdams-modieus",
-    demo: { g: 88, r: 49, rg: 70, region: "Holland", register: "Straattaal" },
+    g: 88, r: 49, rg: 70, region: "Holland", register: "Straattaal",
     essence: "Wisselt 'no cap' en 'wallahi' af met 'gewoon eerlijk'. Geen oordeel.",
   },
   "drentse-trompetterik": {
-    archetypeId: "drentse-trompetterik",
-    demo: { g: 28, r: 82, rg: 68, region: "Drenthe", register: "Dialect" },
+    g: 28, r: 82, rg: 68, region: "Drenthe", register: "Dialect",
     essence: "Zegt weinig, maar wat hij zegt klopt. Heeft een hond die hem aanvoelt.",
   },
   "limburgse-bourgondier": {
-    archetypeId: "limburgse-bourgondier",
-    demo: { g: 38, r: 84, rg: 72, region: "Limburg", register: "Dialect" },
+    g: 38, r: 84, rg: 72, region: "Limburg", register: "Dialect",
     essence: "Carnaval is geen optie maar religie. Eet vier maaltijden per dag minimaal.",
   },
   "stadskind-van-niemand": {
-    archetypeId: "stadskind-van-niemand",
-    demo: { g: 56, r: 38, rg: 42, region: "Holland", register: "Neutraal" },
+    g: 56, r: 38, rg: 42, region: "Holland", register: "Neutraal",
     essence: "Spreekt het Nederlands van NPO Radio 1. Onmisbaar in elk team.",
   },
 };
@@ -69,7 +59,6 @@ export default function ArchetypeCarousel({ archetypes }: Props) {
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Order matches DEMO_VALUES keys for predictable order
   const ordered = archetypes.filter((a) => DEMO_VALUES[a.id]);
   const total = ordered.length;
 
@@ -85,6 +74,7 @@ export default function ArchetypeCarousel({ archetypes }: Props) {
 
   const current = ordered[index];
   const demo = DEMO_VALUES[current.id];
+  const colors = current.colors;
 
   return (
     <section className="my-20 sm:my-24">
@@ -97,31 +87,53 @@ export default function ArchetypeCarousel({ archetypes }: Props) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Stack effect: subtle phantom cards behind */}
+        {/* Phantom stack behind */}
         <div
           aria-hidden
-          className="absolute inset-x-6 top-3 h-full bg-[var(--paper-light)] border border-[var(--rule-soft)]"
-          style={{ transform: "rotate(-0.4deg)" }}
+          className="absolute inset-x-6 top-3 h-full opacity-50"
+          style={{
+            background: colors.bg,
+            transform: "rotate(-0.6deg)",
+            filter: "saturate(0.7)",
+          }}
         />
         <div
           aria-hidden
-          className="absolute inset-x-3 top-1.5 h-full bg-[var(--paper-light)] border border-[var(--rule-soft)]"
-          style={{ transform: "rotate(0.3deg)" }}
+          className="absolute inset-x-3 top-1.5 h-full opacity-75"
+          style={{
+            background: colors.bg,
+            transform: "rotate(0.4deg)",
+            filter: "saturate(0.85)",
+          }}
         />
 
         {/* Active card */}
         <Link
           href="/quiz/welk-nederlands"
-          className="relative block bg-[var(--paper-light)] border border-[var(--ink)] p-6 sm:p-8 transition-transform hover:-translate-y-0.5"
+          className="relative block overflow-hidden transition-transform hover:-translate-y-0.5"
+          style={{
+            background: colors.bg,
+            color: colors.text,
+            transition: "background 0.6s ease, color 0.6s ease",
+          }}
         >
-          <CardContent
-            key={current.id}
-            archetype={current}
-            demo={demo.demo}
-            essence={demo.essence}
-            indexLabel={String(index + 1).padStart(2, "0")}
-            totalLabel={String(total).padStart(2, "0")}
+          {/* Decorative accent stripe */}
+          <div
+            aria-hidden
+            className="absolute -top-20 -right-24 w-64 h-64 opacity-20 rotate-45"
+            style={{ background: colors.accent }}
           />
+
+          <div className="relative p-6 sm:p-8 md:p-10">
+            <CardContent
+              key={current.id}
+              archetype={current}
+              demo={demo}
+              colors={colors}
+              indexLabel={String(index + 1).padStart(2, "0")}
+              totalLabel={String(total).padStart(2, "0")}
+            />
+          </div>
         </Link>
       </div>
 
@@ -137,10 +149,11 @@ export default function ArchetypeCarousel({ archetypes }: Props) {
             }}
             aria-label={`Toon ${arch.name}`}
             className={`h-1 transition-all ${
-              i === index
-                ? "w-8 bg-[var(--stamp)]"
-                : "w-3 bg-[var(--rule)] hover:bg-[var(--ink-faint)]"
+              i === index ? "w-8" : "w-3 hover:opacity-80"
             }`}
+            style={{
+              background: i === index ? arch.colors.bg : "var(--rule)",
+            }}
           />
         ))}
       </div>
@@ -155,13 +168,13 @@ export default function ArchetypeCarousel({ archetypes }: Props) {
 function CardContent({
   archetype,
   demo,
-  essence,
+  colors,
   indexLabel,
   totalLabel,
 }: {
   archetype: Archetype;
-  demo: DemoArchetype["demo"];
-  essence: string;
+  demo: DemoValues;
+  colors: Archetype["colors"];
   indexLabel: string;
   totalLabel: string;
 }) {
@@ -169,27 +182,30 @@ function CardContent({
   return (
     <div className="card-fade">
       {/* Eyebrow line */}
-      <div className="flex items-baseline justify-between mb-4">
-        <span className="eyebrow">Archetype</span>
-        <span className="eyebrow text-[var(--ink-faint)]">
-          <span className="display text-base text-[var(--ink)]">
-            {indexLabel}
-          </span>
+      <div className="flex items-baseline justify-between mb-5">
+        <span
+          className="text-xs uppercase font-medium"
+          style={{ letterSpacing: "0.2em", color: colors.accent }}
+        >
+          Archetype
+        </span>
+        <span
+          className="text-xs uppercase font-medium opacity-60"
+          style={{ letterSpacing: "0.2em" }}
+        >
+          <span className="display text-base opacity-100">{indexLabel}</span>
           {" / "}
           {totalLabel}
         </span>
       </div>
 
       {/* Name */}
-      <h3 className="display text-3xl sm:text-4xl md:text-5xl text-[var(--ink)] leading-[1] mb-3">
+      <h3 className="display text-3xl sm:text-5xl md:text-6xl leading-[0.95] mb-4">
         {words.map((word, i) => (
           <span
             key={i}
-            className={
-              i === 1
-                ? "display-italic text-[var(--stamp)]"
-                : ""
-            }
+            className={i === 1 ? "display-italic" : ""}
+            style={i === 1 ? { color: colors.accent } : undefined}
           >
             {word}
             {i < words.length - 1 && " "}
@@ -198,23 +214,29 @@ function CardContent({
       </h3>
 
       {/* Essence */}
-      <p className="text-base sm:text-lg text-[var(--ink-soft)] leading-snug mb-6 max-w-prose">
-        {essence}
+      <p
+        className="text-base sm:text-lg leading-snug mb-6 max-w-prose"
+        style={{ opacity: 0.75 }}
+      >
+        {demo.essence}
       </p>
 
       {/* Mini axes */}
-      <div className="grid grid-cols-3 gap-4 sm:gap-6 pt-4 border-t border-[var(--rule)]">
-        <MiniAxis label="Generatie" value={demo.g} />
-        <MiniAxis label={demo.region} value={demo.r} />
-        <MiniAxis label={demo.register} value={demo.rg} />
+      <div
+        className="grid grid-cols-3 gap-4 sm:gap-6 pt-5 border-t"
+        style={{ borderColor: `${colors.accent}40` }}
+      >
+        <MiniStat label="Generatie" value={demo.g} colors={colors} />
+        <MiniStat label={demo.region} value={demo.r} colors={colors} />
+        <MiniStat label={demo.register} value={demo.rg} colors={colors} />
       </div>
 
       <style>{`
         .card-fade {
-          animation: cardEnter 0.6s ease-out;
+          animation: cardEnter 0.7s ease-out;
         }
         @keyframes cardEnter {
-          from { opacity: 0; transform: translateY(6px); }
+          from { opacity: 0; transform: translateY(8px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
@@ -222,19 +244,42 @@ function CardContent({
   );
 }
 
-function MiniAxis({ label, value }: { label: string; value: number }) {
+function MiniStat({
+  label,
+  value,
+  colors,
+}: {
+  label: string;
+  value: number;
+  colors: Archetype["colors"];
+}) {
   return (
     <div>
       <div className="flex justify-between items-baseline mb-1.5">
-        <span className="text-[0.65rem] uppercase tracking-widest text-[var(--ink-soft)] font-medium">
+        <span
+          className="text-[0.6rem] sm:text-[0.65rem] uppercase font-medium opacity-60"
+          style={{ letterSpacing: "0.18em" }}
+        >
           {label}
         </span>
-        <span className="display text-base text-[var(--stamp)]">{value}%</span>
+        <span
+          className="display text-lg sm:text-xl"
+          style={{ color: colors.accent }}
+        >
+          {value}%
+        </span>
       </div>
-      <div className="relative h-px bg-[var(--rule)]">
+      <div
+        className="relative h-px"
+        style={{ background: `${colors.accent}30` }}
+      >
         <div
-          className="absolute inset-y-[-1px] left-0 bg-[var(--stamp)] transition-[width] duration-700 ease-out"
-          style={{ width: `${value}%`, height: "3px" }}
+          className="absolute inset-y-[-1px] left-0 transition-[width] duration-700 ease-out"
+          style={{
+            width: `${value}%`,
+            height: "3px",
+            background: colors.accent,
+          }}
         />
       </div>
     </div>

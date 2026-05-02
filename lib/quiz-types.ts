@@ -48,11 +48,21 @@ export interface ArchetypeProfile {
   register?: Register;
 }
 
+export interface ArchetypeColors {
+  /** Dark background color (hex with #) used for the share-card and result hero. */
+  bg: string;
+  /** Bright accent color used for percentages, axes, eyebrow text. */
+  accent: string;
+  /** Body text color over the dark background (typically white or cream). */
+  text: string;
+}
+
 export interface Archetype {
   id: string;
   name: string;
   description: string;
   axes: ArchetypeProfile;
+  colors: ArchetypeColors;
 }
 
 export interface Quiz {

@@ -74,6 +74,7 @@ export default async function ResultPage({ params, searchParams }: Props) {
     notFound();
   }
   const arch = archetype;
+  const colors = arch.colors;
 
   const g = parseInt(sp.g ?? "50", 10);
   const r = parseInt(sp.r ?? "0", 10);
@@ -81,118 +82,151 @@ export default async function ResultPage({ params, searchParams }: Props) {
   const region = sp.reg || null;
   const register = (sp.rs as Register) || null;
 
+  const nameWords = arch.name.split(" ");
+
   return (
-    <div className="max-w-2xl mx-auto px-6 py-8 sm:py-12">
-      {/* Issue marker */}
-      <div className="flex items-center justify-between mb-12 pb-4 border-b border-[var(--rule)]">
-        <span className="eyebrow">Uitkomst · Editie van vandaag</span>
-        <span className="eyebrow text-[var(--ink-faint)]">15 vragen</span>
-      </div>
-
-      {/* Eyebrow */}
-      <div className="section-rule eyebrow mb-8">
-        <span>Jij bent</span>
-      </div>
-
-      {/* Archetype headline */}
-      <div className="mb-10 text-center sm:text-left">
-        <h1
-          className="display text-5xl sm:text-7xl text-[var(--ink)] mb-2 stamp-in"
-          style={{ animationDelay: "0.1s" }}
-        >
-          {arch.name.split(" ").map((word, i) => (
-            <span key={i} className={i === 1 ? "display-italic text-[var(--stamp)]" : ""}>
-              {word}
-              {i < arch.name.split(" ").length - 1 && " "}
-            </span>
-          ))}
-        </h1>
-        <p
-          className="text-lg sm:text-xl text-[var(--ink-soft)] leading-relaxed mt-6 fade-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          {arch.description}
-        </p>
-      </div>
-
-      {/* Profile axes — magazine-style infographic */}
-      <div
-        className="border-y border-[var(--rule)] py-8 my-12 fade-up"
-        style={{ animationDelay: "0.55s" }}
+    <>
+      {/* Full-bleed hero block in archetype color */}
+      <section
+        className="relative overflow-hidden -mt-4"
+        style={{ background: colors.bg, color: colors.text }}
       >
-        <div className="section-rule eyebrow mb-6">
-          <span>Jouw taalprofiel</span>
-        </div>
-        <div className="space-y-7">
-          <AxisRow
-            label="Generatie"
-            value={g}
-            leftLabel="Ouder Nederlands"
-            rightLabel="Jonger Nederlands"
-          />
-          <AxisRow
-            label={`Regio${region ? ` · ${formatRegion(region)}` : ""}`}
-            value={r}
-            leftLabel="Geen sterke streek"
-            rightLabel="Sterke streek"
-          />
-          <AxisRow
-            label={`Register${register ? ` · ${formatRegister(register)}` : ""}`}
-            value={rg}
-            leftLabel="Wisselend"
-            rightLabel="Eén toon dominant"
-          />
-        </div>
-      </div>
+        {/* Decorative accent corner */}
+        <div
+          aria-hidden
+          className="absolute -top-32 -right-40 w-96 h-96 opacity-15 rotate-45"
+          style={{ background: colors.accent }}
+        />
 
-      {/* Share */}
-      <div className="fade-up" style={{ animationDelay: "0.7s" }}>
+        <div className="relative max-w-3xl mx-auto px-6 py-16 sm:py-24">
+          {/* Eyebrow */}
+          <div
+            className="flex items-center justify-between mb-12 pb-4 border-b"
+            style={{ borderColor: `${colors.accent}40` }}
+          >
+            <span
+              className="text-xs uppercase font-medium"
+              style={{ letterSpacing: "0.2em", color: colors.accent }}
+            >
+              SpreekJijNog · Uitkomst
+            </span>
+            <span
+              className="text-xs uppercase font-medium opacity-70"
+              style={{ letterSpacing: "0.2em" }}
+            >
+              15 vragen
+            </span>
+          </div>
+
+          {/* Eyebrow label */}
+          <p
+            className="eyebrow mb-3 stamp-in"
+            style={{ animationDelay: "0.05s", color: colors.accent }}
+          >
+            Ik ben een
+          </p>
+
+          {/* Archetype headline */}
+          <h1
+            className="display text-5xl sm:text-7xl md:text-8xl mb-8 leading-[0.95] stamp-in"
+            style={{ animationDelay: "0.15s" }}
+          >
+            {nameWords.map((word, i) => (
+              <span
+                key={i}
+                className={i === 1 ? "display-italic" : ""}
+                style={i === 1 ? { color: colors.accent } : undefined}
+              >
+                {word}
+                {i < nameWords.length - 1 && " "}
+              </span>
+            ))}
+          </h1>
+
+          {/* Description */}
+          <p
+            className="text-lg sm:text-xl leading-relaxed max-w-2xl mb-12 fade-up"
+            style={{ animationDelay: "0.45s", opacity: 0.8 }}
+          >
+            {arch.description}
+          </p>
+
+          {/* Big percentage stats */}
+          <div
+            className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t fade-up"
+            style={{
+              animationDelay: "0.55s",
+              borderColor: `${colors.accent}40`,
+            }}
+          >
+            <BigStat
+              label="Generatie"
+              value={g}
+              accent={colors.accent}
+              text={colors.text}
+            />
+            <BigStat
+              label={region ? formatRegion(region) : "Regio"}
+              value={r}
+              accent={colors.accent}
+              text={colors.text}
+            />
+            <BigStat
+              label={register ? formatRegister(register) : "Register"}
+              value={rg}
+              accent={colors.accent}
+              text={colors.text}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Cream paper section: share + meta */}
+      <section className="max-w-3xl mx-auto px-6 py-12">
         <div className="section-rule eyebrow mb-6">
           <span>Stuur door</span>
         </div>
         <ShareButtons archetype={arch} slug={slug} searchParams={sp} />
-      </div>
 
-      {/* Try again */}
-      <div className="text-center mt-16 pt-8 border-t border-[var(--rule)]">
-        <a
-          href="/quiz/welk-nederlands"
-          className="editorial-link text-sm"
-        >
-          Probeer het nog een keer →
-        </a>
-      </div>
-    </div>
+        <div className="text-center mt-16 pt-8 border-t border-[var(--rule)]">
+          <a
+            href="/quiz/welk-nederlands"
+            className="editorial-link text-sm"
+          >
+            Probeer het nog een keer →
+          </a>
+        </div>
+      </section>
+    </>
   );
 }
 
-function AxisRow({
+function BigStat({
   label,
   value,
-  leftLabel,
-  rightLabel,
+  accent,
+  text,
 }: {
   label: string;
   value: number;
-  leftLabel: string;
-  rightLabel: string;
+  accent: string;
+  text: string;
 }) {
   return (
-    <div>
-      <div className="flex justify-between items-baseline mb-3">
-        <span className="eyebrow text-[var(--ink)]">{label}</span>
-        <span className="display text-2xl text-[var(--stamp)]">{value}%</span>
-      </div>
-      <div className="relative h-px bg-[var(--rule)] mb-2">
-        <div
-          className="absolute inset-y-[-2px] left-0 bg-[var(--stamp)]"
-          style={{ width: `${value}%`, height: "5px", top: "-2px" }}
-        />
-      </div>
-      <div className="flex justify-between text-xs text-[var(--ink-faint)]">
-        <span>{leftLabel}</span>
-        <span>{rightLabel}</span>
-      </div>
+    <div className="flex flex-col">
+      <span
+        className="text-[0.65rem] sm:text-xs uppercase font-medium mb-2"
+        style={{ letterSpacing: "0.2em", color: text, opacity: 0.6 }}
+      >
+        {label}
+      </span>
+      <span
+        className="display text-4xl sm:text-6xl leading-none"
+        style={{ color: accent, letterSpacing: "-0.02em" }}
+      >
+        {value}
+        <span style={{ fontSize: "0.5em", opacity: 0.7 }}>%</span>
+      </span>
     </div>
   );
 }

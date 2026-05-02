@@ -309,49 +309,57 @@
       "id": "bourgondische-boekhouder",
       "name": "Bourgondische Boekhouder",
       "description": "Woont in Tilburg of Eindhoven, kookt zelf op zondag voor zijn ouders. Werkt netjes en op tijd, maar als hij eens losgaat is hij verwoestend. Zegt 'jonges' tegen zijn voetbalmaten zonder ironie.",
-      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel" }
+      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel" },
+      "colors": { "bg": "#2d0a0a", "accent": "#f5a623", "text": "#fbf0e0" }
     },
     {
       "id": "hagenese-hipster",
       "name": "Hagenese Hipster",
       "description": "Werkt iets met design of strategie, woont in een appartement met witte muren en één Charles Eames-stoel. Mengt formele uitdrukkingen met losse jongerentaal alsof dat normaal is. En het is ook normaal, blijkbaar.",
-      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel" }
+      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel" },
+      "colors": { "bg": "#1a2b32", "accent": "#9ee0c0", "text": "#ffffff" }
     },
     {
       "id": "achterhoekse-academicus",
       "name": "Achterhoekse Academicus",
       "description": "Geboren ergens tussen Doetinchem en Winterswijk, gestudeerd in Nijmegen, sindsdien grotendeels terug bij de familie. Leest drie boeken tegelijk. Zegt nooit 'doei' maar 'tot ziens'. Heeft een sterke mening over wat de provinciale weg vroeger was.",
-      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel" }
+      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel" },
+      "colors": { "bg": "#1f2e1c", "accent": "#d4a93a", "text": "#f4ede0" }
     },
     {
       "id": "belgisch-geinfecteerd",
       "name": "Belgisch Geïnfecteerd",
       "description": "Zegt 'goesting' zonder ironie. Was misschien een paar jaar in Antwerpen of had ooit een Vlaamse vriend(in) van wie de zinsbouw bleef hangen. Reageert verbaasd als iemand opmerkt dat dat eigenlijk niet Hollands is.",
-      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel" }
+      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel" },
+      "colors": { "bg": "#2b1810", "accent": "#e8c882", "text": "#f4ede0" }
     },
     {
       "id": "amsterdams-modieus",
       "name": "Amsterdams Modieus",
       "description": "Zit op TikTok, kent woorden die haar moeder niet kent, soms is dat het hele punt. Wisselt 'no cap' en 'wallahi' af met 'gewoon eerlijk'. Werkt iets met content of social media. Eet havermout 's ochtends en patat 's avonds. Geen oordeel.",
-      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat" }
+      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat" },
+      "colors": { "bg": "#180818", "accent": "#ff3d8a", "text": "#ffffff" }
     },
     {
       "id": "drentse-trompetterik",
       "name": "Drentse Trompetterik",
       "description": "Woont buiten op een paar kilometer van het dichtstbijzijnde dorp. Zegt weinig, maar wat hij zegt klopt. Gebruikt soms een woord dat al sinds 1880 hetzelfde betekent. Heeft een hond die hem volkomen aanvoelt.",
-      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/friesland/noord", "register": "dialect" }
+      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/friesland/noord", "register": "dialect" },
+      "colors": { "bg": "#0d2540", "accent": "#f3c896", "text": "#ffffff" }
     },
     {
       "id": "limburgse-bourgondier",
       "name": "Limburgse Bourgondiër",
       "description": "Zegt 'hoi doelf' tegen iedereen onder de zestig en 'mijnheer' tegen iedereen erboven. Carnaval is geen optie maar religie. Eet vier maaltijden per dag minimaal en vindt dat melk een volwassen drank is.",
-      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect" }
+      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect" },
+      "colors": { "bg": "#280628", "accent": "#e8b94a", "text": "#fbf0e0" }
     },
     {
       "id": "stadskind-van-niemand",
       "name": "Stadskind van Niemand",
       "description": "Hollands geboren, niet specifiek genoeg om ergens vandaan te komen, niet jong genoeg om TikTok helemaal te begrijpen, niet oud genoeg om dialect te onthouden. Spreekt het Nederlands van NPO Radio 1. Onmisbaar in elk team, onopvallend in elke menigte.",
-      "axes": { "generation_min": 1980, "generation_max": 2005, "region": "hollands", "register": "neutraal" }
+      "axes": { "generation_min": 1980, "generation_max": 2005, "region": "hollands", "register": "neutraal" },
+      "colors": { "bg": "#1f2228", "accent": "#d09076", "text": "#ffffff" }
     }
   ]
 }
