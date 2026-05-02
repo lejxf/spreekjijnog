@@ -5,6 +5,7 @@ import type {
   UserProfile,
   QuizResult,
   Register,
+  Vibe,
 } from "./quiz-types";
 
 /**
@@ -71,6 +72,22 @@ export function scoreQuiz(
       ? Math.round((sortedRegisters[0][1] / registerTagged) * 100)
       : 0;
 
+  // Vibe: count occurrences (lifestyle axis)
+  const vibeCounts: Record<string, number> = {};
+  let vibeTagged = 0;
+  pickedTags.forEach((t) => {
+    if (t.vibe) {
+      vibeTagged++;
+      vibeCounts[t.vibe] = (vibeCounts[t.vibe] || 0) + 1;
+    }
+  });
+  const sortedVibes = Object.entries(vibeCounts).sort((a, b) => b[1] - a[1]);
+  const dominantVibe = (sortedVibes[0]?.[0] as Vibe) ?? null;
+  const vibeStrength =
+    sortedVibes[0] && vibeTagged
+      ? Math.round((sortedVibes[0][1] / vibeTagged) * 100)
+      : 0;
+
   // Generation strength: map avg year to 0-100. 1950 = 0, 2025 = 100.
   const generationStrength =
     avgGeneration != null
@@ -81,8 +98,10 @@ export function scoreQuiz(
     avgGeneration,
     dominantRegion,
     dominantRegister,
+    dominantVibe,
     regionStrength,
     registerStrength,
+    vibeStrength,
     generationStrength,
   };
 
@@ -126,6 +145,13 @@ function matchArchetype(profile: UserProfile, archetypes: Archetype[]): Archetyp
     if (profile.dominantRegister && arch.axes.register) {
       if (profile.dominantRegister === arch.axes.register) {
         score += 2;
+      }
+    }
+
+    // Vibe match (weight 4) — strong because it's the lifestyle differentiator
+    if (profile.dominantVibe && arch.axes.vibe) {
+      if (profile.dominantVibe === arch.axes.vibe) {
+        score += 4;
       }
     }
 

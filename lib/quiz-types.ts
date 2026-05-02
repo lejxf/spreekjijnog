@@ -2,6 +2,20 @@
 
 export type Register = "formeel" | "neutraal" | "informeel" | "straat" | "dialect";
 
+/**
+ * Lifestyle vibe — distinguishes archetypes that share language axes.
+ * Padel-Pa and Yoga-Mompreneur are both Hollands+mid+informeel; vibe separates them.
+ */
+export type Vibe =
+  | "sport"
+  | "wellness"
+  | "bewust"
+  | "vintage"
+  | "huiselijk"
+  | "no-nonsense"
+  | "single"
+  | "cultureel";
+
 export type Region =
   | "noord-brabant"
   | "limburg"
@@ -26,6 +40,8 @@ export interface OptionTags {
   /** One or more regions, slash-separated for multi-region words. */
   region?: Region | string;
   register?: Register;
+  /** Lifestyle vibe — used by lifestyle questions to differentiate same-language archetypes. */
+  vibe?: Vibe;
 }
 
 export interface QuizOption {
@@ -46,6 +62,8 @@ export interface ArchetypeProfile {
   /** Preferred region(s) for this archetype, slash-separated for matching. */
   region?: string;
   register?: Register;
+  /** Preferred lifestyle vibe — strong differentiator within same language axes. */
+  vibe?: Vibe;
 }
 
 export interface ArchetypeColors {
@@ -81,10 +99,14 @@ export interface UserProfile {
   dominantRegion: string | null;
   /** Most-picked register, or null. */
   dominantRegister: Register | null;
+  /** Most-picked lifestyle vibe, or null. */
+  dominantVibe: Vibe | null;
   /** How dominant the region is (0-100), based on share of region-tagged answers. */
   regionStrength: number;
   /** How dominant the register is (0-100). */
   registerStrength: number;
+  /** How dominant the vibe is (0-100). */
+  vibeStrength: number;
   /** Position on generation axis (0 = oldest, 100 = youngest), based on avg gen. */
   generationStrength: number;
 }

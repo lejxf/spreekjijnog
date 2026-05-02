@@ -302,6 +302,106 @@
         { "label": "Limburgers" },
         { "label": "Belgen" }
       ]
+    },
+    {
+      "id": "q31_zaterdag",
+      "prompt": "Wat doe je het liefst op zaterdagochtend?",
+      "options": [
+        { "label": "Padel met de mannen", "tags": { "vibe": "sport", "register": "informeel", "generation": 1985 } },
+        { "label": "Yoga in de woonkamer", "tags": { "vibe": "wellness", "register": "informeel" } },
+        { "label": "Met de bakfiets naar de hortus", "tags": { "vibe": "bewust", "region": "noord-holland" } },
+        { "label": "Kringloop-ronde, kop koffie tussendoor", "tags": { "vibe": "vintage", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q32_drankje",
+      "prompt": "Wat is jouw drankje van keuze?",
+      "options": [
+        { "label": "Heineken op de borrel", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
+        { "label": "Oat milk latte", "tags": { "vibe": "bewust", "generation": 2018 } },
+        { "label": "Celery juice 's ochtends", "tags": { "vibe": "wellness", "generation": 2015 } },
+        { "label": "Spa rood met citroen", "tags": { "vibe": "huiselijk", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q33_telefoon",
+      "prompt": "Welke app open je 's ochtends het eerst?",
+      "options": [
+        { "label": "WhatsApp 'De Boys'", "tags": { "vibe": "sport", "register": "informeel" } },
+        { "label": "Calm of Headspace", "tags": { "vibe": "wellness", "generation": 2018 } },
+        { "label": "Marktplaats om biedingen te checken", "tags": { "vibe": "vintage", "generation": 1960 } },
+        { "label": "Tinder", "tags": { "vibe": "single", "generation": 2015 } }
+      ]
+    },
+    {
+      "id": "q34_kleding",
+      "prompt": "Wat zie je het meest in je kledingkast?",
+      "options": [
+        { "label": "Witte Nike Air Force", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
+        { "label": "Vintage Marlboro denim-jas", "tags": { "vibe": "vintage" } },
+        { "label": "Linnen broek met overhemd", "tags": { "vibe": "wellness", "register": "informeel" } },
+        { "label": "Oranje Lacoste polo", "tags": { "vibe": "sport" } }
+      ]
+    },
+    {
+      "id": "q35_borrel",
+      "prompt": "Hoe ziet jouw zaterdag-avond-borrel eruit?",
+      "options": [
+        { "label": "Patatje en bier op de markt", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
+        { "label": "Trappist met stamppot bij de buren", "tags": { "vibe": "huiselijk", "register": "informeel" } },
+        { "label": "Natuurwijn en oesters", "tags": { "vibe": "bewust", "generation": 1990 } },
+        { "label": "Aperol spritz op het terras", "tags": { "vibe": "sport", "generation": 1985 } }
+      ]
+    },
+    {
+      "id": "q36_instagram",
+      "prompt": "Wat zie je het meest op jouw Instagram-feed?",
+      "options": [
+        { "label": "Padel-foto's met de groep", "tags": { "vibe": "sport" } },
+        { "label": "Yoga-stories en quotes", "tags": { "vibe": "wellness" } },
+        { "label": "Bakfiets-foto's met de kids", "tags": { "vibe": "bewust" } },
+        { "label": "Niets, ik kijk alleen", "tags": { "vibe": "vintage" } }
+      ]
+    },
+    {
+      "id": "q37_eerste_date",
+      "prompt": "Wat is jouw eerste vraag op een eerste date?",
+      "options": [
+        { "label": "Wat doe je voor werk?", "tags": { "vibe": "no-nonsense", "register": "neutraal" } },
+        { "label": "Hoe is jouw relatie met je ouders?", "tags": { "vibe": "wellness", "register": "informeel" } },
+        { "label": "Wat staat er op je leeslijst?", "tags": { "vibe": "cultureel", "register": "informeel" } },
+        { "label": "Wat is je sterrenbeeld?", "tags": { "vibe": "single", "generation": 2015 } }
+      ]
+    },
+    {
+      "id": "q38_horloge",
+      "prompt": "Wat draag je om je pols?",
+      "options": [
+        { "label": "Apple Watch met sport-stats", "tags": { "vibe": "sport", "generation": 2018 } },
+        { "label": "Vintage Casio die ik bij oma vond", "tags": { "vibe": "vintage" } },
+        { "label": "Kralen-armband uit Bali", "tags": { "vibe": "wellness", "generation": 2010 } },
+        { "label": "Niks, ik hou ervan vrij te zijn", "tags": { "vibe": "single", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q39_vakantie",
+      "prompt": "Wat is jouw ideale zomervakantie?",
+      "options": [
+        { "label": "Sportieve fietsvakantie in Zuid-Frankrijk", "tags": { "vibe": "sport" } },
+        { "label": "Yoga-retreat in Portugal", "tags": { "vibe": "wellness" } },
+        { "label": "Camper langs de Drentse heide", "tags": { "vibe": "huiselijk", "region": "drenthe" } },
+        { "label": "Festivalweekend met vrienden", "tags": { "vibe": "single", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q40_avond",
+      "prompt": "Hoe sluit jij een doordeweekse avond af?",
+      "options": [
+        { "label": "Boek en thee in een fauteuil", "tags": { "vibe": "cultureel", "register": "neutraal" } },
+        { "label": "Meditatie-app van 10 minuten", "tags": { "vibe": "wellness" } },
+        { "label": "Stoofschotel met de partner voor SBS6", "tags": { "vibe": "huiselijk", "register": "informeel" } },
+        { "label": "TikTok scrollen tot ik in slaap val", "tags": { "vibe": "single", "generation": 2020 } }
+      ]
     }
   ],
   "archetypes": [
@@ -309,49 +409,49 @@
       "id": "bourgondische-boekhouder",
       "name": "Bourgondische Boekhouder",
       "description": "Woont in Tilburg of Eindhoven, kookt zelf op zondag voor zijn ouders. Werkt netjes en op tijd, maar als hij eens losgaat is hij verwoestend. Zegt 'jonges' tegen zijn voetbalmaten zonder ironie.",
-      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel" },
+      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel", "vibe": "huiselijk" },
       "colors": { "bg": "#2d0a0a", "accent": "#f5a623", "text": "#fbf0e0" }
     },
     {
       "id": "hagenese-hipster",
       "name": "Hagenese Hipster",
       "description": "Werkt iets met design of strategie, woont in een appartement met witte muren en één Charles Eames-stoel. Mengt formele uitdrukkingen met losse jongerentaal alsof dat normaal is. En het is ook normaal, blijkbaar.",
-      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel" },
+      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel", "vibe": "cultureel" },
       "colors": { "bg": "#1a2b32", "accent": "#9ee0c0", "text": "#ffffff" }
     },
     {
       "id": "achterhoekse-academicus",
       "name": "Achterhoekse Academicus",
       "description": "Geboren ergens tussen Doetinchem en Winterswijk, gestudeerd in Nijmegen, sindsdien grotendeels terug bij de familie. Leest drie boeken tegelijk. Zegt nooit 'doei' maar 'tot ziens'. Heeft een sterke mening over wat de provinciale weg vroeger was.",
-      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel" },
+      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel", "vibe": "cultureel" },
       "colors": { "bg": "#1f2e1c", "accent": "#d4a93a", "text": "#f4ede0" }
     },
     {
       "id": "belgisch-geinfecteerd",
       "name": "Belgisch Geïnfecteerd",
       "description": "Zegt 'goesting' zonder ironie. Was misschien een paar jaar in Antwerpen of had ooit een Vlaamse vriend(in) van wie de zinsbouw bleef hangen. Reageert verbaasd als iemand opmerkt dat dat eigenlijk niet Hollands is.",
-      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel" },
+      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel", "vibe": "huiselijk" },
       "colors": { "bg": "#2b1810", "accent": "#e8c882", "text": "#f4ede0" }
     },
     {
       "id": "amsterdams-modieus",
       "name": "Amsterdams Modieus",
       "description": "Zit op TikTok, kent woorden die haar moeder niet kent, soms is dat het hele punt. Wisselt 'no cap' en 'wallahi' af met 'gewoon eerlijk'. Werkt iets met content of social media. Eet havermout 's ochtends en patat 's avonds. Geen oordeel.",
-      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat" },
+      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat", "vibe": "bewust" },
       "colors": { "bg": "#180818", "accent": "#ff3d8a", "text": "#ffffff" }
     },
     {
       "id": "drentse-trompetterik",
       "name": "Drentse Trompetterik",
       "description": "Woont buiten op een paar kilometer van het dichtstbijzijnde dorp. Zegt weinig, maar wat hij zegt klopt. Gebruikt soms een woord dat al sinds 1880 hetzelfde betekent. Heeft een hond die hem volkomen aanvoelt.",
-      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/friesland/noord", "register": "dialect" },
+      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/noord", "register": "dialect", "vibe": "no-nonsense" },
       "colors": { "bg": "#0d2540", "accent": "#f3c896", "text": "#ffffff" }
     },
     {
       "id": "limburgse-bourgondier",
       "name": "Limburgse Bourgondiër",
       "description": "Zegt 'hoi doelf' tegen iedereen onder de zestig en 'mijnheer' tegen iedereen erboven. Carnaval is geen optie maar religie. Eet vier maaltijden per dag minimaal en vindt dat melk een volwassen drank is.",
-      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect" },
+      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect", "vibe": "huiselijk" },
       "colors": { "bg": "#280628", "accent": "#e8b94a", "text": "#fbf0e0" }
     },
     {
@@ -360,6 +460,62 @@
       "description": "Hollands geboren, niet specifiek genoeg om ergens vandaan te komen, niet jong genoeg om TikTok helemaal te begrijpen, niet oud genoeg om dialect te onthouden. Spreekt het Nederlands van NPO Radio 1. Onmisbaar in elk team, onopvallend in elke menigte.",
       "axes": { "generation_min": 1980, "generation_max": 2005, "region": "hollands", "register": "neutraal" },
       "colors": { "bg": "#1f2228", "accent": "#d09076", "text": "#ffffff" }
+    },
+    {
+      "id": "padel-pa",
+      "name": "Padel Pa",
+      "description": "Hoogopgeleide blue-chip-baan ergens tussen consultancy en finance, drie keer per week padel met 'de mannen', oranje Lacoste polo voor het weekend, witte Tesla op de oprit. WhatsApp-groep heet 'De Boys 🎾'. Zegt 'wij hebben net een mooie deal gesloten' op zaterdagochtend in de auto.",
+      "axes": { "generation_min": 1975, "generation_max": 1990, "region": "noord-holland/hollands", "register": "informeel", "vibe": "sport" },
+      "colors": { "bg": "#1c2440", "accent": "#ff7e3a", "text": "#ffffff" }
+    },
+    {
+      "id": "yoga-mompreneur",
+      "name": "Yoga Mompreneur",
+      "description": "Heeft een coach-bedrijfje genaamd iets met _wellbeing of _leadership, woont in Bussum of Amstelveen, drinkt celery juice 's ochtends. Zegt 'ik leef écht vanuit mijn waarden'. Drie kinderen die Floor, Sem en Janne heten. Linnen broek in alle seizoenen.",
+      "axes": { "generation_min": 1975, "generation_max": 1992, "region": "hollands/noord-holland", "register": "informeel", "vibe": "wellness" },
+      "colors": { "bg": "#3a4a3a", "accent": "#e8b4a5", "text": "#ffffff" }
+    },
+    {
+      "id": "bakfietsouder",
+      "name": "Bakfiets Ouder",
+      "description": "Hortus van de Maan op zaterdag, zoon heet Tobias, biologische marshmallows mee naar de speeltuin. 'Wij gaan dit jaar geen vlees eten,' zegt 'ie weer. Stintje voor de school-run. Niet vaccin-hesitant maar wel kritisch op vergunning-traag-Amsterdam.",
+      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "noord-holland/utrecht/hollands", "register": "informeel", "vibe": "bewust" },
+      "colors": { "bg": "#2a3a25", "accent": "#d49a3e", "text": "#ffffff" }
+    },
+    {
+      "id": "boomer-op-marktplaats",
+      "name": "Boomer Marktplaats",
+      "description": "Fietst dagelijks naar de bakker, NS-jaarkaart in achterzak, kijkt iedereen wakker met biedingen op vintage Pastoe-kasten en complete Meccano-sets. Schrijft 'schatje vol zit erin' als WhatsApp-status. Weet alle benzineprijzen van Eindhoven tot Hoorn.",
+      "axes": { "generation_min": 1950, "generation_max": 1968, "region": "hollands", "register": "informeel", "vibe": "vintage" },
+      "colors": { "bg": "#3d1815", "accent": "#e8c882", "text": "#fbf0e0" }
+    },
+    {
+      "id": "kringloop-koningin",
+      "name": "Kringloop Koningin",
+      "description": "Elke zaterdag de ronde langs de kringloopwinkels, draagt vintage Marlboro denim-jas, 'alles in mijn huis is een verhaal'. Woont in een 50m² benedenwoning vol stuff. Spotify draait The Velvet Underground en Selah Sue afwisselend.",
+      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "hollands/noord-brabant", "register": "informeel", "vibe": "vintage" },
+      "colors": { "bg": "#2c1632", "accent": "#d68aaa", "text": "#fbf0e0" }
+    },
+    {
+      "id": "friese-stille",
+      "name": "Friese Stille",
+      "description": "Antwoordt met één woord, drinkt koffie zwart, weet alle koeien-geluiden van zien. 'Krek' zegt ze elke dag. Fietst tegen de wind in tot Workum als afleiding. Doet wel mee aan Sonja's Kapsalon-theatershow met een glimlach.",
+      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "friesland", "register": "dialect", "vibe": "huiselijk" },
+      "colors": { "bg": "#1a3540", "accent": "#f5d28e", "text": "#ffffff" }
+    },
+    {
+      "id": "rotterdamse-sjef",
+      "name": "Rotterdamse Sjef",
+      "description": "'Tegelin? Tegelin niet, gezien'n.' Werkt ergens in de haven of bij een groot logistiek bedrijf, draagt witte Nike Air Force, eet patatje met op de markt op zaterdag. Denkt niks van Amsterdam. Accepteert geen gezeik.",
+      "axes": { "generation_min": 1975, "generation_max": 1995, "region": "zuid-holland", "register": "informeel", "vibe": "no-nonsense" },
+      "colors": { "bg": "#28282c", "accent": "#f5b800", "text": "#ffffff" }
+    },
+    {
+      "id": "tinder-veteraan",
+      "name": "Tinder Veteraan",
+      "description": "Drie jaar geleden voor het eerst ge-swiped, nu nog steeds bezig. Ironisch over de hele toestand maar net niet ironisch genoeg om er echt af te zijn. Noemt zichzelf 'the catch you missed in 2019'. Boekhandel-date als second move altijd. Kent alle Amsterdamse tweede-date-bars.",
+      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "single" },
+      "colors": { "bg": "#3a0e2a", "accent": "#f3c896", "text": "#fbf0e0" }
     }
   ]
 }

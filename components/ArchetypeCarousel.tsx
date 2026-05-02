@@ -50,6 +50,38 @@ const DEMO_VALUES: Record<string, DemoValues> = {
     g: 56, r: 38, rg: 42, region: "Holland", register: "Neutraal",
     essence: "Spreekt het Nederlands van NPO Radio 1. Onmisbaar in elk team.",
   },
+  "padel-pa": {
+    g: 58, r: 56, rg: 70, region: "Holland", register: "Sport",
+    essence: "Drie keer per week padel. WhatsApp-groep heet 'De Boys 🎾'. Witte Tesla op de oprit.",
+  },
+  "yoga-mompreneur": {
+    g: 62, r: 51, rg: 68, region: "Bussum", register: "Wellness",
+    essence: "Coach-bedrijfje met _wellbeing in de naam. Zegt 'ik leef vanuit mijn waarden'.",
+  },
+  "bakfietsouder": {
+    g: 75, r: 58, rg: 62, region: "Amsterdam", register: "Bewust",
+    essence: "Stintje voor de school-run, biologische marshmallows, zoon heet Tobias.",
+  },
+  "boomer-op-marktplaats": {
+    g: 18, r: 48, rg: 60, region: "Holland", register: "Vintage",
+    essence: "Jaarkaart NS, fietst dagelijks naar de bakker, weet alle benzineprijzen.",
+  },
+  "kringloop-koningin": {
+    g: 70, r: 47, rg: 64, region: "Hollands", register: "Vintage",
+    essence: "Vintage Marlboro denim, 50m² benedenwoning vol stuff, alles is een verhaal.",
+  },
+  "friese-stille": {
+    g: 45, r: 88, rg: 76, region: "Friesland", register: "Dialect",
+    essence: "Antwoordt met één woord, fietst tegen de wind in tot Workum, zegt 'krek' dagelijks.",
+  },
+  "rotterdamse-sjef": {
+    g: 60, r: 73, rg: 68, region: "Rotterdam", register: "No-nonsense",
+    essence: "Witte Nike Air Force, patatje met op de markt, accepteert geen gezeik.",
+  },
+  "tinder-veteraan": {
+    g: 72, r: 44, rg: 58, region: "Amsterdam", register: "Single",
+    essence: "Drie jaar swipen, ironisch maar net niet, boekhandel-date als second move.",
+  },
 };
 
 const CYCLE_MS = 3800;
