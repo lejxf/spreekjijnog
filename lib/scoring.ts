@@ -18,6 +18,8 @@ export function scoreQuiz(
 ): QuizResult {
   const pickedTags = answers
     .map((a) => {
+      // optionIndex < 0 = "Geen idee" — contributes no tags
+      if (a.optionIndex < 0) return null;
       const q = quiz.questions.find((q) => q.id === a.questionId);
       const opt: QuizOption | undefined = q?.options[a.optionIndex];
       return opt?.tags;
