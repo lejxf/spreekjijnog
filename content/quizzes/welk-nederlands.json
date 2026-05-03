@@ -432,6 +432,36 @@
         { "label": "Vintage spullen op Vinted", "tags": { "vibe": "vintage", "generation": 1995 } },
         { "label": "Niks, dat is niet voor mij", "tags": { "vibe": "huiselijk", "register": "informeel" } }
       ]
+    },
+    {
+      "id": "q44_vervoer",
+      "prompt": "Wat is jouw ideale vervoer naar school of werk?",
+      "options": [
+        { "label": "Fatbike", "tags": { "vibe": "rauw", "generation": 2012, "region": "hollands", "register": "straat" } },
+        { "label": "Stintje of bakfiets met de kinderen", "tags": { "vibe": "bewust", "region": "noord-holland", "generation": 1990 } },
+        { "label": "OV met een boek erbij", "tags": { "vibe": "cultureel", "register": "neutraal" } },
+        { "label": "Auto, kan niet zonder", "tags": { "vibe": "no-nonsense", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q45_schrik",
+      "prompt": "Wat zeg je als je ergens van schrikt?",
+      "options": [
+        { "label": "Skibidi-Ohio?!", "tags": { "vibe": "online", "generation": 2018, "register": "straat" } },
+        { "label": "Wallahi nee", "tags": { "vibe": "rauw", "generation": 2015, "register": "straat" } },
+        { "label": "Jeetje nou", "tags": { "vibe": "huiselijk", "generation": 1965, "register": "informeel" } },
+        { "label": "Echt waar?", "tags": { "register": "neutraal" } }
+      ]
+    },
+    {
+      "id": "q46_zaterdag_routine",
+      "prompt": "Wat is je zaterdagochtend-routine?",
+      "options": [
+        { "label": "Get Ready With Me video maken voor stories", "tags": { "vibe": "online", "generation": 2002, "region": "hollands", "register": "informeel" } },
+        { "label": "Hardlopen met de boys voor het ontbijt", "tags": { "vibe": "sport", "register": "informeel" } },
+        { "label": "Met een boek en koffie de tuin in", "tags": { "vibe": "cultureel", "register": "neutraal" } },
+        { "label": "Uitslapen tot 11:00, dan TikTok", "tags": { "vibe": "single", "generation": 2000 } }
+      ]
     }
   ],
   "archetypes": [
@@ -567,6 +597,27 @@
       "description": "Begon als 'echte' professional, ontdekte vier jaar geleden dat hij beter geld verdient door anderen iets te leren. Verkoopt cursus '12 weken naar financiële vrijheid'. Zes Instagram-stories per dag met motivational quotes vanaf rooftop pool in Bali of Dubai. Mastermind-community op Telegram met 800 leden. Gebruikt 'mindset' minstens drie keer per dag. WhatsApp-status: 'Are you ready to transform your life?'",
       "axes": { "generation_min": 1985, "generation_max": 1995, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
       "colors": { "bg": "#15101e", "accent": "#f4c542", "text": "#ffffff" }
+    },
+    {
+      "id": "fatbike-tiener",
+      "name": "Fatbike Tiener",
+      "description": "Reed sinds zijn dertiende op een Apollo Phantom, helm meestal in de hand. WhatsApp-status: 🤙. Schiet vrijdag-avond door de winkelstraat met de boys, checkt bij Mc Donald's. 'Broedie schiet door' is het levensmotto. Heeft minstens één dummy-account voor 'Spotify scammen'. Begint elk antwoord met 'eyo'. Vader staat 's avonds op de oprit te wachten met handen in de zij.",
+      "axes": { "generation_min": 2008, "generation_max": 2014, "region": "noord-holland/hollands", "register": "straat", "vibe": "rauw" },
+      "colors": { "bg": "#1a1612", "accent": "#fb2c36", "text": "#ffffff" }
+    },
+    {
+      "id": "skibidi-kid",
+      "name": "Skibidi Kid",
+      "description": "Roept 'skibidi sigma Ohio' tegen z'n moeder als ze hem aan tafel roept. Speelt Roblox vier uur per dag, kent alle 'aura'-rangen. iPad-fed sinds eerste verjaardag. Begrijpt vlogs van YouTubers met namen als Lazarbeam beter dan z'n schoolboeken. Eet exclusief witte voedingsmiddelen op verjaardagen. Vraagt 'wat is jouw rizz score' aan vreemden.",
+      "axes": { "generation_min": 2014, "generation_max": 2020, "region": "hollands", "register": "straat", "vibe": "online" },
+      "colors": { "bg": "#1a0d2e", "accent": "#a855f7", "text": "#ffffff" }
+    },
+    {
+      "id": "grwm-girlie",
+      "name": "GRWM Girlie",
+      "description": "Doet elke ochtend een Get Ready With Me video voor 8.000 followers. Lash extensions, lipgloss, contour, blush draws. Drinkt iced matcha bij Pancakes Amsterdam. Werkt iets in marketing of styling. WhatsApp-status: 'unbothered ✨'. Heeft een 'capsule wardrobe' artikel gespaard. Praat met soft-Amerikaanse intonation: 'liiiiteralllyy'.",
+      "axes": { "generation_min": 1998, "generation_max": 2005, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
+      "colors": { "bg": "#3d0a2d", "accent": "#ff66c4", "text": "#ffffff" }
     }
   ]
 }

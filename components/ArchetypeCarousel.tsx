@@ -94,6 +94,18 @@ const DEMO_VALUES: Record<string, DemoValues> = {
     g: 68, r: 49, rg: 80, region: "Amsterdam", register: "Online",
     essence: "Verkoopt cursus '12 weken naar financiële vrijheid'. Bali rooftop pool. 'Mindset' 3× per dag.",
   },
+  "fatbike-tiener": {
+    g: 92, r: 68, rg: 84, region: "Holland", register: "Straat",
+    essence: "Apollo Phantom, helm in de hand, 'broedie schiet door'. Vrijdag-avond door de winkelstraat met de boys.",
+  },
+  "skibidi-kid": {
+    g: 96, r: 52, rg: 78, region: "Holland", register: "Straat",
+    essence: "'Skibidi sigma Ohio' aan tafel. Roblox 4u per dag. iPad-fed sinds peuter. Vraagt 'wat is jouw rizz score?'",
+  },
+  "grwm-girlie": {
+    g: 82, r: 56, rg: 72, region: "Amsterdam", register: "Online",
+    essence: "Get Ready With Me elke ochtend voor 8000 followers. Iced matcha bij Pancakes Amsterdam. 'Liiiteralllyy ✨'.",
+  },
 };
 
 const CYCLE_MS = 3800;

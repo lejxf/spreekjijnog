@@ -15,7 +15,8 @@ export type Vibe =
   | "no-nonsense"
   | "single"
   | "cultureel"
-  | "online";
+  | "online"
+  | "rauw";
 
 export type Region =
   | "noord-brabant"
