@@ -51,10 +51,24 @@ export interface QuizOption {
   tags?: OptionTags;
 }
 
+export type QuestionType = "single_choice" | "multi_select";
+
 export interface QuizQuestion {
   id: string;
   prompt: string;
+  /** Optional subtitle / helper text shown beneath the prompt. */
+  subtitle?: string;
+  /** Defaults to single_choice when omitted. */
+  type?: QuestionType;
+  /** True for lifestyle questions used as verfijning after the multi-select. */
+  lifestyle?: boolean;
   options: QuizOption[];
+}
+
+export interface Answer {
+  questionId: string;
+  /** Array of selected option indexes. For single_choice: 1 item, or [-1] for "geen idee". For multi_select: 0-N items. */
+  selected: number[];
 }
 
 export interface ArchetypeProfile {

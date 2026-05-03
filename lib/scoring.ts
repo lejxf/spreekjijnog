@@ -1,30 +1,28 @@
 import type {
   Quiz,
-  QuizOption,
   Archetype,
   UserProfile,
   QuizResult,
   Register,
   Vibe,
+  Answer,
 } from "./quiz-types";
 
 /**
- * Score a quiz attempt given the user's selected option index per question.
- * Returns a profile (3 axes) and the best-matching archetype.
+ * Score a quiz attempt given the user's answers (each potentially with multiple selected options).
+ * Returns a profile (4 axes) and the best-matching archetype.
  */
-export function scoreQuiz(
-  quiz: Quiz,
-  answers: { questionId: string; optionIndex: number }[],
-): QuizResult {
+export function scoreQuiz(quiz: Quiz, answers: Answer[]): QuizResult {
   const pickedTags = answers
-    .map((a) => {
-      // optionIndex < 0 = "Geen idee" — contributes no tags
-      if (a.optionIndex < 0) return null;
+    .flatMap((a) => {
+      if (!a.selected || a.selected.length === 0) return [];
       const q = quiz.questions.find((q) => q.id === a.questionId);
-      const opt: QuizOption | undefined = q?.options[a.optionIndex];
-      return opt?.tags;
-    })
-    .filter((t): t is NonNullable<typeof t> => t != null);
+      if (!q) return [];
+      return a.selected
+        .filter((idx) => idx >= 0)
+        .map((idx) => q.options[idx]?.tags)
+        .filter((t): t is NonNullable<typeof t> => t != null);
+    });
 
   // Generation: average of picked generation tags
   const genValues = pickedTags
