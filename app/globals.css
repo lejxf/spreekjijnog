@@ -5,8 +5,8 @@
   --paper: #0f0d0a;             /* deep warm-black — main background */
   --paper-light: #1d1813;       /* slightly lighter card background */
   --ink: #f4ede0;               /* warm cream — primary text */
-  --ink-soft: #b0a591;          /* muted warm gray — body text */
-  --ink-faint: #786d5d;         /* faint warm — fine print */
+  --ink-soft: #c8baa3;          /* muted warm — body text (bumped for dark contrast) */
+  --ink-faint: #8a7e6d;         /* faint warm — fine print (bumped for legibility) */
   --rule: #2d2620;              /* subtle border on dark */
   --rule-soft: #1f1a14;         /* even more subtle */
   --stamp: #f5a623;             /* warm amber — primary accent */

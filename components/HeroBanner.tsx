@@ -30,53 +30,86 @@ const POOL: Character[] = [
   { id: "kringloop-koningin",first: "Kringloop",     second: "Koningin",    bg: "#2c1632", accent: "#d68aaa", hasImage: true  },
 ];
 
-const PANEL_COUNT_DESKTOP = 6;
-const PANEL_COUNT_MOBILE = 6; // also 6 (3x2 grid on mobile)
+const PANEL_COUNT = 6;
+// Performance: only this many panels play video at once. Rest show stills.
+const VIDEO_SLOTS_DESKTOP = 3;
+const VIDEO_SLOTS_MOBILE = 2;
 const CYCLE_MS = 5500;
 const FADE_MS = 500;
 
 /** Pick N random unique indexes from pool, optionally avoiding overlap with previous set. */
 function pickIndexes(count: number, total: number, avoid: number[] = []): number[] {
   const indices = Array.from({ length: total }, (_, i) => i);
-  // Bias against indexes that were just shown
   indices.sort(() => Math.random() - 0.5);
   const fresh = indices.filter((i) => !avoid.includes(i));
   const reused = indices.filter((i) => avoid.includes(i));
   return [...fresh, ...reused].slice(0, count);
 }
 
+/** Pick N random panel slots (0..PANEL_COUNT-1) to be video-active. */
+function pickVideoSlots(count: number): Set<number> {
+  const slots = Array.from({ length: PANEL_COUNT }, (_, i) => i)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, count);
+  return new Set(slots);
+}
+
 export default function HeroBanner() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>(() =>
-    pickIndexes(PANEL_COUNT_DESKTOP, POOL.length),
+    pickIndexes(PANEL_COUNT, POOL.length),
+  );
+  const [videoSlots, setVideoSlots] = useState<Set<number>>(() =>
+    pickVideoSlots(VIDEO_SLOTS_DESKTOP),
   );
   const [fading, setFading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const tickRef = useRef<number>(0);
 
+  // Detect viewport + accessibility prefs once
   useEffect(() => {
+    const mql = window.matchMedia("(max-width: 639px)");
+    const reduceMql = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setIsMobile(mql.matches);
+    setReducedMotion(reduceMql.matches);
+
+    const onResize = () => setIsMobile(mql.matches);
+    mql.addEventListener("change", onResize);
+    return () => mql.removeEventListener("change", onResize);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return; // honor reduced-motion: no auto-cycling
+
+    const slots = isMobile ? VIDEO_SLOTS_MOBILE : VIDEO_SLOTS_DESKTOP;
     const interval = setInterval(() => {
       setFading(true);
       setTimeout(() => {
         setActiveIndexes((prev) =>
-          pickIndexes(PANEL_COUNT_DESKTOP, POOL.length, prev),
+          pickIndexes(PANEL_COUNT, POOL.length, prev),
         );
+        setVideoSlots(pickVideoSlots(slots));
         setFading(false);
         tickRef.current += 1;
       }, FADE_MS);
     }, CYCLE_MS);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMobile, reducedMotion]);
 
   return (
     <section className="hero-banner relative w-full overflow-hidden bg-[var(--paper)]">
       <div className="grid grid-cols-3 sm:grid-cols-6 grid-rows-2 sm:grid-rows-1 h-full">
         {activeIndexes.map((idx, panelIdx) => {
           const c = POOL[idx];
+          const playing = !reducedMotion && videoSlots.has(panelIdx);
           return (
             <Panel
               key={`${panelIdx}-${c.id}-${tickRef.current}`}
               character={c}
               fading={fading}
+              playing={playing}
+              delayMs={panelIdx * 80}
             />
           );
         })}
@@ -138,10 +171,33 @@ export default function HeroBanner() {
 function Panel({
   character,
   fading,
+  playing,
+  delayMs,
 }: {
   character: Character;
   fading: boolean;
+  playing: boolean;
+  delayMs: number;
 }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Stagger video start to prevent simultaneous decode spike on cycle.
+  useEffect(() => {
+    if (!playing) return;
+    const v = videoRef.current;
+    if (!v) return;
+    const timer = setTimeout(() => {
+      v.play().catch(() => {
+        // autoplay blocked — fail silently, poster stays
+      });
+    }, delayMs);
+    return () => clearTimeout(timer);
+  }, [playing, delayMs]);
+
+  const posterSrc = character.hasImage
+    ? `/images/${character.id}.jpg`
+    : undefined;
+
   return (
     <div
       className="relative overflow-hidden border-r border-b border-white/10 last:border-r-0"
@@ -158,18 +214,31 @@ function Panel({
         style={{ background: character.accent }}
       />
 
-      {/* Video */}
-      <video
-        src={`/video/${character.id}.mp4`}
-        poster={character.hasImage ? `/images/${character.id}.jpg` : undefined}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ filter: "saturate(1.05) contrast(1.02)" }}
-      />
+      {playing ? (
+        <video
+          ref={videoRef}
+          src={`/video/${character.id}.mp4`}
+          poster={posterSrc}
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          // @ts-expect-error — non-standard but useful for performance
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: "saturate(1.05) contrast(1.02)" }}
+        />
+      ) : posterSrc ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={posterSrc}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: "saturate(1.05) contrast(1.02)" }}
+        />
+      ) : null}
 
       {/* Bottom name label */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-2 sm:p-3 text-center">
