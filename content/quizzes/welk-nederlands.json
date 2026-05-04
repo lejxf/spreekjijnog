@@ -500,6 +500,106 @@
         { "label": "Met een boek en koffie de tuin in", "tags": { "vibe": "cultureel", "register": "neutraal" } },
         { "label": "Uitslapen tot 11:00, dan TikTok", "tags": { "vibe": "single", "generation": 2000 } }
       ]
+    },
+    {
+      "id": "q47_baas",
+      "prompt": "Wat zeg je tegen je baas die een uur te laat is?",
+      "options": [
+        { "label": "Geen probleem, gebeurt iedereen weleens", "tags": { "register": "neutraal", "generation": 1980 } },
+        { "label": "Goh, ook lekker bezig", "tags": { "register": "informeel", "generation": 1985, "region": "hollands" } },
+        { "label": "Ey, wat een delay", "tags": { "register": "straat", "generation": 2010, "vibe": "rauw" } },
+        { "label": "Markje, eigen carpooler verloren?", "tags": { "region": "noord-brabant", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q48_hoegaathet",
+      "prompt": "Iemand vraagt 'hoe gaat het?' — wat zeg je écht?",
+      "options": [
+        { "label": "Goed dank je", "tags": { "register": "neutraal" } },
+        { "label": "Lekker druk", "tags": { "register": "informeel", "generation": 1985, "region": "hollands" } },
+        { "label": "Crisis", "tags": { "register": "straat", "generation": 2018, "vibe": "single" } },
+        { "label": "Moe zo", "tags": { "register": "dialect", "region": "noord", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q49_slechtnieuws",
+      "prompt": "Hoe reageer je als een vriend slecht nieuws vertelt?",
+      "options": [
+        { "label": "Dat is niet leuk om te horen", "tags": { "register": "formeel", "generation": 1965 } },
+        { "label": "Echt klote man", "tags": { "register": "informeel", "generation": 1985 } },
+        { "label": "Wallahi balen", "tags": { "register": "straat", "generation": 2015, "vibe": "rauw" } },
+        { "label": "Allemachtig", "tags": { "register": "informeel", "generation": 1955 } }
+      ]
+    },
+    {
+      "id": "q50_sollicitatie",
+      "prompt": "Hoe begin je een sollicitatiebrief?",
+      "options": [
+        { "label": "Geachte heer/mevrouw,", "tags": { "register": "formeel", "generation": 1960 } },
+        { "label": "Beste [Naam],", "tags": { "register": "neutraal", "generation": 1985 } },
+        { "label": "Hoi, ik ben...", "tags": { "register": "informeel", "generation": 1995 } },
+        { "label": "Eyo, ik solliciteer voor de functie", "tags": { "register": "straat", "generation": 2015 } }
+      ]
+    },
+    {
+      "id": "q51_compliment",
+      "prompt": "Wat zeg je als iemand je een compliment geeft?",
+      "options": [
+        { "label": "Dank je wel", "tags": { "register": "neutraal" } },
+        { "label": "Lol nee joh", "tags": { "register": "informeel", "generation": 1995 } },
+        { "label": "Gewoon eerlijk", "tags": { "register": "straat", "generation": 2018, "vibe": "single" } },
+        { "label": "Kom op zeg", "tags": { "register": "informeel", "generation": 1965, "region": "hollands" } }
+      ]
+    },
+    {
+      "id": "q52_voetbal",
+      "prompt": "Hoe vraag je vrienden om mee te kijken naar voetbal?",
+      "options": [
+        { "label": "Mannen, kijken jullie morgen?", "tags": { "vibe": "sport", "register": "informeel", "region": "hollands" } },
+        { "label": "Jonges! NAC speelt morgen", "tags": { "region": "noord-brabant", "register": "informeel", "vibe": "sport" } },
+        { "label": "Eredivisie sesh tomorrow @ mijn kraak", "tags": { "register": "straat", "generation": 2005, "vibe": "single" } },
+        { "label": "Heeft iemand zin om te kijken?", "tags": { "register": "neutraal" } }
+      ]
+    },
+    {
+      "id": "q53_kerstkaart",
+      "prompt": "Wat schrijf je in een kerstkaart voor je tante?",
+      "options": [
+        { "label": "Geheel goede feestdagen", "tags": { "register": "formeel", "generation": 1960 } },
+        { "label": "Fijne dagen tante!", "tags": { "register": "informeel", "generation": 1985, "vibe": "huiselijk" } },
+        { "label": "Happy holidays auntie ✨", "tags": { "register": "informeel", "generation": 2002, "vibe": "online" } },
+        { "label": "Doei doei tot volgend jaar", "tags": { "register": "informeel", "region": "hollands", "generation": 1975 } }
+      ]
+    },
+    {
+      "id": "q54_koffie",
+      "prompt": "Hoe vraag je je partner of ze koffie wilt?",
+      "options": [
+        { "label": "Wil je een kop koffie?", "tags": { "register": "neutraal" } },
+        { "label": "Bakkie doen?", "tags": { "register": "informeel", "region": "hollands", "generation": 1980 } },
+        { "label": "Koffietje?", "tags": { "region": "noord-brabant", "register": "informeel" } },
+        { "label": "Coffee?", "tags": { "register": "informeel", "generation": 2015, "vibe": "online" } }
+      ]
+    },
+    {
+      "id": "q55_idioom",
+      "prompt": "Wat betekent 'de kat uit de boom kijken'?",
+      "options": [
+        { "label": "Afwachten voordat je iets doet", "tags": { "register": "neutraal", "generation": 1965 } },
+        { "label": "Iemand ergens uit halen" },
+        { "label": "Een geheim ontdekken" },
+        { "label": "Een kat helpen" }
+      ]
+    },
+    {
+      "id": "q56_kennen",
+      "prompt": "Welk van deze woorden gebruik jij echt zelf?",
+      "options": [
+        { "label": "Abusievelijk", "tags": { "register": "formeel", "generation": 1965 } },
+        { "label": "Wallahi", "tags": { "register": "straat", "generation": 2015, "vibe": "rauw" } },
+        { "label": "Moi", "tags": { "region": "groningen", "register": "dialect" } },
+        { "label": "Goesting", "tags": { "region": "vlaams", "register": "informeel" } }
+      ]
     }
   ],
   "archetypes": [
@@ -656,6 +756,27 @@
       "description": "Doet elke ochtend een Get Ready With Me video voor 8.000 followers. Lash extensions, lipgloss, contour, blush draws. Drinkt iced matcha bij Pancakes Amsterdam. Werkt iets in marketing of styling. WhatsApp-status: 'unbothered ✨'. Heeft een 'capsule wardrobe' artikel gespaard. Praat met soft-Amerikaanse intonation: 'liiiiteralllyy'.",
       "axes": { "generation_min": 1998, "generation_max": 2005, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
       "colors": { "bg": "#3d0a2d", "accent": "#ff66c4", "text": "#ffffff" }
+    },
+    {
+      "id": "sober-curious",
+      "name": "Sober Curious",
+      "description": "Drinkt sinds 2024 geen druppel meer en het is z'n favoriete onderwerp. Mocktail-fanatic ('Seedlip met tonic'), stuurt screenshots van alcoholvrije recepten. Zegt 'ik voel me écht beter sinds ik gestopt ben' op verjaardagen. Loopt om 06:00 met de groep. WhatsApp-status: een Brené Brown quote over slaap. Herkent een halve fles wijn in je glas op afstand.",
+      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "wellness" },
+      "colors": { "bg": "#1a4d4d", "accent": "#fef9c3", "text": "#ffffff" }
+    },
+    {
+      "id": "festival-veteraan",
+      "name": "Festival Veteraan",
+      "description": "Was Lowlands- en Best Kept Secret-fanatic tot 2022. Heeft sinds vorig jaar Tobias en weigert 'volwassen' te worden. Gaat naar Mysteryland met de bakfietsbuggy. Dochter heeft gehoorbeschermers van Alpine Earplugs in pasteltint. Post 'we geven het festival-leven niet op, alleen anders doen' op Insta. Kent alle Boomtown Fair organisators op naam.",
+      "axes": { "generation_min": 1985, "generation_max": 1995, "region": "hollands", "register": "informeel", "vibe": "cultureel" },
+      "colors": { "bg": "#3a1842", "accent": "#fda4af", "text": "#ffffff" }
+    },
+    {
+      "id": "crossfit-boomer",
+      "name": "Crossfit Boomer",
+      "description": "55+ en in betere vorm dan z'n kinderen. Crossfit-jaarpas in Bilthoven of Eindhoven, zes keer per week om 07:00. Whey shake na elke training, weegt zich elke ochtend. Kent de boys in de gym op naam, gemiddelde leeftijd vrienden 28. WhatsApp-status: PR's van deze maand. Joe Rogan podcast in de auto. Vindt dat zijn kinderen 'te zacht zijn opgevoed'.",
+      "axes": { "generation_min": 1955, "generation_max": 1970, "region": "hollands", "register": "informeel", "vibe": "sport" },
+      "colors": { "bg": "#1c1917", "accent": "#ef4444", "text": "#ffffff" }
     }
   ]
 }

@@ -106,6 +106,18 @@ const DEMO_VALUES: Record<string, DemoValues> = {
     g: 82, r: 56, rg: 72, region: "Amsterdam", register: "Online",
     essence: "Get Ready With Me elke ochtend voor 8000 followers. Iced matcha bij Pancakes Amsterdam. 'Liiiteralllyy ✨'.",
   },
+  "sober-curious": {
+    g: 64, r: 49, rg: 71, region: "Holland", register: "Wellness",
+    essence: "Drinkt sinds 2024 niks meer. Mocktail-fanatic. 'Ik voel me écht beter sinds ik gestopt ben.'",
+  },
+  "festival-veteraan": {
+    g: 60, r: 52, rg: 68, region: "Holland", register: "Cultureel",
+    essence: "Was Lowlands-fanatic, nu met Tobias in de bakfietsbuggy naar Mysteryland. Alpine Earplugs in pastel.",
+  },
+  "crossfit-boomer": {
+    g: 22, r: 51, rg: 76, region: "Holland", register: "Sport",
+    essence: "55+ in betere vorm dan z'n kinderen. Whey shake, PR's elke maand, Joe Rogan in de auto.",
+  },
 };
 
 const CYCLE_MS = 3800;
