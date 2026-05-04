@@ -13,7 +13,26 @@ interface Props {
     reg?: string;
     rs?: string;
     n?: string;
+    m?: string;
   }>;
+}
+
+interface TopMatch {
+  archetypeId: string;
+  percentage: number;
+}
+
+function parseMatches(raw: string | undefined): TopMatch[] {
+  if (!raw) return [];
+  return raw
+    .split(",")
+    .map((entry) => {
+      const [id, pct] = entry.split(":");
+      const n = parseInt(pct ?? "0", 10);
+      if (!id) return null;
+      return { archetypeId: id.trim(), percentage: isNaN(n) ? 0 : n };
+    })
+    .filter((m): m is TopMatch => m !== null);
 }
 
 const quiz = quizData as Quiz;
@@ -102,7 +121,19 @@ export default async function ResultPage({ params, searchParams }: Props) {
     rg: sp.rg,
     reg: sp.reg,
     rs: sp.rs,
+    m: sp.m,
   };
+
+  // Resolve top-3 matches from URL into archetype objects
+  const matches = parseMatches(sp.m);
+  const topMatches = matches
+    .map((m) => {
+      const a = getArchetype(m.archetypeId);
+      if (!a) return null;
+      return { archetype: a, percentage: m.percentage };
+    })
+    .filter((m): m is { archetype: NonNullable<ReturnType<typeof getArchetype>>; percentage: number } => m !== null)
+    .slice(0, 3);
 
   return (
     <ResultClient
@@ -111,6 +142,7 @@ export default async function ResultPage({ params, searchParams }: Props) {
       initialName={initialName}
       scores={scores}
       searchParams={passthrough}
+      topMatches={topMatches}
     />
   );
 }

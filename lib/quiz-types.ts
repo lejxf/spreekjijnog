@@ -127,7 +127,18 @@ export interface UserProfile {
   generationStrength: number;
 }
 
+export interface ArchetypeMatch {
+  archetype: Archetype;
+  /** Raw weighted score */
+  score: number;
+  /** Normalized percentage (0-100) within top 3 */
+  percentage: number;
+}
+
 export interface QuizResult {
   profile: UserProfile;
+  /** Primary archetype = topMatches[0].archetype */
   archetype: Archetype;
+  /** Top 3 best-matching archetypes with normalized percentages summing to ~100. */
+  topMatches: ArchetypeMatch[];
 }

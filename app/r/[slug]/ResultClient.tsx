@@ -12,6 +12,11 @@ import {
 } from "@/lib/scoring";
 import ShareButtons from "./ShareButtons";
 
+interface ResolvedMatch {
+  archetype: Archetype;
+  percentage: number;
+}
+
 interface Props {
   archetype: Archetype;
   slug: string;
@@ -24,6 +29,7 @@ interface Props {
     register: Register | null;
   };
   searchParams: Record<string, string | undefined>;
+  topMatches: ResolvedMatch[];
 }
 
 function sanitizeName(raw: string): string {
@@ -40,6 +46,7 @@ export default function ResultClient({
   initialName,
   scores,
   searchParams,
+  topMatches,
 }: Props) {
   const colors = archetype.colors;
   const [name, setName] = useState<string | null>(initialName);
@@ -169,6 +176,53 @@ export default function ResultClient({
           </div>
         </div>
       </section>
+
+      {/* Composite breakdown: top 3 archetypes */}
+      {topMatches.length > 1 && (
+        <section className="max-w-3xl mx-auto px-6 pt-12">
+          <div className="section-rule eyebrow mb-6">
+            <span>Jouw mix</span>
+          </div>
+          <p className="text-sm text-[var(--ink-soft)] mb-5 max-w-xl">
+            Niemand past honderd procent in één hokje. Hier is jouw blend.
+          </p>
+          <ul className="space-y-3">
+            {topMatches.map((match, i) => (
+              <li
+                key={match.archetype.id}
+                className="flex items-baseline gap-4 sm:gap-6 group"
+              >
+                <span
+                  className="display text-2xl sm:text-3xl tabular-nums w-16 sm:w-20 text-right"
+                  style={{ color: match.archetype.colors.accent }}
+                >
+                  {match.percentage}%
+                </span>
+                <div
+                  className="flex-1 h-px relative"
+                  style={{ background: "var(--rule)" }}
+                >
+                  <div
+                    className="absolute inset-y-[-2px] left-0 transition-[width] duration-700 ease-out"
+                    style={{
+                      width: `${Math.min(100, match.percentage)}%`,
+                      height: "5px",
+                      background: match.archetype.colors.accent,
+                    }}
+                  />
+                </div>
+                <span
+                  className={`display text-base sm:text-lg w-44 sm:w-56 text-left ${
+                    i === 0 ? "text-[var(--ink)]" : "text-[var(--ink-soft)]"
+                  }`}
+                >
+                  {match.archetype.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Cream paper section: name + share */}
       <section className="max-w-3xl mx-auto px-6 py-12">

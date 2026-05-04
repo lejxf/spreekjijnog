@@ -105,63 +105,79 @@ export function scoreQuiz(quiz: Quiz, answers: Answer[]): QuizResult {
     generationStrength,
   };
 
-  const archetype = matchArchetype(profile, quiz.archetypes);
-  return { profile, archetype };
+  const topMatches = matchArchetypes(profile, quiz.archetypes);
+  return { profile, archetype: topMatches[0].archetype, topMatches };
 }
 
 /**
- * Match a profile to its closest archetype using axis-weighted distance.
+ * Score every archetype and return the top 3 with normalized percentages (sum to ~100).
  */
-function matchArchetype(profile: UserProfile, archetypes: Archetype[]): Archetype {
-  let best = archetypes[0];
-  let bestScore = -Infinity;
+function matchArchetypes(
+  profile: UserProfile,
+  archetypes: Archetype[],
+): import("./quiz-types").ArchetypeMatch[] {
+  const scored = archetypes.map((arch) => ({
+    archetype: arch,
+    score: scoreArchetype(profile, arch),
+  }));
 
-  for (const arch of archetypes) {
-    let score = 0;
+  scored.sort((a, b) => b.score - a.score);
+  const top3 = scored.slice(0, 3);
+  const total = top3.reduce((s, m) => s + m.score, 0) || 1;
 
-    // Generation match (weight 3)
-    if (profile.avgGeneration != null && arch.axes.generation_min != null && arch.axes.generation_max != null) {
-      const mid = (arch.axes.generation_min + arch.axes.generation_max) / 2;
-      const halfRange = (arch.axes.generation_max - arch.axes.generation_min) / 2 || 10;
-      const dist = Math.abs(profile.avgGeneration - mid);
-      // Inside range scores high, outside drops linearly
-      const genMatch = Math.max(0, 1 - dist / (halfRange * 2.5));
-      score += genMatch * 3;
-    }
+  // Round and adjust so percentages sum to 100
+  const rawPercentages = top3.map((m) => (m.score / total) * 100);
+  const rounded = rawPercentages.map((p) => Math.round(p));
+  const drift = 100 - rounded.reduce((s, n) => s + n, 0);
+  if (rounded.length > 0) rounded[0] += drift;
 
-    // Region match (weight 4)
-    if (profile.dominantRegion && arch.axes.region) {
-      const archRegions = arch.axes.region.split("/").map((r) => r.trim());
-      if (archRegions.includes(profile.dominantRegion)) {
-        score += 4;
-      } else if (
-        archRegions.some((r) => profile.dominantRegion!.includes(r) || r.includes(profile.dominantRegion!))
-      ) {
-        score += 2;
-      }
-    }
+  return top3.map((m, i) => ({
+    archetype: m.archetype,
+    score: m.score,
+    percentage: Math.max(0, rounded[i]),
+  }));
+}
 
-    // Register match (weight 2)
-    if (profile.dominantRegister && arch.axes.register) {
-      if (profile.dominantRegister === arch.axes.register) {
-        score += 2;
-      }
-    }
+function scoreArchetype(profile: UserProfile, arch: Archetype): number {
+  let score = 0;
 
-    // Vibe match (weight 4) — strong because it's the lifestyle differentiator
-    if (profile.dominantVibe && arch.axes.vibe) {
-      if (profile.dominantVibe === arch.axes.vibe) {
-        score += 4;
-      }
-    }
+  if (
+    profile.avgGeneration != null &&
+    arch.axes.generation_min != null &&
+    arch.axes.generation_max != null
+  ) {
+    const mid = (arch.axes.generation_min + arch.axes.generation_max) / 2;
+    const halfRange =
+      (arch.axes.generation_max - arch.axes.generation_min) / 2 || 10;
+    const dist = Math.abs(profile.avgGeneration - mid);
+    const genMatch = Math.max(0, 1 - dist / (halfRange * 2.5));
+    score += genMatch * 3;
+  }
 
-    if (score > bestScore) {
-      bestScore = score;
-      best = arch;
+  if (profile.dominantRegion && arch.axes.region) {
+    const archRegions = arch.axes.region.split("/").map((r) => r.trim());
+    if (archRegions.includes(profile.dominantRegion)) {
+      score += 4;
+    } else if (
+      archRegions.some(
+        (r) =>
+          profile.dominantRegion!.includes(r) ||
+          r.includes(profile.dominantRegion!),
+      )
+    ) {
+      score += 2;
     }
   }
 
-  return best;
+  if (profile.dominantRegister && arch.axes.register) {
+    if (profile.dominantRegister === arch.axes.register) score += 2;
+  }
+
+  if (profile.dominantVibe && arch.axes.vibe) {
+    if (profile.dominantVibe === arch.axes.vibe) score += 4;
+  }
+
+  return score;
 }
 
 function clamp(n: number, min: number, max: number): number {

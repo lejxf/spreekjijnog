@@ -6,8 +6,8 @@
     {
       "id": "q_woordenset",
       "type": "multi_select",
-      "prompt": "Welke woorden gebruik je weleens?",
-      "subtitle": "Vink alles aan wat klopt. Hoe meer, hoe scherper jouw profiel.",
+      "prompt": "Welke woorden gebruik je écht zelf?",
+      "subtitle": "Vink alleen aan wat je daadwerkelijk gebruikt — niet wat je alleen kent.",
       "options": [
         { "label": "Houdoe", "tags": { "region": "noord-brabant", "register": "informeel" } },
         { "label": "Jonges", "tags": { "region": "noord-brabant", "register": "informeel" } },
@@ -599,6 +599,46 @@
         { "label": "Wallahi", "tags": { "register": "straat", "generation": 2015, "vibe": "rauw" } },
         { "label": "Moi", "tags": { "region": "groningen", "register": "dialect" } },
         { "label": "Goesting", "tags": { "region": "vlaams", "register": "informeel" } }
+      ]
+    },
+    {
+      "id": "q57_drinken",
+      "prompt": "Wat drink je liefst op een vrijdagavond?",
+      "options": [
+        { "label": "Mocktail of Seedlip met tonic", "tags": { "vibe": "wellness", "generation": 1990, "register": "informeel" } },
+        { "label": "Glas natuurwijn of biologische rosé", "tags": { "vibe": "wellness", "generation": 1985, "register": "informeel" } },
+        { "label": "Trappist of speciaalbier", "tags": { "vibe": "huiselijk", "generation": 1975, "register": "informeel" } },
+        { "label": "Bier op de borrel met de mannen", "tags": { "vibe": "sport", "register": "informeel", "region": "hollands" } }
+      ]
+    },
+    {
+      "id": "q58_zondag_eten",
+      "prompt": "Wat eet je het liefst op zondag?",
+      "options": [
+        { "label": "Stamppot met rookworst", "tags": { "region": "noord-brabant", "register": "informeel", "vibe": "huiselijk", "generation": 1975 } },
+        { "label": "Vlaai met koffie", "tags": { "region": "limburg", "register": "dialect", "vibe": "huiselijk" } },
+        { "label": "Mosselen of patat-frituur", "tags": { "region": "vlaams", "register": "informeel", "vibe": "huiselijk" } },
+        { "label": "Brunch met poké bowl", "tags": { "region": "hollands", "vibe": "cultureel", "generation": 1990 } }
+      ]
+    },
+    {
+      "id": "q59_ai_gebruik",
+      "prompt": "Waarvoor gebruik je AI het meest?",
+      "options": [
+        { "label": "Mailtjes en planning schrijven", "tags": { "vibe": "online", "generation": 1985, "register": "informeel" } },
+        { "label": "Cursus-content of pitches maken", "tags": { "vibe": "online", "generation": 1990, "register": "informeel" } },
+        { "label": "Grappen verzinnen of meme-teksten", "tags": { "vibe": "online", "generation": 2010, "register": "straat" } },
+        { "label": "Niks, ben er niet mee bezig", "tags": { "vibe": "huiselijk", "generation": 1965 } }
+      ]
+    },
+    {
+      "id": "q60_sport",
+      "prompt": "Wat is jouw signature sport?",
+      "options": [
+        { "label": "Padel met de mannen", "tags": { "vibe": "sport", "generation": 1980, "region": "hollands", "register": "informeel" } },
+        { "label": "Hardlopen, halve marathons", "tags": { "vibe": "sport", "generation": 1995, "region": "hollands", "register": "informeel" } },
+        { "label": "Crossfit, om 07:00", "tags": { "vibe": "sport", "generation": 1962, "register": "informeel" } },
+        { "label": "Wandelen of gewoon fietsen", "tags": { "vibe": "huiselijk", "register": "neutraal" } }
       ]
     }
   ],

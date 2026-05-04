@@ -115,6 +115,12 @@ export default function QuizFlow({ quiz }: Props) {
       rs: result.profile.dominantRegister ?? "",
     });
 
+    // Encode top-3 matches as e.g. m=bourgondische-boekhouder:73,drentse-trompetterik:18,stadskind-van-niemand:9
+    const matchesParam = result.topMatches
+      .map((m) => `${m.archetype.id}:${m.percentage}`)
+      .join(",");
+    params.set("m", matchesParam);
+
     router.push(`/r/${result.archetype.id}?${params.toString()}`);
   }
 
