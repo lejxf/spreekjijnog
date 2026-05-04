@@ -34,10 +34,19 @@ export default function ShareButtons({ archetype, slug, searchParams }: Props) {
     return qs ? `${base}?${qs}` : base;
   }
 
+  const emoji = archetype.shareCopy?.emoji ?? "";
+  const reaction = archetype.shareCopy?.reaction ?? "";
+
   const subjectPhrase = userName
     ? `${userName} is een ${archetype.name}`
     : `Ik ben een ${archetype.name}`;
-  const shareText = `${subjectPhrase} volgens SpreekJijNog. Wat ben jij? `;
+
+  // Composed WhatsApp/social share line:
+  //   "Ik ben een Bakfiets Ouder 🚲 — Zo gênant haha. Doe jij em ook? "
+  // Falls back to a generic line if no shareCopy is configured.
+  const shareText = reaction
+    ? `${subjectPhrase} ${emoji} — ${reaction}. Doe jij em ook? `
+    : `${subjectPhrase} volgens SpreekJijNog. Wat ben jij? `;
 
   async function handleNativeShare() {
     const url = getUrl();

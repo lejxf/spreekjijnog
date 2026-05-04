@@ -12,6 +12,7 @@ import {
   type AxisSummary,
 } from "@/lib/scoring";
 import ShareButtons from "./ShareButtons";
+import TagFriend from "./TagFriend";
 
 interface ResolvedMatch {
   archetype: Archetype;
@@ -340,6 +341,8 @@ export default function ResultClient({
           slug={slug}
           searchParams={sharedSearchParams}
         />
+
+        <TagFriend archetype={archetype} />
 
         <div className="text-center mt-16 pt-8 border-t border-[var(--rule)]">
           <a href="/quiz/welk-nederlands" className="editorial-link text-sm">

@@ -91,6 +91,13 @@ export interface ArchetypeColors {
   text: string;
 }
 
+export interface ArchetypeShareCopy {
+  /** Single emoji used in WhatsApp/social share lines. */
+  emoji: string;
+  /** WhatsApp-tone reaction line, ~10–60 chars. */
+  reaction: string;
+}
+
 export interface Archetype {
   id: string;
   name: string;
@@ -99,6 +106,8 @@ export interface Archetype {
   colors: ArchetypeColors;
   /** Optional hero image path (e.g. /images/bakfietsouder.jpg). Falls back to color-only hero when absent. */
   image?: string;
+  /** Optional per-archetype share copy used in WhatsApp/native share text. */
+  shareCopy?: ArchetypeShareCopy;
 }
 
 export interface Quiz {

@@ -3,6 +3,7 @@ import quizData from "@/content/quizzes/welk-nederlands.json";
 import type { Quiz } from "@/lib/quiz-types";
 import ArchetypeCarousel from "@/components/ArchetypeCarousel";
 import HeroBanner from "@/components/HeroBanner";
+import LiveBadge from "@/components/LiveBadge";
 
 const quiz = quizData as Quiz;
 
@@ -16,6 +17,11 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           {/* CTA + description */}
           <div className="fade-up" style={{ animationDelay: "0.1s" }}>
+            <div className="mb-4">
+              {/* Pass `count` once a real counter is wired up. Omitting it shows the "Net live" frame. */}
+              <LiveBadge />
+            </div>
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
               <Link
                 href="/quiz/welk-nederlands"
