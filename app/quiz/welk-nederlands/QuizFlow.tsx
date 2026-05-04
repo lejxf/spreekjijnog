@@ -1,9 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { scoreQuiz } from "@/lib/scoring";
-import type { Quiz, QuizQuestion, Answer } from "@/lib/quiz-types";
+import type { Quiz, QuizQuestion, QuizOption, Answer } from "@/lib/quiz-types";
+
+/** A question is "visual" when every option has an image. Auto-detected, no flag needed. */
+function isVisual(q: QuizQuestion): boolean {
+  return q.options.length > 0 && q.options.every((o) => !!o.image);
+}
 
 interface Props {
   quiz: Quiz;
@@ -205,6 +211,13 @@ export default function QuizFlow({ quiz }: Props) {
             onSubmit={submitMulti}
             disabled={animatingOut !== null}
           />
+        ) : isVisual(currentQuestion) ? (
+          <VisualChoiceGrid
+            options={currentQuestion.options}
+            animatingOut={animatingOut}
+            onSelect={handleSingleSelect}
+            onSkip={() => handleSingleSelect(SKIP_INDEX)}
+          />
         ) : (
           <SingleChoiceList
             options={currentQuestion.options.map((o) => o.label)}
@@ -323,6 +336,74 @@ function SingleChoiceList({
                 {letter}
               </span>
               <span className="text-base sm:text-lg leading-snug">{label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <button
+        onClick={onSkip}
+        disabled={animatingOut !== null}
+        className={`mt-4 w-full text-center py-3 text-sm transition-all disabled:cursor-not-allowed
+          ${
+            animatingOut === SKIP_INDEX
+              ? "bg-[var(--ink)] text-[var(--paper)] scale-[0.99]"
+              : "text-[var(--ink-faint)] hover:text-[var(--stamp)] hover:bg-[var(--paper-light)]"
+          }`}
+      >
+        Geen idee · sla over
+      </button>
+    </>
+  );
+}
+
+// ─── Visual choice (2×2 image grid) ────────────────────────────────────
+function VisualChoiceGrid({
+  options,
+  animatingOut,
+  onSelect,
+  onSkip,
+}: {
+  options: QuizOption[];
+  animatingOut: number | null;
+  onSelect: (i: number) => void;
+  onSkip: () => void;
+}) {
+  return (
+    <>
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        {options.map((opt, i) => {
+          const isSelected = animatingOut === i;
+          if (!opt.image) return null;
+          return (
+            <button
+              key={i}
+              onClick={() => onSelect(i)}
+              disabled={animatingOut !== null}
+              aria-label={opt.label}
+              className={`group relative aspect-square overflow-hidden border-2 transition-all
+                ${
+                  isSelected
+                    ? "border-[var(--ink)] scale-[0.98] ring-2 ring-offset-2 ring-offset-[var(--paper)] ring-[var(--stamp)]"
+                    : "border-[var(--rule)] hover:border-[var(--ink)] active:scale-[0.98]"
+                }
+                disabled:cursor-not-allowed`}
+            >
+              <Image
+                src={opt.image}
+                alt={opt.label}
+                fill
+                sizes="(max-width: 768px) 50vw, 320px"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Bottom gradient + caption overlay */}
+              <div
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none"
+              />
+              <span className="absolute bottom-3 left-3 right-3 text-white text-sm sm:text-base font-medium leading-tight drop-shadow-md">
+                {opt.label}
+              </span>
             </button>
           );
         })}

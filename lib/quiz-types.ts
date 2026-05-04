@@ -48,6 +48,13 @@ export interface OptionTags {
 
 export interface QuizOption {
   label: string;
+  /**
+   * Optional image path (e.g. "/q/welke-fiets/bakfiets.jpg").
+   * When ALL options on a question have an image, the question renders
+   * as a 2×2 visual grid in the QuizFlow. The label is used as alt text
+   * and as a small caption overlaid on the image.
+   */
+  image?: string;
   tags?: OptionTags;
 }
 
