@@ -42,3 +42,7 @@ next-env.d.ts
 
 # raw uploaded source images (renamed copies live in /public/q/)
 /public/images/vragen/
+
+# raw Nano Banana .jpeg drops (renamed copies are .jpg)
+/public/images/*.jpeg
+/public/images/.DS_Store

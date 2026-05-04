@@ -2349,7 +2349,8 @@
       "shareCopy": {
         "emoji": "🍷",
         "reaction": "Kak, ik ben dus echt m'n vader"
-      }
+      },
+      "image": "/images/bourgondische-boekhouder.jpg"
     },
     {
       "id": "hagenese-hipster",
@@ -2370,7 +2371,8 @@
       "shareCopy": {
         "emoji": "☕️",
         "reaction": "Onbedoeld pretentieus, gevonden"
-      }
+      },
+      "image": "/images/hagenese-hipster.jpg"
     },
     {
       "id": "achterhoekse-academicus",
@@ -2391,7 +2393,8 @@
       "shareCopy": {
         "emoji": "📚",
         "reaction": "BookTok was de tell"
-      }
+      },
+      "image": "/images/achterhoekse-academicus.jpg"
     },
     {
       "id": "belgisch-geinfecteerd",
@@ -2412,7 +2415,8 @@
       "shareCopy": {
         "emoji": "🇧🇪",
         "reaction": "Allez, dat klopt zeker"
-      }
+      },
+      "image": "/images/belgisch-geinfecteerd.jpg"
     },
     {
       "id": "amsterdams-modieus",
@@ -2455,7 +2459,8 @@
       "shareCopy": {
         "emoji": "🌾",
         "reaction": "Rustig oud worden = de move"
-      }
+      },
+      "image": "/images/drentse-trompetterik.jpg"
     },
     {
       "id": "limburgse-bourgondier",
@@ -2476,7 +2481,8 @@
       "shareCopy": {
         "emoji": "🍻",
         "reaction": "Carnaval is een gevoel jonges"
-      }
+      },
+      "image": "/images/limburgse-bourgondier.jpg"
     },
     {
       "id": "stadskind-van-niemand",
@@ -2496,7 +2502,8 @@
       "shareCopy": {
         "emoji": "🤖",
         "reaction": "Lol, dus echt gewoon niemand"
-      }
+      },
+      "image": "/images/stadskind-van-niemand.jpg"
     },
     {
       "id": "padel-pa",
@@ -2539,7 +2546,8 @@
       "shareCopy": {
         "emoji": "🧘‍♀️",
         "reaction": "Manifesterend ja"
-      }
+      },
+      "image": "/images/yoga-mompreneur.jpg"
     },
     {
       "id": "bakfietsouder",
@@ -2626,7 +2634,8 @@
       "shareCopy": {
         "emoji": "🌊",
         "reaction": "Tige tank, klopt"
-      }
+      },
+      "image": "/images/friese-stille.jpg"
     },
     {
       "id": "rotterdamse-sjef",
@@ -2647,7 +2656,8 @@
       "shareCopy": {
         "emoji": "⚓️",
         "reaction": "Niet lullen, doen"
-      }
+      },
+      "image": "/images/rotterdamse-sjef.jpg"
     },
     {
       "id": "tinder-veteraan",
@@ -2822,7 +2832,8 @@
       "shareCopy": {
         "emoji": "🍵",
         "reaction": "Dry January × 12"
-      }
+      },
+      "image": "/images/sober-curious.jpg"
     },
     {
       "id": "festival-veteraan",
@@ -2843,7 +2854,8 @@
       "shareCopy": {
         "emoji": "🎪",
         "reaction": "Lowlands met de bakfiets"
-      }
+      },
+      "image": "/images/festival-veteraan.jpg"
     },
     {
       "id": "crossfit-boomer",
@@ -2864,7 +2876,8 @@
       "shareCopy": {
         "emoji": "💪",
         "reaction": "PR vandaag, fysio morgen"
-      }
+      },
+      "image": "/images/crossfit-boomer.jpg"
     }
   ]
 }
