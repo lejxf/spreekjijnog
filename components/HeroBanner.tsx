@@ -11,9 +11,7 @@ interface Character {
   hasImage: boolean;
 }
 
-// Trending + semi-trending pool for the hero banner
 const POOL: Character[] = [
-  // Trending
   { id: "padel-pa",          first: "Padel",         second: "Pa",          bg: "#1c2440", accent: "#ff7e3a", hasImage: true  },
   { id: "yoga-mompreneur",   first: "Yoga",          second: "Mompreneur",  bg: "#3a4a3a", accent: "#e8b4a5", hasImage: false },
   { id: "bakfietsouder",     first: "Bakfiets",      second: "Ouder",       bg: "#2a3a25", accent: "#d49a3e", hasImage: true  },
@@ -23,7 +21,6 @@ const POOL: Character[] = [
   { id: "fatbike-tiener",    first: "Fatbike",       second: "Tiener",      bg: "#1a1612", accent: "#fb2c36", hasImage: true  },
   { id: "skibidi-kid",       first: "Skibidi",       second: "Kid",         bg: "#1a0d2e", accent: "#a855f7", hasImage: true  },
   { id: "grwm-girlie",       first: "GRWM",          second: "Girlie",      bg: "#3d0a2d", accent: "#ff66c4", hasImage: true  },
-  // Semi-trending
   { id: "amsterdams-modieus",first: "Amsterdams",    second: "Modieus",     bg: "#180818", accent: "#ff3d8a", hasImage: true  },
   { id: "boomer-op-marktplaats", first: "Boomer",    second: "Marktplaats", bg: "#3d1815", accent: "#e8c882", hasImage: true  },
   { id: "tinder-veteraan",   first: "Tinder",        second: "Veteraan",    bg: "#3a0e2a", accent: "#f3c896", hasImage: true  },
@@ -31,13 +28,12 @@ const POOL: Character[] = [
 ];
 
 const PANEL_COUNT = 6;
-// Performance: only this many panels play video at once. Rest show stills.
-const VIDEO_SLOTS_DESKTOP = 3;
-const VIDEO_SLOTS_MOBILE = 2;
+// Same on mobile + desktop; performance handled via stagger + Ken Burns + viewport pause
+const VIDEO_SLOTS = 3;
 const CYCLE_MS = 5500;
 const FADE_MS = 500;
+const STAGGER_PER_PANEL_MS = 250;
 
-/** Pick N random unique indexes from pool, optionally avoiding overlap with previous set. */
 function pickIndexes(count: number, total: number, avoid: number[] = []): number[] {
   const indices = Array.from({ length: total }, (_, i) => i);
   indices.sort(() => Math.random() - 0.5);
@@ -46,7 +42,6 @@ function pickIndexes(count: number, total: number, avoid: number[] = []): number
   return [...fresh, ...reused].slice(0, count);
 }
 
-/** Pick N random panel slots (0..PANEL_COUNT-1) to be video-active. */
 function pickVideoSlots(count: number): Set<number> {
   const slots = Array.from({ length: PANEL_COUNT }, (_, i) => i)
     .sort(() => Math.random() - 0.5)
@@ -59,72 +54,82 @@ export default function HeroBanner() {
     pickIndexes(PANEL_COUNT, POOL.length),
   );
   const [videoSlots, setVideoSlots] = useState<Set<number>>(() =>
-    pickVideoSlots(VIDEO_SLOTS_DESKTOP),
+    pickVideoSlots(VIDEO_SLOTS),
   );
   const [fading, setFading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [bannerVisible, setBannerVisible] = useState(true);
   const tickRef = useRef<number>(0);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
-  // Detect viewport + accessibility prefs once
+  // Detect accessibility prefs
   useEffect(() => {
-    const mql = window.matchMedia("(max-width: 639px)");
     const reduceMql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setIsMobile(mql.matches);
     setReducedMotion(reduceMql.matches);
+    const onChange = () => setReducedMotion(reduceMql.matches);
+    reduceMql.addEventListener("change", onChange);
+    return () => reduceMql.removeEventListener("change", onChange);
+  }, []);
 
-    const onResize = () => setIsMobile(mql.matches);
-    mql.addEventListener("change", onResize);
-    return () => mql.removeEventListener("change", onResize);
+  // Pause cycling + videos when banner is offscreen — biggest mobile win
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => setBannerVisible(entry.isIntersecting));
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (reducedMotion) return; // honor reduced-motion: no auto-cycling
-
-    const slots = isMobile ? VIDEO_SLOTS_MOBILE : VIDEO_SLOTS_DESKTOP;
+    if (reducedMotion || !bannerVisible) return;
     const interval = setInterval(() => {
       setFading(true);
       setTimeout(() => {
         setActiveIndexes((prev) =>
           pickIndexes(PANEL_COUNT, POOL.length, prev),
         );
-        setVideoSlots(pickVideoSlots(slots));
+        setVideoSlots(pickVideoSlots(VIDEO_SLOTS));
         setFading(false);
         tickRef.current += 1;
       }, FADE_MS);
     }, CYCLE_MS);
 
     return () => clearInterval(interval);
-  }, [isMobile, reducedMotion]);
+  }, [reducedMotion, bannerVisible]);
 
   return (
-    <section className="hero-banner relative w-full overflow-hidden bg-[var(--paper)]">
+    <section
+      ref={sectionRef}
+      className="hero-banner relative w-full overflow-hidden bg-[var(--paper)]"
+    >
       <div className="grid grid-cols-3 sm:grid-cols-6 grid-rows-2 sm:grid-rows-1 h-full">
         {activeIndexes.map((idx, panelIdx) => {
           const c = POOL[idx];
-          const playing = !reducedMotion && videoSlots.has(panelIdx);
+          const playing = !reducedMotion && bannerVisible && videoSlots.has(panelIdx);
           return (
             <Panel
               key={`${panelIdx}-${c.id}-${tickRef.current}`}
               character={c}
               fading={fading}
               playing={playing}
-              delayMs={panelIdx * 80}
+              kenBurnsDirection={panelIdx % 2 === 0 ? "in" : "out"}
+              delayMs={panelIdx * STAGGER_PER_PANEL_MS}
             />
           );
         })}
       </div>
 
-      {/* Dark gradient overlay for text legibility */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
 
-      {/* Top bar */}
       <div className="absolute top-0 inset-x-0 px-6 sm:px-10 pt-6 flex justify-between items-baseline z-10 text-[0.65rem] sm:text-xs uppercase tracking-[0.25em] font-medium text-white/60 pointer-events-none">
         <span>SpreekJijNog · Nº 01</span>
         <span className="hidden sm:inline">22 archetypes · Mei 2026</span>
       </div>
 
-      {/* Centered headline */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10 pointer-events-none">
         <h1
           className="display text-white"
@@ -137,10 +142,7 @@ export default function HeroBanner() {
         >
           Welk Nederlands<br />
           spreek jij{" "}
-          <span
-            className="display-italic"
-            style={{ color: "#f5a623" }}
-          >
+          <span className="display-italic" style={{ color: "#f5a623" }}>
             eigenlijk
           </span>
           ?
@@ -163,6 +165,22 @@ export default function HeroBanner() {
             height: clamp(380px, 48vw, 520px);
           }
         }
+
+        /* Ken Burns: subtle slow zoom/pan animation. Cheap GPU compositor effect — no decode cost. */
+        @keyframes kenBurnsIn {
+          from { transform: scale(1.06) translate(-1%, -1%); }
+          to   { transform: scale(1.14) translate(2%, 2%); }
+        }
+        @keyframes kenBurnsOut {
+          from { transform: scale(1.14) translate(2%, -1%); }
+          to   { transform: scale(1.06) translate(-1%, 2%); }
+        }
+        .ken-in  { animation: kenBurnsIn  9s ease-in-out infinite alternate; }
+        .ken-out { animation: kenBurnsOut 11s ease-in-out infinite alternate; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .ken-in, .ken-out { animation: none; }
+        }
       `}</style>
     </section>
   );
@@ -172,24 +190,23 @@ function Panel({
   character,
   fading,
   playing,
+  kenBurnsDirection,
   delayMs,
 }: {
   character: Character;
   fading: boolean;
   playing: boolean;
+  kenBurnsDirection: "in" | "out";
   delayMs: number;
 }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Stagger video start to prevent simultaneous decode spike on cycle.
   useEffect(() => {
     if (!playing) return;
     const v = videoRef.current;
     if (!v) return;
     const timer = setTimeout(() => {
-      v.play().catch(() => {
-        // autoplay blocked — fail silently, poster stays
-      });
+      v.play().catch(() => {});
     }, delayMs);
     return () => clearTimeout(timer);
   }, [playing, delayMs]);
@@ -197,6 +214,7 @@ function Panel({
   const posterSrc = character.hasImage
     ? `/images/${character.id}.jpg`
     : undefined;
+  const kenClass = kenBurnsDirection === "in" ? "ken-in" : "ken-out";
 
   return (
     <div
@@ -207,7 +225,6 @@ function Panel({
         opacity: fading ? 0 : 1,
       }}
     >
-      {/* Accent diagonal */}
       <div
         aria-hidden
         className="absolute -top-12 -right-12 w-40 h-40 rotate-45 opacity-15 pointer-events-none"
@@ -223,7 +240,7 @@ function Panel({
           muted
           playsInline
           preload="metadata"
-          // @ts-expect-error — non-standard but useful for performance
+          // @ts-expect-error — non-standard attribute
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "saturate(1.05) contrast(1.02)" }}
@@ -235,27 +252,34 @@ function Panel({
           alt=""
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "saturate(1.05) contrast(1.02)" }}
+          className={`absolute inset-0 w-full h-full object-cover ${kenClass}`}
+          style={{
+            filter: "saturate(1.05) contrast(1.02)",
+            willChange: "transform",
+          }}
         />
       ) : null}
 
-      {/* Bottom name label */}
       <div className="absolute inset-x-0 bottom-0 z-10 p-2 sm:p-3 text-center">
-        <div className="display text-white leading-[1.0]" style={{
-          fontSize: "clamp(11px, 1.2vw, 18px)",
-          fontWeight: 600,
-          letterSpacing: "-0.01em",
-          textShadow: "0 2px 8px rgba(0,0,0,0.7)",
-        }}>
+        <div
+          className="display text-white leading-[1.0]"
+          style={{
+            fontSize: "clamp(11px, 1.2vw, 18px)",
+            fontWeight: 600,
+            letterSpacing: "-0.01em",
+            textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+          }}
+        >
           {character.first}{" "}
-          <span className="display-italic block sm:inline" style={{ color: character.accent }}>
+          <span
+            className="display-italic block sm:inline"
+            style={{ color: character.accent }}
+          >
             {character.second}
           </span>
         </div>
       </div>
 
-      {/* Subtle bottom gradient for label legibility */}
       <div
         aria-hidden
         className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"
