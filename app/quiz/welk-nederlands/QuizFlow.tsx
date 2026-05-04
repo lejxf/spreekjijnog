@@ -16,6 +16,8 @@ interface Props {
 }
 
 const VERFIJNING_COUNT = 6;
+/** Of the 6 verfijning slots, how many should be visual questions when available. */
+const VISUAL_TARGET = 2;
 const SKIP_INDEX = -1;
 
 function shuffle<T>(arr: T[]): T[] {
@@ -37,12 +39,22 @@ function isLifestyle(q: QuizQuestion): boolean {
 export default function QuizFlow({ quiz }: Props) {
   const router = useRouter();
 
-  // Build session: 1 multi-select woordenset + 6 random lifestyle questions
+  // Build session: 1 multi-select woordenset + 6 lifestyle questions
+  // (biased toward VISUAL_TARGET visual questions when available)
   const sessionQuestions = useMemo<QuizQuestion[]>(() => {
     const multi = quiz.questions.find((q) => q.type === "multi_select");
-    const verfijning = shuffle(
-      quiz.questions.filter((q) => isLifestyle(q)),
-    ).slice(0, VERFIJNING_COUNT);
+    const lifestylePool = quiz.questions.filter((q) => isLifestyle(q));
+    const visualPool = lifestylePool.filter(isVisual);
+    const textPool = lifestylePool.filter((q) => !isVisual(q));
+
+    const targetVisual = Math.min(VISUAL_TARGET, visualPool.length);
+    const pickedVisual = shuffle(visualPool).slice(0, targetVisual);
+    const pickedText = shuffle(textPool).slice(
+      0,
+      VERFIJNING_COUNT - pickedVisual.length,
+    );
+    const verfijning = shuffle([...pickedVisual, ...pickedText]);
+
     return multi ? [multi, ...verfijning] : verfijning;
   }, [quiz.questions]);
 

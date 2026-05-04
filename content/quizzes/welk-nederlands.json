@@ -2044,6 +2044,289 @@
           }
         }
       ]
+    },
+    {
+      "id": "q61_visual_avond",
+      "prompt": "Welke avond eindigt voor jou hier?",
+      "subtitle": "Foto's, geen woorden — kies de scene die het meest klopt.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "Padel-baan met biertjes",
+          "image": "/q/welke-avond/padel.jpg",
+          "tags": {
+            "generation": 1980,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "CrossFit-box na de wod",
+          "image": "/q/welke-avond/crossfit.jpg",
+          "tags": {
+            "generation": 1985,
+            "register": "informeel",
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Mocktail-bar in Amsterdam",
+          "image": "/q/welke-avond/mocktail.jpg",
+          "tags": {
+            "generation": 1992,
+            "region": "noord-holland",
+            "register": "informeel",
+            "vibe": "wellness"
+          }
+        },
+        {
+          "label": "Kringloop-vondst voor de gram",
+          "image": "/q/welke-avond/kringloop.jpg",
+          "tags": {
+            "generation": 1995,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "vintage"
+          }
+        }
+      ]
+    },
+    {
+      "id": "q62_visual_koffie",
+      "prompt": "Welke koffie ben jij?",
+      "subtitle": "Een ochtend zegt veel.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "Oat-flat-white bij de specialty coffee",
+          "image": "/q/welke-koffie/oat-flat-white.jpg",
+          "tags": {
+            "generation": 1992,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "bewust"
+          }
+        },
+        {
+          "label": "Automaatkoffie van het werk",
+          "image": "/q/welke-koffie/automaat.jpg",
+          "tags": {
+            "generation": 1975,
+            "register": "neutraal",
+            "vibe": "no-nonsense"
+          }
+        },
+        {
+          "label": "Espresso in een Italiaans café",
+          "image": "/q/welke-koffie/espresso.jpg",
+          "tags": {
+            "generation": 1982,
+            "region": "zuid-holland",
+            "register": "informeel",
+            "vibe": "cultureel"
+          }
+        },
+        {
+          "label": "Senseo bij ma",
+          "image": "/q/welke-koffie/senseo.jpg",
+          "tags": {
+            "generation": 1965,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "vintage"
+          }
+        }
+      ]
+    },
+    {
+      "id": "q63_visual_fiets",
+      "prompt": "Welke fiets staat in jouw schuur?",
+      "subtitle": "Fiets = identiteit. Kies eerlijk.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "Bakfiets Urban Arrow",
+          "image": "/q/welke-fiets/bakfiets.jpg",
+          "tags": {
+            "generation": 1988,
+            "region": "noord-holland/utrecht",
+            "register": "informeel",
+            "vibe": "bewust"
+          }
+        },
+        {
+          "label": "Fatbike bij McDonald's",
+          "image": "/q/welke-fiets/fatbike.jpg",
+          "tags": {
+            "generation": 2010,
+            "region": "noord-holland",
+            "register": "straat",
+            "vibe": "rauw"
+          }
+        },
+        {
+          "label": "Carbon racefiets",
+          "image": "/q/welke-fiets/racefiets.jpg",
+          "tags": {
+            "generation": 1980,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Omafiets met kratje",
+          "image": "/q/welke-fiets/omafiets.jpg",
+          "tags": {
+            "generation": 1990,
+            "register": "neutraal",
+            "vibe": "huiselijk"
+          }
+        }
+      ]
+    },
+    {
+      "id": "q64_visual_zaterdag",
+      "prompt": "Welk huiselijk moment is jouw zaterdag?",
+      "subtitle": "Geen goed of fout — kies welke hier het meest jou is.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "Borrelplankje + LED-strips in de tuin",
+          "image": "/q/zaterdag/borrelplankje.jpg",
+          "tags": {
+            "generation": 1980,
+            "region": "noord-brabant/limburg",
+            "register": "informeel",
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Macha-ceremonie op het aanrecht",
+          "image": "/q/zaterdag/macha.jpg",
+          "tags": {
+            "generation": 1990,
+            "region": "hollands",
+            "register": "informeel",
+            "vibe": "wellness"
+          }
+        },
+        {
+          "label": "Vasteloavend in Maastricht",
+          "image": "/q/zaterdag/vasteloavend.jpg",
+          "tags": {
+            "generation": 1975,
+            "region": "limburg",
+            "register": "dialect",
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Stille middag in een Drents tuintje",
+          "image": "/q/zaterdag/drenthe.jpg",
+          "tags": {
+            "generation": 1965,
+            "region": "drenthe/noord",
+            "register": "dialect",
+            "vibe": "no-nonsense"
+          }
+        }
+      ]
+    },
+    {
+      "id": "q65_visual_nachtkastje",
+      "prompt": "Wat ligt op je nachtkastje?",
+      "subtitle": "Het verraadt meer dan je denkt.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "Sarah J. Maas met sticky notes",
+          "image": "/q/nachtkastje/booktok.jpg",
+          "tags": {
+            "generation": 1995,
+            "region": "achterhoek/gelderland",
+            "register": "informeel",
+            "vibe": "cultureel"
+          }
+        },
+        {
+          "label": "iPad met TikTok open",
+          "image": "/q/nachtkastje/ipad.jpg",
+          "tags": {
+            "generation": 2010,
+            "register": "straat",
+            "vibe": "online"
+          }
+        },
+        {
+          "label": "Cassetterecorder en een briefblok",
+          "image": "/q/nachtkastje/cassette.jpg",
+          "tags": {
+            "generation": 1955,
+            "register": "formeel",
+            "vibe": "vintage"
+          }
+        },
+        {
+          "label": "Bose-koptelefoon + uitgeprinte Substack",
+          "image": "/q/nachtkastje/bose.jpg",
+          "tags": {
+            "generation": 1988,
+            "region": "zuid-holland",
+            "register": "informeel",
+            "vibe": "cultureel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "q66_visual_supermarkt",
+      "prompt": "Welke supermarkt is jouw thuisbasis?",
+      "subtitle": "Waar je wekelijks eindigt.",
+      "lifestyle": true,
+      "options": [
+        {
+          "label": "AH To Go op Centraal",
+          "image": "/q/supermarkt/ah-to-go.jpg",
+          "tags": {
+            "generation": 1995,
+            "region": "noord-holland",
+            "register": "informeel",
+            "vibe": "online"
+          }
+        },
+        {
+          "label": "Lidl in Drachten",
+          "image": "/q/supermarkt/lidl.jpg",
+          "tags": {
+            "generation": 1970,
+            "region": "friesland/noord",
+            "register": "dialect",
+            "vibe": "no-nonsense"
+          }
+        },
+        {
+          "label": "Plus in Tilburg",
+          "image": "/q/supermarkt/plus.jpg",
+          "tags": {
+            "generation": 1980,
+            "region": "noord-brabant",
+            "register": "informeel",
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Marqt op de Westerstraat",
+          "image": "/q/supermarkt/marqt.jpg",
+          "tags": {
+            "generation": 1985,
+            "region": "noord-holland",
+            "register": "informeel",
+            "vibe": "bewust"
+          }
+        }
+      ]
     }
   ],
   "archetypes": [
