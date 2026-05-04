@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* SpreekJijNog — editorial Dutch language magazine palette */
-  --paper: #f4ede0;             /* warm cream paper */
-  --paper-light: #faf5e8;       /* lighter card background */
-  --ink: #1a1612;               /* deep warm-black ink */
-  --ink-soft: #5a4d3e;          /* subdued warm gray-brown */
-  --ink-faint: #8a7e6e;         /* faintest text, for fine print */
-  --rule: #cbc1a9;              /* paper rules / dividers */
-  --rule-soft: #ddd5be;         /* even more subtle rules */
-  --stamp: #c84a32;             /* deep red — accent / stamp color */
-  --stamp-deep: #9d3624;        /* darker red for hover/active */
-  --mustard: #d4a93a;           /* vintage mustard, for accents */
-  --selection: #f4d4a3;         /* warm highlighter color */
+  /* SpreekJijNog — dark cinematic palette (matching hero banner) */
+  --paper: #0f0d0a;             /* deep warm-black — main background */
+  --paper-light: #1d1813;       /* slightly lighter card background */
+  --ink: #f4ede0;               /* warm cream — primary text */
+  --ink-soft: #b0a591;          /* muted warm gray — body text */
+  --ink-faint: #786d5d;         /* faint warm — fine print */
+  --rule: #2d2620;              /* subtle border on dark */
+  --rule-soft: #1f1a14;         /* even more subtle */
+  --stamp: #f5a623;             /* warm amber — primary accent */
+  --stamp-deep: #d68a18;        /* darker amber for hover */
+  --mustard: #d4a93a;
+  --selection: #5a3a14;         /* dark warm highlight */
+  --card: #1d1813;              /* card surface */
 }
 
 @theme inline {
@@ -37,10 +38,10 @@ body {
   font-family: var(--font-geist), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* subtle paper texture */
+  /* subtle warm cinematic glow */
   background-image:
-    radial-gradient(circle at 25% 30%, rgba(202, 184, 145, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 75% 70%, rgba(168, 140, 110, 0.03) 0%, transparent 40%);
+    radial-gradient(circle at 18% 22%, rgba(245, 166, 35, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 82% 78%, rgba(200, 74, 50, 0.04) 0%, transparent 50%);
 }
 
 * {

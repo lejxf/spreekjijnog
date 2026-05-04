@@ -68,7 +68,7 @@ export default function HeroBanner() {
   }, []);
 
   return (
-    <section className="hero-banner relative w-full overflow-hidden bg-[var(--ink)]">
+    <section className="hero-banner relative w-full overflow-hidden bg-[var(--paper)]">
       <div className="grid grid-cols-3 sm:grid-cols-6 grid-rows-2 sm:grid-rows-1 h-full">
         {activeIndexes.map((idx, panelIdx) => {
           const c = POOL[idx];
