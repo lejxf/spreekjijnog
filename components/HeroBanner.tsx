@@ -13,34 +13,19 @@ interface Character {
 }
 
 const POOL: Character[] = [
-  // Original 13 — all have videos + stills.
-  { id: "padel-pa",              first: "Padel",        second: "Pa",            bg: "#1c2440", accent: "#ff7e3a", hasImage: true,  hasVideo: true  },
-  { id: "yoga-mompreneur",       first: "Yoga",         second: "Mompreneur",    bg: "#3a4a3a", accent: "#e8b4a5", hasImage: true,  hasVideo: true  },
-  { id: "bakfietsouder",         first: "Bakfiets",     second: "Ouder",         bg: "#2a3a25", accent: "#d49a3e", hasImage: true,  hasVideo: true  },
-  { id: "insta-goeroe",          first: "Insta",        second: "Goeroe",        bg: "#15101e", accent: "#f4c542", hasImage: true,  hasVideo: true  },
-  { id: "run-club-hardloper",    first: "Run Club",     second: "Hardloper",     bg: "#0d3530", accent: "#bef264", hasImage: true,  hasVideo: true  },
-  { id: "ai-bestie",             first: "AI",           second: "Bestie",        bg: "#0a1830", accent: "#22d3ee", hasImage: true,  hasVideo: true  },
-  { id: "fatbike-tiener",        first: "Fatbike",      second: "Tiener",        bg: "#1a1612", accent: "#fb2c36", hasImage: true,  hasVideo: true  },
-  { id: "skibidi-kid",           first: "Skibidi",      second: "Kid",           bg: "#1a0d2e", accent: "#a855f7", hasImage: true,  hasVideo: true  },
-  { id: "grwm-girlie",           first: "GRWM",         second: "Girlie",        bg: "#3d0a2d", accent: "#ff66c4", hasImage: true,  hasVideo: true  },
-  { id: "amsterdams-modieus",    first: "Amsterdams",   second: "Modieus",       bg: "#180818", accent: "#ff3d8a", hasImage: true,  hasVideo: true  },
-  { id: "boomer-op-marktplaats", first: "Boomer",       second: "Marktplaats",   bg: "#3d1815", accent: "#e8c882", hasImage: true,  hasVideo: true  },
-  { id: "tinder-veteraan",       first: "Tinder",       second: "Veteraan",      bg: "#3a0e2a", accent: "#f3c896", hasImage: true,  hasVideo: true  },
-  { id: "kringloop-koningin",    first: "Kringloop",    second: "Koningin",      bg: "#2c1632", accent: "#d68aaa", hasImage: true,  hasVideo: true  },
-
-  // New 12 — stills only, animated via Ken Burns instead of video.
-  { id: "bourgondische-boekhouder", first: "Bourgondische", second: "Boekhouder", bg: "#2d0a0a", accent: "#f5a623", hasImage: true,  hasVideo: false },
-  { id: "hagenese-hipster",      first: "Hagenese",     second: "Hipster",       bg: "#1a2b32", accent: "#9ee0c0", hasImage: true,  hasVideo: false },
-  { id: "achterhoekse-academicus", first: "Achterhoekse", second: "Lezer",       bg: "#1f2e1c", accent: "#d4a93a", hasImage: true,  hasVideo: false },
-  { id: "belgisch-geinfecteerd", first: "Belgisch",     second: "Geïnfecteerd",  bg: "#2b1810", accent: "#e8c882", hasImage: true,  hasVideo: false },
-  { id: "drentse-trompetterik",  first: "Drentse",      second: "Rust-Influencer", bg: "#0d2540", accent: "#f3c896", hasImage: true,  hasVideo: false },
-  { id: "limburgse-bourgondier", first: "Limburgse",    second: "Bourgondiër",   bg: "#280628", accent: "#e8b94a", hasImage: true,  hasVideo: false },
-  { id: "stadskind-van-niemand", first: "Universele",   second: "NPC",           bg: "#1f2228", accent: "#d09076", hasImage: true,  hasVideo: false },
-  { id: "friese-stille",         first: "Friese",       second: "Stille",        bg: "#1a3540", accent: "#f5d28e", hasImage: true,  hasVideo: false },
-  { id: "rotterdamse-sjef",      first: "Rotterdamse",  second: "Sjef",          bg: "#28282c", accent: "#f5b800", hasImage: true,  hasVideo: false },
-  { id: "sober-curious",         first: "Sober",        second: "Curious",       bg: "#1a4d4d", accent: "#fef9c3", hasImage: true,  hasVideo: false },
-  { id: "festival-veteraan",     first: "Festival",     second: "Veteraan",      bg: "#3a1842", accent: "#fda4af", hasImage: true,  hasVideo: false },
-  { id: "crossfit-boomer",       first: "Crossfit",     second: "Boomer",        bg: "#1c1917", accent: "#ef4444", hasImage: true,  hasVideo: false },
+  { id: "padel-pa",              first: "Padel",        second: "Pa",          bg: "#1c2440", accent: "#ff7e3a", hasImage: true, hasVideo: true },
+  { id: "yoga-mompreneur",       first: "Yoga",         second: "Mompreneur",  bg: "#3a4a3a", accent: "#e8b4a5", hasImage: true, hasVideo: true },
+  { id: "bakfietsouder",         first: "Bakfiets",     second: "Ouder",       bg: "#2a3a25", accent: "#d49a3e", hasImage: true, hasVideo: true },
+  { id: "insta-goeroe",          first: "Insta",        second: "Goeroe",      bg: "#15101e", accent: "#f4c542", hasImage: true, hasVideo: true },
+  { id: "run-club-hardloper",    first: "Run Club",     second: "Hardloper",   bg: "#0d3530", accent: "#bef264", hasImage: true, hasVideo: true },
+  { id: "ai-bestie",             first: "AI",           second: "Bestie",      bg: "#0a1830", accent: "#22d3ee", hasImage: true, hasVideo: true },
+  { id: "fatbike-tiener",        first: "Fatbike",      second: "Tiener",      bg: "#1a1612", accent: "#fb2c36", hasImage: true, hasVideo: true },
+  { id: "skibidi-kid",           first: "Skibidi",      second: "Kid",         bg: "#1a0d2e", accent: "#a855f7", hasImage: true, hasVideo: true },
+  { id: "grwm-girlie",           first: "GRWM",         second: "Girlie",      bg: "#3d0a2d", accent: "#ff66c4", hasImage: true, hasVideo: true },
+  { id: "amsterdams-modieus",    first: "Amsterdams",   second: "Modieus",     bg: "#180818", accent: "#ff3d8a", hasImage: true, hasVideo: true },
+  { id: "boomer-op-marktplaats", first: "Boomer",       second: "Marktplaats", bg: "#3d1815", accent: "#e8c882", hasImage: true, hasVideo: true },
+  { id: "tinder-veteraan",       first: "Tinder",       second: "Veteraan",    bg: "#3a0e2a", accent: "#f3c896", hasImage: true, hasVideo: true },
+  { id: "kringloop-koningin",    first: "Kringloop",    second: "Koningin",    bg: "#2c1632", accent: "#d68aaa", hasImage: true, hasVideo: true },
 ];
 
 const PANEL_COUNT = 6;
@@ -92,6 +77,8 @@ export default function HeroBanner() {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [bannerVisible, setBannerVisible] = useState(true);
   const sectionRef = useRef<HTMLElement | null>(null);
+  /** Which panel index swaps next — increments 0,1,2,3,4,5,0,1,... so the cycle is sequential not random. */
+  const nextPanelRef = useRef<number>(0);
 
   // Detect accessibility prefs
   useEffect(() => {
@@ -118,8 +105,11 @@ export default function HeroBanner() {
   useEffect(() => {
     if (reducedMotion || !bannerVisible) return;
     const interval = setInterval(() => {
-      // Pick ONE random panel to swap — keeps the rest stable so the eye has anchors.
-      const panelToSwap = Math.floor(Math.random() * PANEL_COUNT);
+      // Sequential rotation: panel 0 -> 1 -> 2 -> ... -> 5 -> 0 -> ...
+      // The character that rotates IN is still randomly picked from the unused pool, so
+      // each panel swap brings a fresh face but the cycling rhythm stays predictable.
+      const panelToSwap = nextPanelRef.current;
+      nextPanelRef.current = (nextPanelRef.current + 1) % PANEL_COUNT;
       setFadingPanel(panelToSwap);
 
       setTimeout(() => {
@@ -169,7 +159,7 @@ export default function HeroBanner() {
 
       <div className="absolute top-0 inset-x-0 px-6 sm:px-10 pt-6 flex justify-between items-baseline z-10 text-[0.65rem] sm:text-xs uppercase tracking-[0.25em] font-medium text-white/60 pointer-events-none">
         <span>SpreekJijNog · Nº 01</span>
-        <span className="hidden sm:inline">25 archetypes · Mei 2026</span>
+        <span className="hidden sm:inline">25 archetypes · Mei 2026</span>{/* full quiz pool — hero rotates 13 trending */}
       </div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10 pointer-events-none">
