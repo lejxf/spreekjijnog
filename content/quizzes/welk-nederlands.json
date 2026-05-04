@@ -9,636 +9,2040 @@
       "prompt": "Welke woorden gebruik je écht zelf?",
       "subtitle": "Vink alleen aan wat je daadwerkelijk gebruikt — niet wat je alleen kent.",
       "options": [
-        { "label": "Houdoe", "tags": { "region": "noord-brabant", "register": "informeel" } },
-        { "label": "Jonges", "tags": { "region": "noord-brabant", "register": "informeel" } },
-        { "label": "Hoi doelf", "tags": { "region": "limburg", "register": "dialect" } },
-        { "label": "Ge zijt", "tags": { "region": "vlaams/limburg", "register": "dialect" } },
-        { "label": "Goesting", "tags": { "region": "vlaams", "register": "informeel" } },
-        { "label": "Krek", "tags": { "region": "friesland", "register": "dialect", "generation": 1955 } },
-        { "label": "Moi", "tags": { "region": "groningen", "register": "dialect" } },
-        { "label": "Boude", "tags": { "region": "achterhoek", "register": "dialect" } },
-        { "label": "Doei", "tags": { "region": "hollands", "register": "informeel", "generation": 1990 } },
-        { "label": "Hoor", "tags": { "region": "hollands", "register": "informeel", "generation": 1965 } },
-        { "label": "Skeer", "tags": { "generation": 2018, "register": "straat" } },
-        { "label": "Lit", "tags": { "generation": 2017, "register": "straat" } },
-        { "label": "No cap", "tags": { "generation": 2019, "register": "straat" } },
-        { "label": "Skibidi", "tags": { "generation": 2020, "register": "straat", "vibe": "online" } },
-        { "label": "Sigma", "tags": { "generation": 2022, "register": "straat", "vibe": "online" } },
-        { "label": "Wallahi", "tags": { "generation": 2015, "register": "straat" } },
-        { "label": "Eyo", "tags": { "generation": 2010, "register": "straat", "vibe": "rauw", "region": "hollands" } },
-        { "label": "Broedie", "tags": { "generation": 2010, "register": "straat", "vibe": "rauw", "region": "hollands" } },
-        { "label": "Jeetje", "tags": { "generation": 1965, "register": "informeel" } },
-        { "label": "Krijg nou", "tags": { "generation": 1960, "register": "informeel" } },
-        { "label": "Tof", "tags": { "generation": 1975, "register": "informeel" } },
-        { "label": "Tot ziens", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Mindset", "tags": { "vibe": "online", "generation": 1985, "register": "informeel" } },
-        { "label": "Promptje", "tags": { "vibe": "online", "generation": 1985, "register": "informeel" } },
-        { "label": "Aura", "tags": { "vibe": "online", "generation": 2022, "register": "straat" } },
-        { "label": "Lekker bezig", "tags": { "vibe": "sport", "region": "hollands", "register": "informeel" } },
-        { "label": "GRWM", "tags": { "vibe": "online", "generation": 2002, "register": "informeel" } },
-        { "label": "Geachte", "tags": { "register": "formeel", "generation": 1960 } },
-        { "label": "Eens kijken hoor", "tags": { "vibe": "huiselijk", "generation": 1960, "region": "noord", "register": "informeel" } },
-        { "label": "Goh", "tags": { "register": "informeel", "generation": 1955, "region": "hollands" } }
+        {
+          "label": "Houdoe",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Jonges",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Hoi doelf",
+          "tags": {
+            "region": "limburg",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Ge zijt",
+          "tags": {
+            "region": "vlaams/limburg",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Goesting",
+          "tags": {
+            "region": "vlaams",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Krek",
+          "tags": {
+            "region": "friesland",
+            "register": "dialect",
+            "generation": 1955
+          }
+        },
+        {
+          "label": "Moi",
+          "tags": {
+            "region": "groningen",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Boude",
+          "tags": {
+            "region": "achterhoek",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Doei",
+          "tags": {
+            "region": "hollands",
+            "register": "informeel",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "Hoor",
+          "tags": {
+            "region": "hollands",
+            "register": "informeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Skeer",
+          "tags": {
+            "generation": 2018,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Lit",
+          "tags": {
+            "generation": 2017,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "No cap",
+          "tags": {
+            "generation": 2019,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Skibidi",
+          "tags": {
+            "generation": 2020,
+            "register": "straat",
+            "vibe": "online"
+          }
+        },
+        {
+          "label": "Sigma",
+          "tags": {
+            "generation": 2022,
+            "register": "straat",
+            "vibe": "online"
+          }
+        },
+        {
+          "label": "Wallahi",
+          "tags": {
+            "generation": 2015,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Eyo",
+          "tags": {
+            "generation": 2010,
+            "register": "straat",
+            "vibe": "rauw",
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Broedie",
+          "tags": {
+            "generation": 2010,
+            "register": "straat",
+            "vibe": "rauw",
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Jeetje",
+          "tags": {
+            "generation": 1965,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Krijg nou",
+          "tags": {
+            "generation": 1960,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Tof",
+          "tags": {
+            "generation": 1975,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Tot ziens",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Mindset",
+          "tags": {
+            "vibe": "online",
+            "generation": 1985,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Promptje",
+          "tags": {
+            "vibe": "online",
+            "generation": 1985,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Aura",
+          "tags": {
+            "vibe": "online",
+            "generation": 2022,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Lekker bezig",
+          "tags": {
+            "vibe": "sport",
+            "region": "hollands",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "GRWM",
+          "tags": {
+            "vibe": "online",
+            "generation": 2002,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Geachte",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Eens kijken hoor",
+          "tags": {
+            "vibe": "huiselijk",
+            "generation": 1960,
+            "region": "noord",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Goh",
+          "tags": {
+            "register": "informeel",
+            "generation": 1955,
+            "region": "hollands"
+          }
+        }
       ]
     },
     {
       "id": "q1_skeer",
       "prompt": "Wat betekent 'skeer'?",
       "options": [
-        { "label": "Geen geld hebben", "tags": { "generation": 2018, "register": "straat" } },
-        { "label": "Snel rennen" },
-        { "label": "Een beetje saai" },
-        { "label": "Klaagachtig" }
+        {
+          "label": "Geen geld hebben",
+          "tags": {
+            "generation": 2018,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Snel rennen"
+        },
+        {
+          "label": "Een beetje saai"
+        },
+        {
+          "label": "Klaagachtig"
+        }
       ]
     },
     {
       "id": "q2_houdoe",
       "prompt": "Wat zou jij zeggen tegen iemand die de winkel uitloopt?",
       "options": [
-        { "label": "Doei", "tags": { "region": "hollands", "register": "informeel", "generation": 1990 } },
-        { "label": "Hoi", "tags": { "region": "hollands", "register": "informeel", "generation": 1985 } },
-        { "label": "Houdoe", "tags": { "region": "noord-brabant", "register": "informeel" } },
-        { "label": "Tot ziens", "tags": { "register": "formeel", "generation": 1965 } }
+        {
+          "label": "Doei",
+          "tags": {
+            "region": "hollands",
+            "register": "informeel",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "Hoi",
+          "tags": {
+            "region": "hollands",
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Houdoe",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Tot ziens",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q3_moi",
       "prompt": "'Moi' is een groet uit...",
       "options": [
-        { "label": "Groningen of Friesland", "tags": { "region": "groningen", "register": "dialect" } },
-        { "label": "Limburg" },
-        { "label": "Brabant" },
-        { "label": "Drenthe" }
+        {
+          "label": "Groningen of Friesland",
+          "tags": {
+            "region": "groningen",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Limburg"
+        },
+        {
+          "label": "Brabant"
+        },
+        {
+          "label": "Drenthe"
+        }
       ]
     },
     {
       "id": "q4_goesting",
       "prompt": "Wat betekent 'goesting'?",
       "options": [
-        { "label": "Zin in iets", "tags": { "region": "vlaams", "register": "informeel" } },
-        { "label": "Honger" },
-        { "label": "Verdriet" },
-        { "label": "Nieuwsgierigheid" }
+        {
+          "label": "Zin in iets",
+          "tags": {
+            "region": "vlaams",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Honger"
+        },
+        {
+          "label": "Verdriet"
+        },
+        {
+          "label": "Nieuwsgierigheid"
+        }
       ]
     },
     {
       "id": "q5_lit",
       "prompt": "Wanneer gebruik je 'lit'?",
       "options": [
-        { "label": "Als iets mega is", "tags": { "generation": 2017, "register": "straat" } },
-        { "label": "Als iets brandt" },
-        { "label": "Als je dronken bent" },
-        { "label": "Als iets droog is" }
+        {
+          "label": "Als iets mega is",
+          "tags": {
+            "generation": 2017,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Als iets brandt"
+        },
+        {
+          "label": "Als je dronken bent"
+        },
+        {
+          "label": "Als iets droog is"
+        }
       ]
     },
     {
       "id": "q6_geen_tijd",
       "prompt": "Een vriend zegt 'ik ben helemaal volgepland'. Wat zou jij antwoorden?",
       "options": [
-        { "label": "Dat is balen, kan ik me voorstellen", "tags": { "register": "neutraal", "generation": 1980 } },
-        { "label": "Ach, een gekkenhuis hier ook", "tags": { "register": "informeel", "generation": 1975 } },
-        { "label": "No worries, ik check je later wel", "tags": { "generation": 2010, "register": "informeel" } },
-        { "label": "Kom op zeg, vroeger had je gewoon tijd", "tags": { "generation": 1955, "register": "informeel" } }
+        {
+          "label": "Dat is balen, kan ik me voorstellen",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "Ach, een gekkenhuis hier ook",
+          "tags": {
+            "register": "informeel",
+            "generation": 1975
+          }
+        },
+        {
+          "label": "No worries, ik check je later wel",
+          "tags": {
+            "generation": 2010,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Kom op zeg, vroeger had je gewoon tijd",
+          "tags": {
+            "generation": 1955,
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q7_formeel_brief",
       "prompt": "Hoe begin jij liefst een mail aan iemand die je niet kent?",
       "options": [
-        { "label": "Geachte heer/mevrouw,", "tags": { "register": "formeel", "generation": 1960 } },
-        { "label": "Beste...", "tags": { "register": "neutraal" } },
-        { "label": "Hoi!", "tags": { "register": "informeel", "generation": 1995 } },
-        { "label": "Hee...", "tags": { "register": "informeel", "generation": 2010 } }
+        {
+          "label": "Geachte heer/mevrouw,",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Beste...",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Hoi!",
+          "tags": {
+            "register": "informeel",
+            "generation": 1995
+          }
+        },
+        {
+          "label": "Hee...",
+          "tags": {
+            "register": "informeel",
+            "generation": 2010
+          }
+        }
       ]
     },
     {
       "id": "q8_jonges",
       "prompt": "Iemand zegt 'jonges' tegen een groep vrienden. Hij is...",
       "options": [
-        { "label": "Brabander", "tags": { "region": "noord-brabant", "register": "informeel" } },
-        { "label": "Limburger" },
-        { "label": "Drent" },
-        { "label": "Amsterdammer" }
+        {
+          "label": "Brabander",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Limburger"
+        },
+        {
+          "label": "Drent"
+        },
+        {
+          "label": "Amsterdammer"
+        }
       ]
     },
     {
       "id": "q9_wallahi",
       "prompt": "Een vriend roept 'wallahi'. Wat denk je?",
       "options": [
-        { "label": "Hij is jong en/of stadskind", "tags": { "generation": 2015, "register": "straat" } },
-        { "label": "Hij is moslim, simpel" },
-        { "label": "Hij overdrijft" },
-        { "label": "Hij vraagt om een gunst" }
+        {
+          "label": "Hij is jong en/of stadskind",
+          "tags": {
+            "generation": 2015,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Hij is moslim, simpel"
+        },
+        {
+          "label": "Hij overdrijft"
+        },
+        {
+          "label": "Hij vraagt om een gunst"
+        }
       ]
     },
     {
       "id": "q10_drukke_dag",
       "prompt": "Hoe omschrijf je een knetterdrukke werkdag?",
       "options": [
-        { "label": "Werkelijk overspoeld", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Gekkenhuis", "tags": { "register": "informeel", "generation": 1985 } },
-        { "label": "Echt skeer aan tijd", "tags": { "generation": 2018, "register": "straat" } },
-        { "label": "Spuugzat van het hollen", "tags": { "generation": 1970, "register": "informeel" } }
+        {
+          "label": "Werkelijk overspoeld",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Gekkenhuis",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Echt skeer aan tijd",
+          "tags": {
+            "generation": 2018,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Spuugzat van het hollen",
+          "tags": {
+            "generation": 1970,
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q11_bonafide",
       "prompt": "'Bonafide' betekent in het Nederlands?",
       "options": [
-        { "label": "Te goeder trouw, betrouwbaar", "tags": { "register": "formeel", "generation": 1970 } },
-        { "label": "Lui en sloom" },
-        { "label": "Streng, kritisch" },
-        { "label": "Verlegen of nerveus" }
+        {
+          "label": "Te goeder trouw, betrouwbaar",
+          "tags": {
+            "register": "formeel",
+            "generation": 1970
+          }
+        },
+        {
+          "label": "Lui en sloom"
+        },
+        {
+          "label": "Streng, kritisch"
+        },
+        {
+          "label": "Verlegen of nerveus"
+        }
       ]
     },
     {
       "id": "q12_eind",
       "prompt": "'Ik ben helemaal aan de eind' — hoe komt dat over?",
       "options": [
-        { "label": "Vlaamse roots of Vlaamse partner", "tags": { "region": "vlaams" } },
-        { "label": "Brabantse afkomst" },
-        { "label": "Hagenees in een rare bui" },
-        { "label": "Onhandige tikfout" }
+        {
+          "label": "Vlaamse roots of Vlaamse partner",
+          "tags": {
+            "region": "vlaams"
+          }
+        },
+        {
+          "label": "Brabantse afkomst"
+        },
+        {
+          "label": "Hagenees in een rare bui"
+        },
+        {
+          "label": "Onhandige tikfout"
+        }
       ]
     },
     {
       "id": "q13_mooie_ochtend",
       "prompt": "Hoe reageer je op een prachtige zonnige ochtend?",
       "options": [
-        { "label": "Wat een prachtige dag", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Lekker dagje, hè", "tags": { "register": "informeel", "generation": 1980 } },
-        { "label": "No cap, dit is fris", "tags": { "generation": 2019, "register": "straat" } },
-        { "label": "Goh, wat een ochtend", "tags": { "generation": 1960, "register": "informeel" } }
+        {
+          "label": "Wat een prachtige dag",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Lekker dagje, hè",
+          "tags": {
+            "register": "informeel",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "No cap, dit is fris",
+          "tags": {
+            "generation": 2019,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Goh, wat een ochtend",
+          "tags": {
+            "generation": 1960,
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q14_boude",
       "prompt": "'Boude' is dialect voor 'buiten' uit...",
       "options": [
-        { "label": "Achterhoek of Twente", "tags": { "region": "achterhoek", "register": "dialect" } },
-        { "label": "Brabant" },
-        { "label": "Drenthe" },
-        { "label": "Limburg" }
+        {
+          "label": "Achterhoek of Twente",
+          "tags": {
+            "region": "achterhoek",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Brabant"
+        },
+        {
+          "label": "Drenthe"
+        },
+        {
+          "label": "Limburg"
+        }
       ]
     },
     {
       "id": "q15_eens_kijken",
       "prompt": "Iemand zegt rustig 'eens kijken hoor' voor hij iets doet. Hij is waarschijnlijk...",
       "options": [
-        { "label": "Drent, Groninger of Fries", "tags": { "region": "noord", "register": "informeel" } },
-        { "label": "Brabander" },
-        { "label": "Limburger" },
-        { "label": "Belg" }
+        {
+          "label": "Drent, Groninger of Fries",
+          "tags": {
+            "region": "noord",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Brabander"
+        },
+        {
+          "label": "Limburger"
+        },
+        {
+          "label": "Belg"
+        }
       ]
     },
     {
       "id": "q16_no_cap",
       "prompt": "'No cap' staat voor...",
       "options": [
-        { "label": "Geen leugen, eerlijk", "tags": { "generation": 2019, "register": "straat" } },
-        { "label": "Geen pet" },
-        { "label": "Geen limiet" },
-        { "label": "Geen filter op" }
+        {
+          "label": "Geen leugen, eerlijk",
+          "tags": {
+            "generation": 2019,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Geen pet"
+        },
+        {
+          "label": "Geen limiet"
+        },
+        {
+          "label": "Geen filter op"
+        }
       ]
     },
     {
       "id": "q17_tabe",
       "prompt": "'Tabee' of 'tabe' afscheid wordt gezegd in...",
       "options": [
-        { "label": "Achterhoek/Twente vooral", "tags": { "region": "achterhoek/twente", "register": "dialect", "generation": 1960 } },
-        { "label": "Limburg" },
-        { "label": "Brabant" },
-        { "label": "Vlaanderen" }
+        {
+          "label": "Achterhoek/Twente vooral",
+          "tags": {
+            "region": "achterhoek/twente",
+            "register": "dialect",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Limburg"
+        },
+        {
+          "label": "Brabant"
+        },
+        {
+          "label": "Vlaanderen"
+        }
       ]
     },
     {
       "id": "q18_chat",
       "prompt": "Wat zou jij in een chat schrijven om hard te lachen?",
       "options": [
-        { "label": "haha", "tags": { "register": "neutraal" } },
-        { "label": "lol", "tags": { "generation": 2005, "register": "informeel" } },
-        { "label": "lmaooo", "tags": { "generation": 2015, "register": "straat" } },
-        { "label": "Amusant!", "tags": { "register": "formeel", "generation": 1965 } }
+        {
+          "label": "haha",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "lol",
+          "tags": {
+            "generation": 2005,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "lmaooo",
+          "tags": {
+            "generation": 2015,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Amusant!",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q19_jeetje",
       "prompt": "Wanneer zeg jij 'jeetje'?",
       "options": [
-        { "label": "Als iets je verbaast", "tags": { "generation": 1965, "register": "informeel" } },
-        { "label": "Als je teleurgesteld bent" },
-        { "label": "Als je iets vies vindt" },
-        { "label": "Ik gebruik dit woord nooit" }
+        {
+          "label": "Als iets je verbaast",
+          "tags": {
+            "generation": 1965,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Als je teleurgesteld bent"
+        },
+        {
+          "label": "Als je iets vies vindt"
+        },
+        {
+          "label": "Ik gebruik dit woord nooit"
+        }
       ]
     },
     {
       "id": "q20_krek",
       "prompt": "'Krek' betekent...",
       "options": [
-        { "label": "Precies, in oud-Hollands of Fries", "tags": { "region": "friesland", "generation": 1955, "register": "dialect" } },
-        { "label": "Krap aan" },
-        { "label": "Moeilijk" },
-        { "label": "Gemeen" }
+        {
+          "label": "Precies, in oud-Hollands of Fries",
+          "tags": {
+            "region": "friesland",
+            "generation": 1955,
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Krap aan"
+        },
+        {
+          "label": "Moeilijk"
+        },
+        {
+          "label": "Gemeen"
+        }
       ]
     },
     {
       "id": "q21_patatje",
       "prompt": "'Patatje speciaal' eet je het meest bij...",
       "options": [
-        { "label": "Een Hollandse snackbar", "tags": { "region": "hollands", "register": "informeel", "generation": 1980 } },
-        { "label": "Een Belgische frituur" },
-        { "label": "Een Limburgse kraam" },
-        { "label": "Geen idee, ik eet geen patat" }
+        {
+          "label": "Een Hollandse snackbar",
+          "tags": {
+            "region": "hollands",
+            "register": "informeel",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "Een Belgische frituur"
+        },
+        {
+          "label": "Een Limburgse kraam"
+        },
+        {
+          "label": "Geen idee, ik eet geen patat"
+        }
       ]
     },
     {
       "id": "q22_aanspreken",
       "prompt": "Hoe spreek je iemand aan op de markt die je niet kent?",
       "options": [
-        { "label": "Mevrouw / meneer", "tags": { "register": "formeel", "generation": 1960 } },
-        { "label": "Hè, mag ik even?", "tags": { "register": "informeel", "generation": 1985 } },
-        { "label": "Sorry hoor, momentje", "tags": { "register": "neutraal", "generation": 1980 } },
-        { "label": "Ey, mag ik wat vragen?", "tags": { "generation": 2015, "register": "straat" } }
+        {
+          "label": "Mevrouw / meneer",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Hè, mag ik even?",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Sorry hoor, momentje",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "Ey, mag ik wat vragen?",
+          "tags": {
+            "generation": 2015,
+            "register": "straat"
+          }
+        }
       ]
     },
     {
       "id": "q23_tof",
       "prompt": "Wat past het best bij 'tof'?",
       "options": [
-        { "label": "Een algemeen positief woord", "tags": { "generation": 1975, "register": "informeel" } },
-        { "label": "Specifiek voor mooie spullen" },
-        { "label": "Specifiek voor lieve mensen" },
-        { "label": "Negatief sarcastisch bedoeld" }
+        {
+          "label": "Een algemeen positief woord",
+          "tags": {
+            "generation": 1975,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Specifiek voor mooie spullen"
+        },
+        {
+          "label": "Specifiek voor lieve mensen"
+        },
+        {
+          "label": "Negatief sarcastisch bedoeld"
+        }
       ]
     },
     {
       "id": "q24_ge_zijt",
       "prompt": "'Ge zijt zot' — wie zegt dit?",
       "options": [
-        { "label": "Een Vlaming of Limburger", "tags": { "region": "vlaams/limburg", "register": "dialect" } },
-        { "label": "Een Hagenees" },
-        { "label": "Een Amsterdammer" },
-        { "label": "Een Drent" }
+        {
+          "label": "Een Vlaming of Limburger",
+          "tags": {
+            "region": "vlaams/limburg",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Een Hagenees"
+        },
+        {
+          "label": "Een Amsterdammer"
+        },
+        {
+          "label": "Een Drent"
+        }
       ]
     },
     {
       "id": "q25_vergissing",
       "prompt": "Iemand maakt een fout. Wat zeg jij?",
       "options": [
-        { "label": "Ach welnee", "tags": { "generation": 1965, "register": "informeel" } },
-        { "label": "Geen probleem joh", "tags": { "register": "neutraal" } },
-        { "label": "Maakt niks uit", "tags": { "register": "informeel", "generation": 1985 } },
-        { "label": "Geheel begrijpelijk", "tags": { "register": "formeel", "generation": 1960 } }
+        {
+          "label": "Ach welnee",
+          "tags": {
+            "generation": 1965,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Geen probleem joh",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Maakt niks uit",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Geheel begrijpelijk",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        }
       ]
     },
     {
       "id": "q26_skiplezen",
       "prompt": "'Skiplezen' is...",
       "options": [
-        { "label": "Snel doorlezen", "tags": { "generation": 1995, "register": "neutraal" } },
-        { "label": "Skien terwijl je leest" },
-        { "label": "Een soort kwis" },
-        { "label": "Stiekem plagiaat plegen" }
+        {
+          "label": "Snel doorlezen",
+          "tags": {
+            "generation": 1995,
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Skien terwijl je leest"
+        },
+        {
+          "label": "Een soort kwis"
+        },
+        {
+          "label": "Stiekem plagiaat plegen"
+        }
       ]
     },
     {
       "id": "q27_zus",
       "prompt": "'Zus' (in plaats van 'zo') gebruik je vooral als je...",
       "options": [
-        { "label": "Limburger of Brabander bent", "tags": { "region": "limburg/noord-brabant", "register": "dialect" } },
-        { "label": "Hollander bent" },
-        { "label": "Drent bent" },
-        { "label": "Belg bent" }
+        {
+          "label": "Limburger of Brabander bent",
+          "tags": {
+            "region": "limburg/noord-brabant",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Hollander bent"
+        },
+        {
+          "label": "Drent bent"
+        },
+        {
+          "label": "Belg bent"
+        }
       ]
     },
     {
       "id": "q28_aura",
       "prompt": "Gen-Z zegt iets als 'die aura is min 1000'. Wat bedoelen ze?",
       "options": [
-        { "label": "Iemands vibe op dat moment", "tags": { "generation": 2024, "register": "straat" } },
-        { "label": "Hun batterijniveau" },
-        { "label": "Hun zonneklimaat" },
-        { "label": "Een soort thee-merk" }
+        {
+          "label": "Iemands vibe op dat moment",
+          "tags": {
+            "generation": 2024,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Hun batterijniveau"
+        },
+        {
+          "label": "Hun zonneklimaat"
+        },
+        {
+          "label": "Een soort thee-merk"
+        }
       ]
     },
     {
       "id": "q29_grap_mis",
       "prompt": "Iemand vertelt een grap die niet aanslaat. Wat zeg jij?",
       "options": [
-        { "label": "Krijg nou de tering", "tags": { "generation": 1960, "register": "informeel" } },
-        { "label": "Nice try, ehm", "tags": { "generation": 2010, "register": "informeel" } },
-        { "label": "Dat was niet mijn intentie", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Was niet erg hoor", "tags": { "register": "neutraal", "generation": 1980 } }
+        {
+          "label": "Krijg nou de tering",
+          "tags": {
+            "generation": 1960,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Nice try, ehm",
+          "tags": {
+            "generation": 2010,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Dat was niet mijn intentie",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Was niet erg hoor",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1980
+          }
+        }
       ]
     },
     {
       "id": "q30_hoor",
       "prompt": "Wie eindigt zinnen vaak met 'hoor'?",
       "options": [
-        { "label": "Hollanders, vooral oudere generatie", "tags": { "region": "hollands", "generation": 1965, "register": "informeel" } },
-        { "label": "Brabanders" },
-        { "label": "Limburgers" },
-        { "label": "Belgen" }
+        {
+          "label": "Hollanders, vooral oudere generatie",
+          "tags": {
+            "region": "hollands",
+            "generation": 1965,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Brabanders"
+        },
+        {
+          "label": "Limburgers"
+        },
+        {
+          "label": "Belgen"
+        }
       ]
     },
     {
       "id": "q31_zaterdag",
       "prompt": "Wat doe je het liefst op zaterdagochtend?",
       "options": [
-        { "label": "Padel met de mannen", "tags": { "vibe": "sport", "register": "informeel", "generation": 1985 } },
-        { "label": "Yoga in de woonkamer", "tags": { "vibe": "wellness", "register": "informeel" } },
-        { "label": "Met de bakfiets naar de hortus", "tags": { "vibe": "bewust", "region": "noord-holland" } },
-        { "label": "Kringloop-ronde, kop koffie tussendoor", "tags": { "vibe": "vintage", "register": "informeel" } }
+        {
+          "label": "Padel met de mannen",
+          "tags": {
+            "vibe": "sport",
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Yoga in de woonkamer",
+          "tags": {
+            "vibe": "wellness",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Met de bakfiets naar de hortus",
+          "tags": {
+            "vibe": "bewust",
+            "region": "noord-holland"
+          }
+        },
+        {
+          "label": "Kringloop-ronde, kop koffie tussendoor",
+          "tags": {
+            "vibe": "vintage",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q32_drankje",
       "prompt": "Wat is jouw drankje van keuze?",
       "options": [
-        { "label": "Heineken op de borrel", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
-        { "label": "Oat milk latte", "tags": { "vibe": "bewust", "generation": 2018 } },
-        { "label": "Celery juice 's ochtends", "tags": { "vibe": "wellness", "generation": 2015 } },
-        { "label": "Spa rood met citroen", "tags": { "vibe": "huiselijk", "generation": 1965 } }
+        {
+          "label": "Heineken op de borrel",
+          "tags": {
+            "vibe": "no-nonsense",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Oat milk latte",
+          "tags": {
+            "vibe": "bewust",
+            "generation": 2018
+          }
+        },
+        {
+          "label": "Celery juice 's ochtends",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 2015
+          }
+        },
+        {
+          "label": "Spa rood met citroen",
+          "tags": {
+            "vibe": "huiselijk",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q33_telefoon",
       "prompt": "Welke app open je 's ochtends het eerst?",
       "options": [
-        { "label": "WhatsApp 'De Boys'", "tags": { "vibe": "sport", "register": "informeel" } },
-        { "label": "Calm of Headspace", "tags": { "vibe": "wellness", "generation": 2018 } },
-        { "label": "Marktplaats om biedingen te checken", "tags": { "vibe": "vintage", "generation": 1960 } },
-        { "label": "Tinder", "tags": { "vibe": "single", "generation": 2015 } }
+        {
+          "label": "WhatsApp 'De Boys'",
+          "tags": {
+            "vibe": "sport",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Calm of Headspace",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 2018
+          }
+        },
+        {
+          "label": "Marktplaats om biedingen te checken",
+          "tags": {
+            "vibe": "vintage",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Tinder",
+          "tags": {
+            "vibe": "single",
+            "generation": 2015
+          }
+        }
       ]
     },
     {
       "id": "q34_kleding",
       "prompt": "Wat zie je het meest in je kledingkast?",
       "options": [
-        { "label": "Witte Nike Air Force", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
-        { "label": "Vintage Marlboro denim-jas", "tags": { "vibe": "vintage" } },
-        { "label": "Linnen broek met overhemd", "tags": { "vibe": "wellness", "register": "informeel" } },
-        { "label": "Oranje Lacoste polo", "tags": { "vibe": "sport" } }
+        {
+          "label": "Witte Nike Air Force",
+          "tags": {
+            "vibe": "no-nonsense",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Vintage Marlboro denim-jas",
+          "tags": {
+            "vibe": "vintage"
+          }
+        },
+        {
+          "label": "Linnen broek met overhemd",
+          "tags": {
+            "vibe": "wellness",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Oranje Lacoste polo",
+          "tags": {
+            "vibe": "sport"
+          }
+        }
       ]
     },
     {
       "id": "q35_borrel",
       "prompt": "Hoe ziet jouw zaterdag-avond-borrel eruit?",
       "options": [
-        { "label": "Patatje en bier op de markt", "tags": { "vibe": "no-nonsense", "register": "informeel" } },
-        { "label": "Trappist met stamppot bij de buren", "tags": { "vibe": "huiselijk", "register": "informeel" } },
-        { "label": "Natuurwijn en oesters", "tags": { "vibe": "bewust", "generation": 1990 } },
-        { "label": "Aperol spritz op het terras", "tags": { "vibe": "sport", "generation": 1985 } }
+        {
+          "label": "Patatje en bier op de markt",
+          "tags": {
+            "vibe": "no-nonsense",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Trappist met stamppot bij de buren",
+          "tags": {
+            "vibe": "huiselijk",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Natuurwijn en oesters",
+          "tags": {
+            "vibe": "bewust",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "Aperol spritz op het terras",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1985
+          }
+        }
       ]
     },
     {
       "id": "q36_instagram",
       "prompt": "Wat zie je het meest op jouw Instagram-feed?",
       "options": [
-        { "label": "Padel-foto's met de groep", "tags": { "vibe": "sport" } },
-        { "label": "Yoga-stories en quotes", "tags": { "vibe": "wellness" } },
-        { "label": "Bakfiets-foto's met de kids", "tags": { "vibe": "bewust" } },
-        { "label": "Niets, ik kijk alleen", "tags": { "vibe": "vintage" } }
+        {
+          "label": "Padel-foto's met de groep",
+          "tags": {
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Yoga-stories en quotes",
+          "tags": {
+            "vibe": "wellness"
+          }
+        },
+        {
+          "label": "Bakfiets-foto's met de kids",
+          "tags": {
+            "vibe": "bewust"
+          }
+        },
+        {
+          "label": "Niets, ik kijk alleen",
+          "tags": {
+            "vibe": "vintage"
+          }
+        }
       ]
     },
     {
       "id": "q37_eerste_date",
       "prompt": "Wat is jouw eerste vraag op een eerste date?",
       "options": [
-        { "label": "Wat doe je voor werk?", "tags": { "vibe": "no-nonsense", "register": "neutraal" } },
-        { "label": "Hoe is jouw relatie met je ouders?", "tags": { "vibe": "wellness", "register": "informeel" } },
-        { "label": "Wat staat er op je leeslijst?", "tags": { "vibe": "cultureel", "register": "informeel" } },
-        { "label": "Wat is je sterrenbeeld?", "tags": { "vibe": "single", "generation": 2015 } }
+        {
+          "label": "Wat doe je voor werk?",
+          "tags": {
+            "vibe": "no-nonsense",
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Hoe is jouw relatie met je ouders?",
+          "tags": {
+            "vibe": "wellness",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Wat staat er op je leeslijst?",
+          "tags": {
+            "vibe": "cultureel",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Wat is je sterrenbeeld?",
+          "tags": {
+            "vibe": "single",
+            "generation": 2015
+          }
+        }
       ]
     },
     {
       "id": "q38_horloge",
       "prompt": "Wat draag je om je pols?",
       "options": [
-        { "label": "Apple Watch met sport-stats", "tags": { "vibe": "sport", "generation": 2018 } },
-        { "label": "Vintage Casio die ik bij oma vond", "tags": { "vibe": "vintage" } },
-        { "label": "Kralen-armband uit Bali", "tags": { "vibe": "wellness", "generation": 2010 } },
-        { "label": "Niks, ik hou ervan vrij te zijn", "tags": { "vibe": "single", "register": "informeel" } }
+        {
+          "label": "Apple Watch met sport-stats",
+          "tags": {
+            "vibe": "sport",
+            "generation": 2018
+          }
+        },
+        {
+          "label": "Vintage Casio die ik bij oma vond",
+          "tags": {
+            "vibe": "vintage"
+          }
+        },
+        {
+          "label": "Kralen-armband uit Bali",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 2010
+          }
+        },
+        {
+          "label": "Niks, ik hou ervan vrij te zijn",
+          "tags": {
+            "vibe": "single",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q39_vakantie",
       "prompt": "Wat is jouw ideale zomervakantie?",
       "options": [
-        { "label": "Sportieve fietsvakantie in Zuid-Frankrijk", "tags": { "vibe": "sport" } },
-        { "label": "Yoga-retreat in Portugal", "tags": { "vibe": "wellness" } },
-        { "label": "Camper langs de Drentse heide", "tags": { "vibe": "huiselijk", "region": "drenthe" } },
-        { "label": "Festivalweekend met vrienden", "tags": { "vibe": "single", "register": "informeel" } }
+        {
+          "label": "Sportieve fietsvakantie in Zuid-Frankrijk",
+          "tags": {
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Yoga-retreat in Portugal",
+          "tags": {
+            "vibe": "wellness"
+          }
+        },
+        {
+          "label": "Camper langs de Drentse heide",
+          "tags": {
+            "vibe": "huiselijk",
+            "region": "drenthe"
+          }
+        },
+        {
+          "label": "Festivalweekend met vrienden",
+          "tags": {
+            "vibe": "single",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q40_avond",
       "prompt": "Hoe sluit jij een doordeweekse avond af?",
       "options": [
-        { "label": "Boek en thee in een fauteuil", "tags": { "vibe": "cultureel", "register": "neutraal" } },
-        { "label": "Meditatie-app van 10 minuten", "tags": { "vibe": "wellness" } },
-        { "label": "Stoofschotel met de partner voor SBS6", "tags": { "vibe": "huiselijk", "register": "informeel" } },
-        { "label": "TikTok scrollen tot ik in slaap val", "tags": { "vibe": "single", "generation": 2020 } }
+        {
+          "label": "Boek en thee in een fauteuil",
+          "tags": {
+            "vibe": "cultureel",
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Meditatie-app van 10 minuten",
+          "tags": {
+            "vibe": "wellness"
+          }
+        },
+        {
+          "label": "Stoofschotel met de partner voor SBS6",
+          "tags": {
+            "vibe": "huiselijk",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "TikTok scrollen tot ik in slaap val",
+          "tags": {
+            "vibe": "single",
+            "generation": 2020
+          }
+        }
       ]
     },
     {
       "id": "q41_ochtend",
       "prompt": "Wat doe jij om 6:30 's ochtends?",
       "options": [
-        { "label": "Hardlopen met de boys", "tags": { "vibe": "sport", "generation": 1992, "region": "hollands" } },
-        { "label": "Mediteren met de Calm-app", "tags": { "vibe": "wellness", "generation": 2015 } },
-        { "label": "ChatGPT-prompts voor de dag", "tags": { "vibe": "online", "generation": 1985 } },
-        { "label": "Slapen, ik ben geen ochtendmens", "tags": { "vibe": "vintage", "generation": 1965 } }
+        {
+          "label": "Hardlopen met de boys",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1992,
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Mediteren met de Calm-app",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 2015
+          }
+        },
+        {
+          "label": "ChatGPT-prompts voor de dag",
+          "tags": {
+            "vibe": "online",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Slapen, ik ben geen ochtendmens",
+          "tags": {
+            "vibe": "vintage",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q42_app",
       "prompt": "Welke app is jouw heilige graal deze maand?",
       "options": [
-        { "label": "Strava voor mijn rondjes", "tags": { "vibe": "sport", "generation": 1995 } },
-        { "label": "ChatGPT voor letterlijk alles", "tags": { "vibe": "online", "register": "informeel" } },
-        { "label": "Mijn online cursus-platform", "tags": { "vibe": "online", "generation": 1990 } },
-        { "label": "Aldi-app voor de bonus-aanbiedingen", "tags": { "vibe": "vintage", "generation": 1965 } }
+        {
+          "label": "Strava voor mijn rondjes",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1995
+          }
+        },
+        {
+          "label": "ChatGPT voor letterlijk alles",
+          "tags": {
+            "vibe": "online",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Mijn online cursus-platform",
+          "tags": {
+            "vibe": "online",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "Aldi-app voor de bonus-aanbiedingen",
+          "tags": {
+            "vibe": "vintage",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q43_verkoop",
       "prompt": "Als jij iets zou verkopen, wat dan?",
       "options": [
-        { "label": "Een 12-weekse online cursus", "tags": { "vibe": "online", "register": "informeel", "generation": 1990 } },
-        { "label": "Hardloop-coaching plannen", "tags": { "vibe": "sport" } },
-        { "label": "Vintage spullen op Vinted", "tags": { "vibe": "vintage", "generation": 1995 } },
-        { "label": "Niks, dat is niet voor mij", "tags": { "vibe": "huiselijk", "register": "informeel" } }
+        {
+          "label": "Een 12-weekse online cursus",
+          "tags": {
+            "vibe": "online",
+            "register": "informeel",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "Hardloop-coaching plannen",
+          "tags": {
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Vintage spullen op Vinted",
+          "tags": {
+            "vibe": "vintage",
+            "generation": 1995
+          }
+        },
+        {
+          "label": "Niks, dat is niet voor mij",
+          "tags": {
+            "vibe": "huiselijk",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q44_vervoer",
       "prompt": "Wat is jouw ideale vervoer naar school of werk?",
       "options": [
-        { "label": "Fatbike", "tags": { "vibe": "rauw", "generation": 2012, "region": "hollands", "register": "straat" } },
-        { "label": "Stintje of bakfiets met de kinderen", "tags": { "vibe": "bewust", "region": "noord-holland", "generation": 1990 } },
-        { "label": "OV met een boek erbij", "tags": { "vibe": "cultureel", "register": "neutraal" } },
-        { "label": "Auto, kan niet zonder", "tags": { "vibe": "no-nonsense", "register": "informeel" } }
+        {
+          "label": "Fatbike",
+          "tags": {
+            "vibe": "rauw",
+            "generation": 2012,
+            "region": "hollands",
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Stintje of bakfiets met de kinderen",
+          "tags": {
+            "vibe": "bewust",
+            "region": "noord-holland",
+            "generation": 1990
+          }
+        },
+        {
+          "label": "OV met een boek erbij",
+          "tags": {
+            "vibe": "cultureel",
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Auto, kan niet zonder",
+          "tags": {
+            "vibe": "no-nonsense",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q45_schrik",
       "prompt": "Wat zeg je als je ergens van schrikt?",
       "options": [
-        { "label": "Skibidi-Ohio?!", "tags": { "vibe": "online", "generation": 2018, "register": "straat" } },
-        { "label": "Wallahi nee", "tags": { "vibe": "rauw", "generation": 2015, "register": "straat" } },
-        { "label": "Jeetje nou", "tags": { "vibe": "huiselijk", "generation": 1965, "register": "informeel" } },
-        { "label": "Echt waar?", "tags": { "register": "neutraal" } }
+        {
+          "label": "Skibidi-Ohio?!",
+          "tags": {
+            "vibe": "online",
+            "generation": 2018,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Wallahi nee",
+          "tags": {
+            "vibe": "rauw",
+            "generation": 2015,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Jeetje nou",
+          "tags": {
+            "vibe": "huiselijk",
+            "generation": 1965,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Echt waar?",
+          "tags": {
+            "register": "neutraal"
+          }
+        }
       ]
     },
     {
       "id": "q46_zaterdag_routine",
       "prompt": "Wat is je zaterdagochtend-routine?",
       "options": [
-        { "label": "Get Ready With Me video maken voor stories", "tags": { "vibe": "online", "generation": 2002, "region": "hollands", "register": "informeel" } },
-        { "label": "Hardlopen met de boys voor het ontbijt", "tags": { "vibe": "sport", "register": "informeel" } },
-        { "label": "Met een boek en koffie de tuin in", "tags": { "vibe": "cultureel", "register": "neutraal" } },
-        { "label": "Uitslapen tot 11:00, dan TikTok", "tags": { "vibe": "single", "generation": 2000 } }
+        {
+          "label": "Get Ready With Me video maken voor stories",
+          "tags": {
+            "vibe": "online",
+            "generation": 2002,
+            "region": "hollands",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Hardlopen met de boys voor het ontbijt",
+          "tags": {
+            "vibe": "sport",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Met een boek en koffie de tuin in",
+          "tags": {
+            "vibe": "cultureel",
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Uitslapen tot 11:00, dan TikTok",
+          "tags": {
+            "vibe": "single",
+            "generation": 2000
+          }
+        }
       ]
     },
     {
       "id": "q47_baas",
       "prompt": "Wat zeg je tegen je baas die een uur te laat is?",
       "options": [
-        { "label": "Geen probleem, gebeurt iedereen weleens", "tags": { "register": "neutraal", "generation": 1980 } },
-        { "label": "Goh, ook lekker bezig", "tags": { "register": "informeel", "generation": 1985, "region": "hollands" } },
-        { "label": "Ey, wat een delay", "tags": { "register": "straat", "generation": 2010, "vibe": "rauw" } },
-        { "label": "Markje, eigen carpooler verloren?", "tags": { "region": "noord-brabant", "register": "informeel" } }
+        {
+          "label": "Geen probleem, gebeurt iedereen weleens",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "Goh, ook lekker bezig",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985,
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Ey, wat een delay",
+          "tags": {
+            "register": "straat",
+            "generation": 2010,
+            "vibe": "rauw"
+          }
+        },
+        {
+          "label": "Markje, eigen carpooler verloren?",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q48_hoegaathet",
       "prompt": "Iemand vraagt 'hoe gaat het?' — wat zeg je écht?",
       "options": [
-        { "label": "Goed dank je", "tags": { "register": "neutraal" } },
-        { "label": "Lekker druk", "tags": { "register": "informeel", "generation": 1985, "region": "hollands" } },
-        { "label": "Crisis", "tags": { "register": "straat", "generation": 2018, "vibe": "single" } },
-        { "label": "Moe zo", "tags": { "register": "dialect", "region": "noord", "generation": 1965 } }
+        {
+          "label": "Goed dank je",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Lekker druk",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985,
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Crisis",
+          "tags": {
+            "register": "straat",
+            "generation": 2018,
+            "vibe": "single"
+          }
+        },
+        {
+          "label": "Moe zo",
+          "tags": {
+            "register": "dialect",
+            "region": "noord",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q49_slechtnieuws",
       "prompt": "Hoe reageer je als een vriend slecht nieuws vertelt?",
       "options": [
-        { "label": "Dat is niet leuk om te horen", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Echt klote man", "tags": { "register": "informeel", "generation": 1985 } },
-        { "label": "Wallahi balen", "tags": { "register": "straat", "generation": 2015, "vibe": "rauw" } },
-        { "label": "Allemachtig", "tags": { "register": "informeel", "generation": 1955 } }
+        {
+          "label": "Dat is niet leuk om te horen",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Echt klote man",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Wallahi balen",
+          "tags": {
+            "register": "straat",
+            "generation": 2015,
+            "vibe": "rauw"
+          }
+        },
+        {
+          "label": "Allemachtig",
+          "tags": {
+            "register": "informeel",
+            "generation": 1955
+          }
+        }
       ]
     },
     {
       "id": "q50_sollicitatie",
       "prompt": "Hoe begin je een sollicitatiebrief?",
       "options": [
-        { "label": "Geachte heer/mevrouw,", "tags": { "register": "formeel", "generation": 1960 } },
-        { "label": "Beste [Naam],", "tags": { "register": "neutraal", "generation": 1985 } },
-        { "label": "Hoi, ik ben...", "tags": { "register": "informeel", "generation": 1995 } },
-        { "label": "Eyo, ik solliciteer voor de functie", "tags": { "register": "straat", "generation": 2015 } }
+        {
+          "label": "Geachte heer/mevrouw,",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Beste [Naam],",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1985
+          }
+        },
+        {
+          "label": "Hoi, ik ben...",
+          "tags": {
+            "register": "informeel",
+            "generation": 1995
+          }
+        },
+        {
+          "label": "Eyo, ik solliciteer voor de functie",
+          "tags": {
+            "register": "straat",
+            "generation": 2015
+          }
+        }
       ]
     },
     {
       "id": "q51_compliment",
       "prompt": "Wat zeg je als iemand je een compliment geeft?",
       "options": [
-        { "label": "Dank je wel", "tags": { "register": "neutraal" } },
-        { "label": "Lol nee joh", "tags": { "register": "informeel", "generation": 1995 } },
-        { "label": "Gewoon eerlijk", "tags": { "register": "straat", "generation": 2018, "vibe": "single" } },
-        { "label": "Kom op zeg", "tags": { "register": "informeel", "generation": 1965, "region": "hollands" } }
+        {
+          "label": "Dank je wel",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Lol nee joh",
+          "tags": {
+            "register": "informeel",
+            "generation": 1995
+          }
+        },
+        {
+          "label": "Gewoon eerlijk",
+          "tags": {
+            "register": "straat",
+            "generation": 2018,
+            "vibe": "single"
+          }
+        },
+        {
+          "label": "Kom op zeg",
+          "tags": {
+            "register": "informeel",
+            "generation": 1965,
+            "region": "hollands"
+          }
+        }
       ]
     },
     {
       "id": "q52_voetbal",
       "prompt": "Hoe vraag je vrienden om mee te kijken naar voetbal?",
       "options": [
-        { "label": "Mannen, kijken jullie morgen?", "tags": { "vibe": "sport", "register": "informeel", "region": "hollands" } },
-        { "label": "Jonges! NAC speelt morgen", "tags": { "region": "noord-brabant", "register": "informeel", "vibe": "sport" } },
-        { "label": "Eredivisie sesh tomorrow @ mijn kraak", "tags": { "register": "straat", "generation": 2005, "vibe": "single" } },
-        { "label": "Heeft iemand zin om te kijken?", "tags": { "register": "neutraal" } }
+        {
+          "label": "Mannen, kijken jullie morgen?",
+          "tags": {
+            "vibe": "sport",
+            "register": "informeel",
+            "region": "hollands"
+          }
+        },
+        {
+          "label": "Jonges! NAC speelt morgen",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel",
+            "vibe": "sport"
+          }
+        },
+        {
+          "label": "Eredivisie sesh tomorrow @ mijn kraak",
+          "tags": {
+            "register": "straat",
+            "generation": 2005,
+            "vibe": "single"
+          }
+        },
+        {
+          "label": "Heeft iemand zin om te kijken?",
+          "tags": {
+            "register": "neutraal"
+          }
+        }
       ]
     },
     {
       "id": "q53_kerstkaart",
       "prompt": "Wat schrijf je in een kerstkaart voor je tante?",
       "options": [
-        { "label": "Geheel goede feestdagen", "tags": { "register": "formeel", "generation": 1960 } },
-        { "label": "Fijne dagen tante!", "tags": { "register": "informeel", "generation": 1985, "vibe": "huiselijk" } },
-        { "label": "Happy holidays auntie ✨", "tags": { "register": "informeel", "generation": 2002, "vibe": "online" } },
-        { "label": "Doei doei tot volgend jaar", "tags": { "register": "informeel", "region": "hollands", "generation": 1975 } }
+        {
+          "label": "Geheel goede feestdagen",
+          "tags": {
+            "register": "formeel",
+            "generation": 1960
+          }
+        },
+        {
+          "label": "Fijne dagen tante!",
+          "tags": {
+            "register": "informeel",
+            "generation": 1985,
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Happy holidays auntie ✨",
+          "tags": {
+            "register": "informeel",
+            "generation": 2002,
+            "vibe": "online"
+          }
+        },
+        {
+          "label": "Doei doei tot volgend jaar",
+          "tags": {
+            "register": "informeel",
+            "region": "hollands",
+            "generation": 1975
+          }
+        }
       ]
     },
     {
       "id": "q54_koffie",
       "prompt": "Hoe vraag je je partner of ze koffie wilt?",
       "options": [
-        { "label": "Wil je een kop koffie?", "tags": { "register": "neutraal" } },
-        { "label": "Bakkie doen?", "tags": { "register": "informeel", "region": "hollands", "generation": 1980 } },
-        { "label": "Koffietje?", "tags": { "region": "noord-brabant", "register": "informeel" } },
-        { "label": "Coffee?", "tags": { "register": "informeel", "generation": 2015, "vibe": "online" } }
+        {
+          "label": "Wil je een kop koffie?",
+          "tags": {
+            "register": "neutraal"
+          }
+        },
+        {
+          "label": "Bakkie doen?",
+          "tags": {
+            "register": "informeel",
+            "region": "hollands",
+            "generation": 1980
+          }
+        },
+        {
+          "label": "Koffietje?",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Coffee?",
+          "tags": {
+            "register": "informeel",
+            "generation": 2015,
+            "vibe": "online"
+          }
+        }
       ]
     },
     {
       "id": "q55_idioom",
       "prompt": "Wat betekent 'de kat uit de boom kijken'?",
       "options": [
-        { "label": "Afwachten voordat je iets doet", "tags": { "register": "neutraal", "generation": 1965 } },
-        { "label": "Iemand ergens uit halen" },
-        { "label": "Een geheim ontdekken" },
-        { "label": "Een kat helpen" }
+        {
+          "label": "Afwachten voordat je iets doet",
+          "tags": {
+            "register": "neutraal",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Iemand ergens uit halen"
+        },
+        {
+          "label": "Een geheim ontdekken"
+        },
+        {
+          "label": "Een kat helpen"
+        }
       ]
     },
     {
       "id": "q56_kennen",
       "prompt": "Welk van deze woorden gebruik jij echt zelf?",
       "options": [
-        { "label": "Abusievelijk", "tags": { "register": "formeel", "generation": 1965 } },
-        { "label": "Wallahi", "tags": { "register": "straat", "generation": 2015, "vibe": "rauw" } },
-        { "label": "Moi", "tags": { "region": "groningen", "register": "dialect" } },
-        { "label": "Goesting", "tags": { "region": "vlaams", "register": "informeel" } }
+        {
+          "label": "Abusievelijk",
+          "tags": {
+            "register": "formeel",
+            "generation": 1965
+          }
+        },
+        {
+          "label": "Wallahi",
+          "tags": {
+            "register": "straat",
+            "generation": 2015,
+            "vibe": "rauw"
+          }
+        },
+        {
+          "label": "Moi",
+          "tags": {
+            "region": "groningen",
+            "register": "dialect"
+          }
+        },
+        {
+          "label": "Goesting",
+          "tags": {
+            "region": "vlaams",
+            "register": "informeel"
+          }
+        }
       ]
     },
     {
       "id": "q57_drinken",
       "prompt": "Wat drink je liefst op een vrijdagavond?",
       "options": [
-        { "label": "Mocktail of Seedlip met tonic", "tags": { "vibe": "wellness", "generation": 1990, "register": "informeel" } },
-        { "label": "Glas natuurwijn of biologische rosé", "tags": { "vibe": "wellness", "generation": 1985, "register": "informeel" } },
-        { "label": "Trappist of speciaalbier", "tags": { "vibe": "huiselijk", "generation": 1975, "register": "informeel" } },
-        { "label": "Bier op de borrel met de mannen", "tags": { "vibe": "sport", "register": "informeel", "region": "hollands" } }
+        {
+          "label": "Mocktail of Seedlip met tonic",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 1990,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Glas natuurwijn of biologische rosé",
+          "tags": {
+            "vibe": "wellness",
+            "generation": 1985,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Trappist of speciaalbier",
+          "tags": {
+            "vibe": "huiselijk",
+            "generation": 1975,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Bier op de borrel met de mannen",
+          "tags": {
+            "vibe": "sport",
+            "register": "informeel",
+            "region": "hollands"
+          }
+        }
       ]
     },
     {
       "id": "q58_zondag_eten",
       "prompt": "Wat eet je het liefst op zondag?",
       "options": [
-        { "label": "Stamppot met rookworst", "tags": { "region": "noord-brabant", "register": "informeel", "vibe": "huiselijk", "generation": 1975 } },
-        { "label": "Vlaai met koffie", "tags": { "region": "limburg", "register": "dialect", "vibe": "huiselijk" } },
-        { "label": "Mosselen of patat-frituur", "tags": { "region": "vlaams", "register": "informeel", "vibe": "huiselijk" } },
-        { "label": "Brunch met poké bowl", "tags": { "region": "hollands", "vibe": "cultureel", "generation": 1990 } }
+        {
+          "label": "Stamppot met rookworst",
+          "tags": {
+            "region": "noord-brabant",
+            "register": "informeel",
+            "vibe": "huiselijk",
+            "generation": 1975
+          }
+        },
+        {
+          "label": "Vlaai met koffie",
+          "tags": {
+            "region": "limburg",
+            "register": "dialect",
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Mosselen of patat-frituur",
+          "tags": {
+            "region": "vlaams",
+            "register": "informeel",
+            "vibe": "huiselijk"
+          }
+        },
+        {
+          "label": "Brunch met poké bowl",
+          "tags": {
+            "region": "hollands",
+            "vibe": "cultureel",
+            "generation": 1990
+          }
+        }
       ]
     },
     {
       "id": "q59_ai_gebruik",
       "prompt": "Waarvoor gebruik je AI het meest?",
       "options": [
-        { "label": "Mailtjes en planning schrijven", "tags": { "vibe": "online", "generation": 1985, "register": "informeel" } },
-        { "label": "Cursus-content of pitches maken", "tags": { "vibe": "online", "generation": 1990, "register": "informeel" } },
-        { "label": "Grappen verzinnen of meme-teksten", "tags": { "vibe": "online", "generation": 2010, "register": "straat" } },
-        { "label": "Niks, ben er niet mee bezig", "tags": { "vibe": "huiselijk", "generation": 1965 } }
+        {
+          "label": "Mailtjes en planning schrijven",
+          "tags": {
+            "vibe": "online",
+            "generation": 1985,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Cursus-content of pitches maken",
+          "tags": {
+            "vibe": "online",
+            "generation": 1990,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Grappen verzinnen of meme-teksten",
+          "tags": {
+            "vibe": "online",
+            "generation": 2010,
+            "register": "straat"
+          }
+        },
+        {
+          "label": "Niks, ben er niet mee bezig",
+          "tags": {
+            "vibe": "huiselijk",
+            "generation": 1965
+          }
+        }
       ]
     },
     {
       "id": "q60_sport",
       "prompt": "Wat is jouw signature sport?",
       "options": [
-        { "label": "Padel met de mannen", "tags": { "vibe": "sport", "generation": 1980, "region": "hollands", "register": "informeel" } },
-        { "label": "Hardlopen, halve marathons", "tags": { "vibe": "sport", "generation": 1995, "region": "hollands", "register": "informeel" } },
-        { "label": "Crossfit, om 07:00", "tags": { "vibe": "sport", "generation": 1962, "register": "informeel" } },
-        { "label": "Wandelen of gewoon fietsen", "tags": { "vibe": "huiselijk", "register": "neutraal" } }
+        {
+          "label": "Padel met de mannen",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1980,
+            "region": "hollands",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Hardlopen, halve marathons",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1995,
+            "region": "hollands",
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Crossfit, om 07:00",
+          "tags": {
+            "vibe": "sport",
+            "generation": 1962,
+            "register": "informeel"
+          }
+        },
+        {
+          "label": "Wandelen of gewoon fietsen",
+          "tags": {
+            "vibe": "huiselijk",
+            "register": "neutraal"
+          }
+        }
       ]
     }
   ],
@@ -647,176 +2051,437 @@
       "id": "bourgondische-boekhouder",
       "name": "Bourgondische Boekhouder",
       "description": "Werkt 4-daags bij accountancy in Tilburg, vrijdag heilig. WhatsApp-groep 'De Mannen 🍷' organiseert maandelijkse winetastings in elkaars schuren. Borrelplankjes op Insta met 'gewoon zaterdag bij ons'. Rosé in de tuin met overkapping en LED-strips. Witte Tesla, Stintje voor de kids. Zegt 'jonges' tegen z'n padel-maten zonder ironie.",
-      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "noord-brabant/limburg", "register": "informeel", "vibe": "huiselijk" },
-      "colors": { "bg": "#2d0a0a", "accent": "#f5a623", "text": "#fbf0e0" }
+      "axes": {
+        "generation_min": 1970,
+        "generation_max": 1990,
+        "region": "noord-brabant/limburg",
+        "register": "informeel",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#2d0a0a",
+        "accent": "#f5a623",
+        "text": "#fbf0e0"
+      }
     },
     {
       "id": "hagenese-hipster",
       "name": "Hagenese Hipster",
       "description": "Strategy bij een agency op de Bezuidenhoutseweg, side-Substack over Dutch politiek. Bocca pour-over 's ochtends, Brouwerij De Molen op vrijdag. Eames lounger gespot op Marktplaats voor €1.200. Norse Projects sweater, Aesop hand soap. Studio Dumbar print ingelijst. Wisselt 'lekker bezig' en 'krek' af zonder erbij na te denken.",
-      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "zuid-holland/hollands", "register": "informeel", "vibe": "cultureel" },
-      "colors": { "bg": "#1a2b32", "accent": "#9ee0c0", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 2000,
+        "region": "zuid-holland/hollands",
+        "register": "informeel",
+        "vibe": "cultureel"
+      },
+      "colors": {
+        "bg": "#1a2b32",
+        "accent": "#9ee0c0",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "achterhoekse-academicus",
       "name": "Achterhoekse Lezer",
       "description": "Filosofie in Nijmegen, gepromoveerd in iets onverkoopbaars. BookTok-account met 4.000 followers over 'cozy leeshoek-content'. Sticky notes voor spicy chapters in Sarah J. Maas en Donna Tartt. Abonnement op De Groene én NRC, schrijft brieven aan de redactie. Border collie heet Kafka. Wandelt elke zondag in het Bergherbos. Sterke mening over de N18.",
-      "axes": { "generation_min": 1960, "generation_max": 1985, "region": "achterhoek/twente/gelderland", "register": "formeel", "vibe": "cultureel" },
-      "colors": { "bg": "#1f2e1c", "accent": "#d4a93a", "text": "#f4ede0" }
+      "axes": {
+        "generation_min": 1960,
+        "generation_max": 1985,
+        "region": "achterhoek/twente/gelderland",
+        "register": "formeel",
+        "vibe": "cultureel"
+      },
+      "colors": {
+        "bg": "#1f2e1c",
+        "accent": "#d4a93a",
+        "text": "#f4ede0"
+      }
     },
     {
       "id": "belgisch-geinfecteerd",
       "name": "Belgisch Geïnfecteerd",
       "description": "Drie jaar in Antwerpen gewoond, of had ooit een Vlaamse vriend(in) waarvan de zinsbouw bleef plakken. Volgt Belgische foodbloggers op Insta, kent een fritkot in Berchem op naam. Trappist op donderdag (Westmalle of Orval). WhatsApp-status: 'goesting in een waterzooi vanavond'. Kijkt 'Thuis' op woensdag terwijl 'ie er niks aan vindt. Reageert verbaasd als iemand zegt dat 'ie 'beetje Belgisch' klinkt.",
-      "axes": { "generation_min": 1970, "generation_max": 2000, "region": "vlaams", "register": "informeel", "vibe": "huiselijk" },
-      "colors": { "bg": "#2b1810", "accent": "#e8c882", "text": "#f4ede0" }
+      "axes": {
+        "generation_min": 1970,
+        "generation_max": 2000,
+        "region": "vlaams",
+        "register": "informeel",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#2b1810",
+        "accent": "#e8c882",
+        "text": "#f4ede0"
+      }
     },
     {
       "id": "amsterdams-modieus",
       "name": "Amsterdams Modieus",
       "description": "Studeert content of communication aan UvA of HvA, freelance-fase ingegaan bij een sociale-media-agency. Stanley cup in pasteltint, vintage Carhartt thrifted op de Albert Cuyp, AirPods Pro 24/7. Halal slager op naam. Havermout 's ochtends, kapsalon om 23:00. Wisselt 'no cap', 'wallahi' en 'gewoon eerlijk' af. LinkedIn-post over een privé-aankoop minstens één keer per maand.",
-      "axes": { "generation_min": 2000, "generation_max": 2025, "region": "noord-holland/hollands", "register": "straat", "vibe": "bewust" },
-      "colors": { "bg": "#180818", "accent": "#ff3d8a", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 2000,
+        "generation_max": 2025,
+        "region": "noord-holland/hollands",
+        "register": "straat",
+        "vibe": "bewust"
+      },
+      "colors": {
+        "bg": "#180818",
+        "accent": "#ff3d8a",
+        "text": "#ffffff"
+      },
+      "image": "/images/amsterdams-modieus.jpg"
     },
     {
       "id": "drentse-trompetterik",
       "name": "Drentse Rust-Influencer",
       "description": "Woont op een paar km van het dichtstbijzijnde dorp. Hond zonder leiband, postcode-loterij ja-bewoner. Insta-account met 13K followers over 'rustig oud worden in Drenthe', captions als 'er gebeurt nooit iets en dat is mooi'. Wandelroutes in 30km straal blind. 'Eens kijken hoor' voor 'ie iets doet. Pickup-camper voor de zomer. Stoofschotel met augurken op woensdag.",
-      "axes": { "generation_min": 1955, "generation_max": 1980, "region": "drenthe/groningen/noord", "register": "dialect", "vibe": "no-nonsense" },
-      "colors": { "bg": "#0d2540", "accent": "#f3c896", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1955,
+        "generation_max": 1980,
+        "region": "drenthe/groningen/noord",
+        "register": "dialect",
+        "vibe": "no-nonsense"
+      },
+      "colors": {
+        "bg": "#0d2540",
+        "accent": "#f3c896",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "limburgse-bourgondier",
       "name": "Limburgse Bourgondiër",
       "description": "Vasteloavendsmedaille aan de muur naast MVV- of Roda-shawl. Vlaai van Bobbejaan op verjaardagen, mosterdsoep met balletjes, mosselen in Maastricht. WhatsApp-groep met carnavalsverenigingsleden, 280 deelnemers. Heuvelland-fietsroute uit het hoofd. Insta vol carnavalsfoto's onder een ijsmaffe filter. Zegt 'hoi doelf' tegen iedereen onder de 60. Vier maaltijden per dag minimum.",
-      "axes": { "generation_min": 1960, "generation_max": 1990, "region": "limburg", "register": "dialect", "vibe": "huiselijk" },
-      "colors": { "bg": "#280628", "accent": "#e8b94a", "text": "#fbf0e0" }
+      "axes": {
+        "generation_min": 1960,
+        "generation_max": 1990,
+        "region": "limburg",
+        "register": "dialect",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#280628",
+        "accent": "#e8b94a",
+        "text": "#fbf0e0"
+      }
     },
     {
       "id": "stadskind-van-niemand",
       "name": "Universele NPC",
       "description": "Heeft de 'NPC'-meme helemaal omarmd, ironisch-zelfbewust over basic zijn. HEMA mok zonder spreuk, NS-kaart automatisch in achterzak, brood met smeerkaas in lunchpauze. Spotify Daily Mix #4 vooral. Reels met 'normal day in NL' content over autorijden in de file. 'Oké super' als bevestiging. Onverschillig over kroket vs frikandel. Voetbal kijken zonder team.",
-      "axes": { "generation_min": 1980, "generation_max": 2005, "region": "hollands", "register": "neutraal" },
-      "colors": { "bg": "#1f2228", "accent": "#d09076", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1980,
+        "generation_max": 2005,
+        "region": "hollands",
+        "register": "neutraal"
+      },
+      "colors": {
+        "bg": "#1f2228",
+        "accent": "#d09076",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "padel-pa",
       "name": "Padel Pa",
       "description": "Hoogopgeleide blue-chip-baan ergens tussen consultancy en finance, drie keer per week padel met 'de mannen', oranje Lacoste polo voor het weekend, witte Tesla op de oprit. WhatsApp-groep heet 'De Boys 🎾'. Zegt 'wij hebben net een mooie deal gesloten' op zaterdagochtend in de auto.",
-      "axes": { "generation_min": 1975, "generation_max": 1990, "region": "noord-holland/hollands", "register": "informeel", "vibe": "sport" },
-      "colors": { "bg": "#1c2440", "accent": "#ff7e3a", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1975,
+        "generation_max": 1990,
+        "region": "noord-holland/hollands",
+        "register": "informeel",
+        "vibe": "sport"
+      },
+      "colors": {
+        "bg": "#1c2440",
+        "accent": "#ff7e3a",
+        "text": "#ffffff"
+      },
+      "image": "/images/padel-pa.jpg"
     },
     {
       "id": "yoga-mompreneur",
       "name": "Yoga Mompreneur",
       "description": "Heeft een coach-bedrijfje genaamd iets met _wellbeing of _leadership, woont in Bussum of Amstelveen, drinkt celery juice 's ochtends. Zegt 'ik leef écht vanuit mijn waarden'. Drie kinderen die Floor, Sem en Janne heten. Linnen broek in alle seizoenen.",
-      "axes": { "generation_min": 1975, "generation_max": 1992, "region": "hollands/noord-holland", "register": "informeel", "vibe": "wellness" },
-      "colors": { "bg": "#3a4a3a", "accent": "#e8b4a5", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1975,
+        "generation_max": 1992,
+        "region": "hollands/noord-holland",
+        "register": "informeel",
+        "vibe": "wellness"
+      },
+      "colors": {
+        "bg": "#3a4a3a",
+        "accent": "#e8b4a5",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "bakfietsouder",
       "name": "Bakfiets Ouder",
       "description": "Hortus van de Maan op zaterdag, zoon heet Tobias, biologische marshmallows mee naar de speeltuin. 'Wij gaan dit jaar geen vlees eten,' zegt 'ie weer. Stintje voor de school-run. Niet vaccin-hesitant maar wel kritisch op vergunning-traag-Amsterdam.",
-      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "noord-holland/utrecht/hollands", "register": "informeel", "vibe": "bewust" },
-      "colors": { "bg": "#2a3a25", "accent": "#d49a3e", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1998,
+        "region": "noord-holland/utrecht/hollands",
+        "register": "informeel",
+        "vibe": "bewust"
+      },
+      "colors": {
+        "bg": "#2a3a25",
+        "accent": "#d49a3e",
+        "text": "#ffffff"
+      },
+      "image": "/images/bakfietsouder.jpg"
     },
     {
       "id": "boomer-op-marktplaats",
       "name": "Boomer Marktplaats",
       "description": "Fietst dagelijks naar de bakker, NS-jaarkaart in achterzak, kijkt iedereen wakker met biedingen op vintage Pastoe-kasten en complete Meccano-sets. Schrijft 'schatje vol zit erin' als WhatsApp-status. Weet alle benzineprijzen van Eindhoven tot Hoorn.",
-      "axes": { "generation_min": 1950, "generation_max": 1968, "region": "hollands", "register": "informeel", "vibe": "vintage" },
-      "colors": { "bg": "#3d1815", "accent": "#e8c882", "text": "#fbf0e0" }
+      "axes": {
+        "generation_min": 1950,
+        "generation_max": 1968,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "vintage"
+      },
+      "colors": {
+        "bg": "#3d1815",
+        "accent": "#e8c882",
+        "text": "#fbf0e0"
+      },
+      "image": "/images/boomer-op-marktplaats.jpg"
     },
     {
       "id": "kringloop-koningin",
       "name": "Kringloop Koningin",
       "description": "Elke zaterdag de ronde langs de kringloopwinkels, draagt vintage Marlboro denim-jas, 'alles in mijn huis is een verhaal'. Woont in een 50m² benedenwoning vol stuff. Spotify draait The Velvet Underground en Selah Sue afwisselend.",
-      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "hollands/noord-brabant", "register": "informeel", "vibe": "vintage" },
-      "colors": { "bg": "#2c1632", "accent": "#d68aaa", "text": "#fbf0e0" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 2000,
+        "region": "hollands/noord-brabant",
+        "register": "informeel",
+        "vibe": "vintage"
+      },
+      "colors": {
+        "bg": "#2c1632",
+        "accent": "#d68aaa",
+        "text": "#fbf0e0"
+      },
+      "image": "/images/kringloop-koningin.jpg"
     },
     {
       "id": "friese-stille",
       "name": "Friese Stille",
       "description": "Antwoordt met één woord, drinkt koffie zwart, weet alle koeien-geluiden van zien. 'Krek' zegt ze elke dag. Fietst tegen de wind in tot Workum als afleiding. Doet wel mee aan Sonja's Kapsalon-theatershow met een glimlach.",
-      "axes": { "generation_min": 1970, "generation_max": 1990, "region": "friesland", "register": "dialect", "vibe": "huiselijk" },
-      "colors": { "bg": "#1a3540", "accent": "#f5d28e", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1970,
+        "generation_max": 1990,
+        "region": "friesland",
+        "register": "dialect",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#1a3540",
+        "accent": "#f5d28e",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "rotterdamse-sjef",
       "name": "Rotterdamse Sjef",
       "description": "'Tegelin? Tegelin niet, gezien'n.' Werkt ergens in de haven of bij een groot logistiek bedrijf, draagt witte Nike Air Force, eet patatje met op de markt op zaterdag. Denkt niks van Amsterdam. Accepteert geen gezeik.",
-      "axes": { "generation_min": 1975, "generation_max": 1995, "region": "zuid-holland", "register": "informeel", "vibe": "no-nonsense" },
-      "colors": { "bg": "#28282c", "accent": "#f5b800", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1975,
+        "generation_max": 1995,
+        "region": "zuid-holland",
+        "register": "informeel",
+        "vibe": "no-nonsense"
+      },
+      "colors": {
+        "bg": "#28282c",
+        "accent": "#f5b800",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "tinder-veteraan",
       "name": "Tinder Veteraan",
       "description": "Drie jaar geleden voor het eerst ge-swiped, nu nog steeds bezig. Ironisch over de hele toestand maar net niet ironisch genoeg om er echt af te zijn. Noemt zichzelf 'the catch you missed in 2019'. Boekhandel-date als second move altijd. Kent alle Amsterdamse tweede-date-bars.",
-      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "single" },
-      "colors": { "bg": "#3a0e2a", "accent": "#f3c896", "text": "#fbf0e0" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1998,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "single"
+      },
+      "colors": {
+        "bg": "#3a0e2a",
+        "accent": "#f3c896",
+        "text": "#fbf0e0"
+      },
+      "image": "/images/tinder-veteraan.jpg"
     },
     {
       "id": "run-club-hardloper",
       "name": "Run Club Hardloper",
       "description": "Garmin Forerunner aan de pols, Strava op het scherm voor het ontbijt. WhatsApp-groep heet 'De Boys 🏃'. Schopt zich uit bed om 6:30 ondanks de regen. Decopolo gel als zaterdagse lange duurloop. Kent alle Vondelpark-rondjes en hun precieze afstanden. Eerste vraag op verjaardag: 'wanneer heb jij voor het laatst gelopen?'",
-      "axes": { "generation_min": 1985, "generation_max": 2000, "region": "hollands/noord-holland", "register": "informeel", "vibe": "sport" },
-      "colors": { "bg": "#0d3530", "accent": "#bef264", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 2000,
+        "region": "hollands/noord-holland",
+        "register": "informeel",
+        "vibe": "sport"
+      },
+      "colors": {
+        "bg": "#0d3530",
+        "accent": "#bef264",
+        "text": "#ffffff"
+      },
+      "image": "/images/run-club-hardloper.jpg"
     },
     {
       "id": "ai-bestie",
       "name": "AI-Bestie",
       "description": "Heeft ChatGPT op de eerste plek in het dock. Schrijft sollicitatiemails, plant vakanties, ontwerpt jeugdfeestjes — alles met AI. Zegt 'ik heb het er met ChatGPT over gehad' alsof dat een collega is. LinkedIn-post over hoe AI zijn workflow heeft veranderd minstens een keer per maand. Spreekt het woord 'promptje' tegenwoordig zonder twijfel.",
-      "axes": { "generation_min": 1980, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "online" },
-      "colors": { "bg": "#0a1830", "accent": "#22d3ee", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1980,
+        "generation_max": 1998,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "online"
+      },
+      "colors": {
+        "bg": "#0a1830",
+        "accent": "#22d3ee",
+        "text": "#ffffff"
+      },
+      "image": "/images/ai-bestie.jpg"
     },
     {
       "id": "insta-goeroe",
       "name": "Insta-Goeroe",
       "description": "Begon als 'echte' professional, ontdekte vier jaar geleden dat hij beter geld verdient door anderen iets te leren. Verkoopt cursus '12 weken naar financiële vrijheid'. Zes Instagram-stories per dag met motivational quotes vanaf rooftop pool in Bali of Dubai. Mastermind-community op Telegram met 800 leden. Gebruikt 'mindset' minstens drie keer per dag. WhatsApp-status: 'Are you ready to transform your life?'",
-      "axes": { "generation_min": 1985, "generation_max": 1995, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
-      "colors": { "bg": "#15101e", "accent": "#f4c542", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1995,
+        "region": "noord-holland/hollands",
+        "register": "informeel",
+        "vibe": "online"
+      },
+      "colors": {
+        "bg": "#15101e",
+        "accent": "#f4c542",
+        "text": "#ffffff"
+      },
+      "image": "/images/insta-goeroe.jpg"
     },
     {
       "id": "fatbike-tiener",
       "name": "Fatbike Tiener",
       "description": "Reed sinds zijn dertiende op een Apollo Phantom, helm meestal in de hand. WhatsApp-status: 🤙. Schiet vrijdag-avond door de winkelstraat met de boys, checkt bij Mc Donald's. 'Broedie schiet door' is het levensmotto. Heeft minstens één dummy-account voor 'Spotify scammen'. Begint elk antwoord met 'eyo'. Vader staat 's avonds op de oprit te wachten met handen in de zij.",
-      "axes": { "generation_min": 2008, "generation_max": 2014, "region": "noord-holland/hollands", "register": "straat", "vibe": "rauw" },
-      "colors": { "bg": "#1a1612", "accent": "#fb2c36", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 2008,
+        "generation_max": 2014,
+        "region": "noord-holland/hollands",
+        "register": "straat",
+        "vibe": "rauw"
+      },
+      "colors": {
+        "bg": "#1a1612",
+        "accent": "#fb2c36",
+        "text": "#ffffff"
+      },
+      "image": "/images/fatbike-tiener.jpg"
     },
     {
       "id": "skibidi-kid",
       "name": "Skibidi Kid",
       "description": "Roept 'skibidi sigma Ohio' tegen z'n moeder als ze hem aan tafel roept. Speelt Roblox vier uur per dag, kent alle 'aura'-rangen. iPad-fed sinds eerste verjaardag. Begrijpt vlogs van YouTubers met namen als Lazarbeam beter dan z'n schoolboeken. Eet exclusief witte voedingsmiddelen op verjaardagen. Vraagt 'wat is jouw rizz score' aan vreemden.",
-      "axes": { "generation_min": 2014, "generation_max": 2020, "region": "hollands", "register": "straat", "vibe": "online" },
-      "colors": { "bg": "#1a0d2e", "accent": "#a855f7", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 2014,
+        "generation_max": 2020,
+        "region": "hollands",
+        "register": "straat",
+        "vibe": "online"
+      },
+      "colors": {
+        "bg": "#1a0d2e",
+        "accent": "#a855f7",
+        "text": "#ffffff"
+      },
+      "image": "/images/skibidi-kid.jpg"
     },
     {
       "id": "grwm-girlie",
       "name": "GRWM Girlie",
       "description": "Doet elke ochtend een Get Ready With Me video voor 8.000 followers. Lash extensions, lipgloss, contour, blush draws. Drinkt iced matcha bij Pancakes Amsterdam. Werkt iets in marketing of styling. WhatsApp-status: 'unbothered ✨'. Heeft een 'capsule wardrobe' artikel gespaard. Praat met soft-Amerikaanse intonation: 'liiiiteralllyy'.",
-      "axes": { "generation_min": 1998, "generation_max": 2005, "region": "noord-holland/hollands", "register": "informeel", "vibe": "online" },
-      "colors": { "bg": "#3d0a2d", "accent": "#ff66c4", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1998,
+        "generation_max": 2005,
+        "region": "noord-holland/hollands",
+        "register": "informeel",
+        "vibe": "online"
+      },
+      "colors": {
+        "bg": "#3d0a2d",
+        "accent": "#ff66c4",
+        "text": "#ffffff"
+      },
+      "image": "/images/grwm-girlie.jpg"
     },
     {
       "id": "sober-curious",
       "name": "Sober Curious",
       "description": "Drinkt sinds 2024 geen druppel meer en het is z'n favoriete onderwerp. Mocktail-fanatic ('Seedlip met tonic'), stuurt screenshots van alcoholvrije recepten. Zegt 'ik voel me écht beter sinds ik gestopt ben' op verjaardagen. Loopt om 06:00 met de groep. WhatsApp-status: een Brené Brown quote over slaap. Herkent een halve fles wijn in je glas op afstand.",
-      "axes": { "generation_min": 1985, "generation_max": 1998, "region": "hollands", "register": "informeel", "vibe": "wellness" },
-      "colors": { "bg": "#1a4d4d", "accent": "#fef9c3", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1998,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "wellness"
+      },
+      "colors": {
+        "bg": "#1a4d4d",
+        "accent": "#fef9c3",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "festival-veteraan",
       "name": "Festival Veteraan",
       "description": "Was Lowlands- en Best Kept Secret-fanatic tot 2022. Heeft sinds vorig jaar Tobias en weigert 'volwassen' te worden. Gaat naar Mysteryland met de bakfietsbuggy. Dochter heeft gehoorbeschermers van Alpine Earplugs in pasteltint. Post 'we geven het festival-leven niet op, alleen anders doen' op Insta. Kent alle Boomtown Fair organisators op naam.",
-      "axes": { "generation_min": 1985, "generation_max": 1995, "region": "hollands", "register": "informeel", "vibe": "cultureel" },
-      "colors": { "bg": "#3a1842", "accent": "#fda4af", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1995,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "cultureel"
+      },
+      "colors": {
+        "bg": "#3a1842",
+        "accent": "#fda4af",
+        "text": "#ffffff"
+      }
     },
     {
       "id": "crossfit-boomer",
       "name": "Crossfit Boomer",
       "description": "55+ en in betere vorm dan z'n kinderen. Crossfit-jaarpas in Bilthoven of Eindhoven, zes keer per week om 07:00. Whey shake na elke training, weegt zich elke ochtend. Kent de boys in de gym op naam, gemiddelde leeftijd vrienden 28. WhatsApp-status: PR's van deze maand. Joe Rogan podcast in de auto. Vindt dat zijn kinderen 'te zacht zijn opgevoed'.",
-      "axes": { "generation_min": 1955, "generation_max": 1970, "region": "hollands", "register": "informeel", "vibe": "sport" },
-      "colors": { "bg": "#1c1917", "accent": "#ef4444", "text": "#ffffff" }
+      "axes": {
+        "generation_min": 1955,
+        "generation_max": 1970,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "sport"
+      },
+      "colors": {
+        "bg": "#1c1917",
+        "accent": "#ef4444",
+        "text": "#ffffff"
+      }
     }
   ]
 }

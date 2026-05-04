@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import type { Archetype, Register } from "@/lib/quiz-types";
 import {
@@ -99,9 +100,9 @@ export default function ResultClient({
           style={{ background: colors.accent }}
         />
 
-        <div className="relative max-w-3xl mx-auto px-6 py-16 sm:py-24">
+        <div className="relative max-w-5xl mx-auto px-6 py-12 sm:py-20">
           <div
-            className="flex items-center justify-between mb-12 pb-4 border-b"
+            className="flex items-center justify-between mb-10 pb-4 border-b"
             style={{ borderColor: `${colors.accent}40` }}
           >
             <span
@@ -118,35 +119,89 @@ export default function ResultClient({
             </span>
           </div>
 
-          <p
-            className="eyebrow mb-3 stamp-in"
-            style={{ animationDelay: "0.05s", color: colors.accent }}
+          {/* Main hero block: image (when available) + name/description side-by-side on desktop */}
+          <div
+            className={`${
+              archetype.image
+                ? "grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] gap-8 sm:gap-12 items-center mb-12"
+                : "max-w-3xl mb-12"
+            }`}
           >
-            {name ? `${name} is een` : "Ik ben een"}
-          </p>
-
-          <h1
-            className="display text-5xl sm:text-7xl md:text-8xl mb-8 leading-[0.95] stamp-in"
-            style={{ animationDelay: "0.15s" }}
-          >
-            {nameWords.map((word, i) => (
-              <span
-                key={i}
-                className={i === 1 ? "display-italic" : ""}
-                style={i === 1 ? { color: colors.accent } : undefined}
+            {archetype.image && (
+              <div
+                className="relative aspect-[9/14] w-full max-w-sm mx-auto md:max-w-none stamp-in"
+                style={{ animationDelay: "0.05s" }}
               >
-                {word}
-                {i < nameWords.length - 1 && " "}
-              </span>
-            ))}
-          </h1>
+                {/* Archetype color glow behind image */}
+                <div
+                  aria-hidden
+                  className="absolute -inset-2 blur-2xl opacity-40 rounded-lg"
+                  style={{ background: colors.accent }}
+                />
+                {/* Inner ring */}
+                <div
+                  aria-hidden
+                  className="absolute -inset-1 rounded-sm"
+                  style={{ background: `${colors.accent}30` }}
+                />
+                {/* The image itself */}
+                <div className="relative h-full w-full overflow-hidden">
+                  <Image
+                    src={archetype.image}
+                    alt={archetype.name}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 480px"
+                    priority
+                    className="object-cover"
+                  />
+                  {/* Subtle bottom gradient for depth */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                    style={{
+                      background: `linear-gradient(to top, ${colors.bg}cc, transparent)`,
+                    }}
+                  />
+                </div>
+              </div>
+            )}
 
-          <p
-            className="text-lg sm:text-xl leading-relaxed max-w-2xl mb-12 fade-up"
-            style={{ animationDelay: "0.45s", opacity: 0.8 }}
-          >
-            {archetype.description}
-          </p>
+            <div className="min-w-0">
+              <p
+                className="eyebrow mb-3 stamp-in"
+                style={{ animationDelay: "0.15s", color: colors.accent }}
+              >
+                {name ? `${name} is een` : "Ik ben een"}
+              </p>
+
+              <h1
+                className={`display mb-6 leading-[0.95] stamp-in ${
+                  archetype.image
+                    ? "text-4xl sm:text-5xl md:text-6xl"
+                    : "text-5xl sm:text-7xl md:text-8xl mb-8"
+                }`}
+                style={{ animationDelay: "0.25s" }}
+              >
+                {nameWords.map((word, i) => (
+                  <span
+                    key={i}
+                    className={i === 1 ? "display-italic" : ""}
+                    style={i === 1 ? { color: colors.accent } : undefined}
+                  >
+                    {word}
+                    {i < nameWords.length - 1 && " "}
+                  </span>
+                ))}
+              </h1>
+
+              <p
+                className="text-base sm:text-lg leading-relaxed fade-up"
+                style={{ animationDelay: "0.45s", opacity: 0.8 }}
+              >
+                {archetype.description}
+              </p>
+            </div>
+          </div>
 
           <div
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t fade-up"
@@ -237,7 +292,7 @@ export default function ResultClient({
             <p className="text-base text-[var(--ink-soft)] mb-4 leading-relaxed">
               Wil je je naam op de deelkaart? Dan staat er straks{" "}
               <em className="display display-italic">
-                "[Naam] is een {archetype.name}"
+                &ldquo;[Naam] is een {archetype.name}&rdquo;
               </em>
               . Optioneel — niets wordt opgeslagen.
             </p>

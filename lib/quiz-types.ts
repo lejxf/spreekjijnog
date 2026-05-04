@@ -97,6 +97,8 @@ export interface Archetype {
   description: string;
   axes: ArchetypeProfile;
   colors: ArchetypeColors;
+  /** Optional hero image path (e.g. /images/bakfietsouder.jpg). Falls back to color-only hero when absent. */
+  image?: string;
 }
 
 export interface Quiz {
