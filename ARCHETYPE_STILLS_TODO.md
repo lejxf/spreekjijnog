@@ -185,6 +185,26 @@ Stylized digital oil painting, painterly editorial caricature illustration with 
 
 ---
 
+## Stills te vervangen (refresh)
+
+### Boomer-Marktplaats — v2
+
+De huidige still is sterk maar de prop is alleen "telefoon" zonder context. Re-prompt voor scherper Marktplaats-signaal:
+
+**File:** `/public/images/boomer-op-marktplaats.jpg` (overschrijft huidige)
+
+```
+Stylized digital oil painting, painterly editorial caricature illustration with subtle exaggeration of features and bold visible brushwork, strong rim lighting from one side, saturated painted backdrop, single character upper body or 3/4 length, 9:16 vertical portrait, magazine-cover editorial vibe, vivid color palette, glowing skin highlights. Subject: 65-year-old Dutch man with messy grey hair and reading glasses on the tip of his nose, red-and-blue plaid flannel shirt, holding an iPhone in one hand and a small cardboard box marked "OPHALEN VEENENDAAL" with a sharpie scribble in the other. The phone screen clearly shows a Marktplaats listing with a vintage Pastoe cabinet image and "€45 — bieden". Background: deep mahogany painted backdrop with abstract suggestion of a wooden cellar shelf and cardboard boxes. Lighting: warm amber rim light from upper-left, glow on the phone screen. Expression: focused squint at the screen, mouth slightly open in concentration. Mood: schatje vol zit erin.
+```
+
+Of als alternatief — zonder telefoon, gewoon de doos:
+
+```
+Stylized digital oil painting, painterly editorial caricature illustration with subtle exaggeration of features and bold visible brushwork, strong rim lighting from one side, saturated painted backdrop, single character upper body or 3/4 length, 9:16 vertical portrait, magazine-cover editorial vibe, vivid color palette, glowing skin highlights. Subject: 65-year-old Dutch man with messy grey hair and reading glasses, red-and-blue plaid flannel shirt, holding a brown cardboard moving box with "OPHALEN VEENENDAAL" handwritten in thick black sharpie on the side, packing tape edges visible. Background: deep mahogany painted backdrop with abstract suggestion of a garage shelf and a Stintje or oude fiets in soft focus. Lighting: warm amber rim light from upper-left. Expression: pleased proud smirk, "got a deal"-energy. Mood: schatje vol zit erin.
+```
+
+Kies welke visuele richting jou meer aanspreekt — beide werken.
+
 ## Sync-script (run na het droppen van images)
 
 Vanuit project root:
