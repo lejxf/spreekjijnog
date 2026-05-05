@@ -155,6 +155,36 @@ Stylized digital oil painting, painterly editorial caricature illustration with 
 
 ---
 
+## 14. Marie van HR (NIEUW)
+
+**File:** `/public/images/marie-van-hr.jpg`
+
+```
+Stylized digital oil painting, painterly editorial caricature illustration with subtle exaggeration of features and bold visible brushwork, strong rim lighting from one side, saturated painted backdrop, single character upper body or 3/4 length, 9:16 vertical portrait, magazine-cover editorial vibe, vivid color palette, glowing skin highlights. Subject: 35-year-old Dutch woman, sleek low ponytail, tailored cream blazer over a silk navy blouse, gold delicate necklace, holding a navy "Even een touchpoint?"-mug close to chest. Background: deep navy painted backdrop with abstract suggestion of an open MacBook screen and a Peloton bike outline in soft focus. Lighting: cool corporate rim light from upper left, soft sky-blue glow on shoulder. Expression: warm-but-pushy reassuring smile, eyes slightly tilted in active-listening pose. Mood: ik leef voor cultuur en verbinding.
+```
+
+---
+
+## 15. De IT'er (NIEUW)
+
+**File:** `/public/images/de-iter.jpg`
+
+```
+Stylized digital oil painting, painterly editorial caricature illustration with subtle exaggeration of features and bold visible brushwork, strong rim lighting from one side, saturated painted backdrop, single character upper body or 3/4 length, 9:16 vertical portrait, magazine-cover editorial vibe, vivid color palette, glowing skin highlights. Subject: 32-year-old Dutch man, three-day beard, round metal-frame glasses, dark grey Patagonia fleece vest over a black graphic tee that reads "RTFM", holding a mechanical RGB-keyboard horizontally in front of chest. Background: deep purple-magenta painted backdrop with abstract suggestion of three glowing monitors and an ergonomic chair silhouette. Lighting: cool blue-purple rim from below-left, RGB-glow accents on his glasses. Expression: tired but smug, slight knowing smirk. Mood: deze meeting had een mail kunnen zijn.
+```
+
+---
+
+## 16. Bodywarmer Henk (NIEUW)
+
+**File:** `/public/images/bodywarmer-henk.jpg`
+
+```
+Stylized digital oil painting, painterly editorial caricature illustration with subtle exaggeration of features and bold visible brushwork, strong rim lighting from one side, saturated painted backdrop, single character upper body or 3/4 length, 9:16 vertical portrait, magazine-cover editorial vibe, vivid color palette, glowing skin highlights. Subject: 52-year-old Dutch man, weathered cheeks, navy fleece bodywarmer (gilet) over a grey fleece sweater, faded Schiermonnikoog cap, holding a worn Albert Heijn shopper bag in one hand, other hand tucked into bodywarmer pocket. Background: deep autumn-green painted backdrop with abstract suggestion of a campsite caravan and a barbecue silhouette. Lighting: warm orange rim light from upper-right, golden glow on cap brim. Expression: relaxed knowing smirk, dad-energy stare. Mood: effe niet, ik ben aan het barbecueën.
+```
+
+---
+
 ## Sync-script (run na het droppen van images)
 
 Vanuit project root:

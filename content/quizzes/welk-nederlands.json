@@ -2878,6 +2878,69 @@
         "reaction": "PR vandaag, fysio morgen"
       },
       "image": "/images/crossfit-boomer.jpg"
+    },
+    {
+      "id": "marie-van-hr",
+      "name": "Marie van HR",
+      "description": "Touchpoint vanmiddag? Werkt 4×9 bij accountancy of consultancy in Amsterdam, leeft voor 'cultuur en verbinding'. Deelt LinkedIn-quotes over psychologische veiligheid. Organiseert de Sinterklaas-borrel én de verbindingsdag op de hei. Peloton in de woonkamer, weekendje Toscane voor gronding. Zegt 'eventjes meedenken' tegen iedereen.",
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1996,
+        "region": "noord-holland/hollands",
+        "register": "neutraal",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#0d1f3a",
+        "accent": "#7dd3fc",
+        "text": "#f4ede0"
+      },
+      "shareCopy": {
+        "emoji": "💼",
+        "reaction": "Touchpoint? Sure."
+      }
+    },
+    {
+      "id": "de-iter",
+      "name": "De IT'er",
+      "description": "Backend-engineer bij scaleup in Amsterdam, drie 27-inch monitors thuis, mechanical RGB-keyboard, ergochair die meer kost dan z'n fiets. Patagonia-vest naar de tech-borrel, post 'deze meeting had een mail kunnen zijn' op LinkedIn. Werkt vrijdag remote, leest Hacker News in plaats van Volkskrant.",
+      "axes": {
+        "generation_min": 1985,
+        "generation_max": 1998,
+        "region": "noord-holland/hollands",
+        "register": "informeel",
+        "vibe": "online"
+      },
+      "colors": {
+        "bg": "#0d0a1f",
+        "accent": "#8b5cf6",
+        "text": "#f4ede0"
+      },
+      "shareCopy": {
+        "emoji": "⌨️",
+        "reaction": "Had een mail kunnen zijn"
+      }
+    },
+    {
+      "id": "bodywarmer-henk",
+      "name": "Bodywarmer Henk",
+      "description": "Bodywarmer over een fleece-trui, Schiermonnikoog-cap, Crocs in de tuin. Werkt bij gemeente of installatiebedrijf, geeft op de camping leiding aan de manus-van-alles. WhatsApp-pp van 'm met de hond. Albert Heijn-shopper als boodschappentas, ook naar Praxis. Zegt 'effe niet' tegen de kids.",
+      "axes": {
+        "generation_min": 1965,
+        "generation_max": 1980,
+        "region": "hollands",
+        "register": "informeel",
+        "vibe": "huiselijk"
+      },
+      "colors": {
+        "bg": "#1f2818",
+        "accent": "#fb923c",
+        "text": "#f4ede0"
+      },
+      "shareCopy": {
+        "emoji": "🦺",
+        "reaction": "Klopt, ik draag ook een gilet"
+      }
     }
   ]
 }
