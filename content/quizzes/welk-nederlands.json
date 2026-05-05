@@ -2898,7 +2898,8 @@
       "shareCopy": {
         "emoji": "💼",
         "reaction": "Touchpoint? Sure."
-      }
+      },
+      "image": "/images/marie-van-hr.jpg"
     },
     {
       "id": "de-iter",
@@ -2919,7 +2920,8 @@
       "shareCopy": {
         "emoji": "⌨️",
         "reaction": "Had een mail kunnen zijn"
-      }
+      },
+      "image": "/images/de-iter.jpg"
     },
     {
       "id": "bodywarmer-henk",
@@ -2940,7 +2942,8 @@
       "shareCopy": {
         "emoji": "🦺",
         "reaction": "Klopt, ik draag ook een gilet"
-      }
+      },
+      "image": "/images/bodywarmer-henk.jpg"
     }
   ]
 }
