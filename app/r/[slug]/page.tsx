@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import quizData from "@/content/quizzes/welk-nederlands.json";
 import type { Quiz, Register } from "@/lib/quiz-types";
+import {
+  archetypeArticleSchema,
+  breadcrumbSchema,
+  jsonLd,
+} from "@/lib/structured-data";
 import ResultClient from "./ResultClient";
 
 interface Props {
@@ -76,9 +81,16 @@ export async function generateMetadata({
   return {
     title,
     description,
+    // Canonical points to the slug-only URL — collapses all the personalised
+    // share variations (?g=&r=&n=...) into one indexable result page.
+    alternates: {
+      canonical: `/r/${slug}`,
+    },
     openGraph: {
       title,
       description,
+      url: `/r/${slug}`,
+      type: "article",
       images: [
         {
           url: `/api/og/${slug}?${ogQuery.toString()}`,
@@ -136,13 +148,29 @@ export default async function ResultPage({ params, searchParams }: Props) {
     .slice(0, 3);
 
   return (
-    <ResultClient
-      archetype={archetype}
-      slug={slug}
-      initialName={initialName}
-      scores={scores}
-      searchParams={passthrough}
-      topMatches={topMatches}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd([
+          archetypeArticleSchema(archetype),
+          breadcrumbSchema([
+            { name: "Home", url: "https://spreekjijnog.nl" },
+            { name: "Quiz", url: "https://spreekjijnog.nl/quiz/welk-nederlands" },
+            {
+              name: archetype.name,
+              url: `https://spreekjijnog.nl/r/${slug}`,
+            },
+          ]),
+        ])}
+      />
+      <ResultClient
+        archetype={archetype}
+        slug={slug}
+        initialName={initialName}
+        scores={scores}
+        searchParams={passthrough}
+        topMatches={topMatches}
+      />
+    </>
   );
 }

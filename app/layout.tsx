@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Fraunces, Geist } from "next/font/google";
+import {
+  jsonLd,
+  organizationSchema,
+  websiteSchema,
+} from "@/lib/structured-data";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -48,6 +53,11 @@ export default function RootLayout({
       className={`${fraunces.variable} ${geist.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Site-wide structured data — WebSite for sitelinks searchbox eligibility, Organization for brand panel */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLd([websiteSchema(), organizationSchema()])}
+        />
         <header className="pt-6 pb-4 px-6">
           <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
             <Link

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import quizData from "@/content/quizzes/welk-nederlands.json";
 import type { Quiz } from "@/lib/quiz-types";
@@ -6,6 +7,32 @@ import HeroBanner from "@/components/HeroBanner";
 import LiveBadge from "@/components/LiveBadge";
 
 const quiz = quizData as Quiz;
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "SpreekJijNog — Welk Nederlands spreek jij eigenlijk?",
+  },
+  description:
+    "Welk type Nederlandstalige ben jij? Een redactionele quiz die je classificeert in één van 28 archetypes — van Bourgondische Boekhouder tot Skibidi Kid — op generatie, regio, toon en levensstijl.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Welk Nederlands spreek jij eigenlijk?",
+    description:
+      "Vijftien woorden, drie minuten, één archetype. Een quiz over hoe Nederland praat.",
+    url: "/",
+    type: "website",
+  },
+  keywords: [
+    "welk nederlands spreek jij",
+    "nederlandse persoonlijkheidstest",
+    "welke nederlander ben jij",
+    "nederlands archetype quiz",
+    "dialect quiz nederland",
+    "taal-quiz nederland",
+  ],
+};
 
 export default function Home() {
   return (
