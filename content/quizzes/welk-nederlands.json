@@ -2438,7 +2438,8 @@
       "shareCopy": {
         "emoji": "🛍",
         "reaction": "Wel een diss btw"
-      }
+      },
+      "video": "/video/amsterdams-modieus.mp4"
     },
     {
       "id": "drentse-trompetterik",
@@ -2525,7 +2526,8 @@
       "shareCopy": {
         "emoji": "🎾",
         "reaction": "Klopt 100%, broski"
-      }
+      },
+      "video": "/video/padel-pa.mp4"
     },
     {
       "id": "yoga-mompreneur",
@@ -2547,7 +2549,8 @@
         "emoji": "🧘‍♀️",
         "reaction": "Manifesterend ja"
       },
-      "image": "/images/yoga-mompreneur.jpg"
+      "image": "/images/yoga-mompreneur.jpg",
+      "video": "/video/yoga-mompreneur.mp4"
     },
     {
       "id": "bakfietsouder",
@@ -2569,7 +2572,8 @@
       "shareCopy": {
         "emoji": "🚲",
         "reaction": "Zo gênant haha"
-      }
+      },
+      "video": "/video/bakfietsouder.mp4"
     },
     {
       "id": "boomer-op-marktplaats",
@@ -2591,7 +2595,8 @@
       "shareCopy": {
         "emoji": "📦",
         "reaction": "Wel goed onderhandelen wel"
-      }
+      },
+      "video": "/video/boomer-op-marktplaats.mp4"
     },
     {
       "id": "kringloop-koningin",
@@ -2613,7 +2618,8 @@
       "shareCopy": {
         "emoji": "👜",
         "reaction": "Vintage > nieuw, periodt"
-      }
+      },
+      "video": "/video/kringloop-koningin.mp4"
     },
     {
       "id": "friese-stille",
@@ -2679,7 +2685,8 @@
       "shareCopy": {
         "emoji": "💔",
         "reaction": "Pijnlijk accuraat ngl"
-      }
+      },
+      "video": "/video/tinder-veteraan.mp4"
     },
     {
       "id": "run-club-hardloper",
@@ -2701,7 +2708,8 @@
       "shareCopy": {
         "emoji": "🏃‍♀️",
         "reaction": "Strava bewijst het"
-      }
+      },
+      "video": "/video/run-club-hardloper.mp4"
     },
     {
       "id": "ai-bestie",
@@ -2723,7 +2731,8 @@
       "shareCopy": {
         "emoji": "🤖",
         "reaction": "ChatGPT kent me beter dan m'n moeder"
-      }
+      },
+      "video": "/video/ai-bestie.mp4"
     },
     {
       "id": "insta-goeroe",
@@ -2745,7 +2754,8 @@
       "shareCopy": {
         "emoji": "✨",
         "reaction": "Goedemorgen lieverds 💫"
-      }
+      },
+      "video": "/video/insta-goeroe.mp4"
     },
     {
       "id": "fatbike-tiener",
@@ -2767,7 +2777,8 @@
       "shareCopy": {
         "emoji": "🛵",
         "reaction": "Skibidi Ohio fr fr"
-      }
+      },
+      "video": "/video/fatbike-tiener.mp4"
     },
     {
       "id": "skibidi-kid",
@@ -2789,7 +2800,8 @@
       "shareCopy": {
         "emoji": "🚽",
         "reaction": "Sigma alpha rizz, no cap"
-      }
+      },
+      "video": "/video/skibidi-kid.mp4"
     },
     {
       "id": "grwm-girlie",
@@ -2811,7 +2823,8 @@
       "shareCopy": {
         "emoji": "💄",
         "reaction": "GRWM voor… niks specifiek"
-      }
+      },
+      "video": "/video/grwm-girlie.mp4"
     },
     {
       "id": "sober-curious",

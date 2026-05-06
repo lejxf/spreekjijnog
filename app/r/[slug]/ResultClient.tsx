@@ -145,7 +145,8 @@ export default function ResultClient({
                   className="absolute -inset-1 rounded-sm"
                   style={{ background: `${colors.accent}30` }}
                 />
-                {/* The image itself */}
+                {/* Video loop when available, otherwise the still image. The image always
+                    renders behind the video as a poster so the panel never flashes blank. */}
                 <div className="relative h-full w-full overflow-hidden">
                   <Image
                     src={archetype.image}
@@ -155,10 +156,22 @@ export default function ResultClient({
                     priority
                     className="object-cover"
                   />
+                  {archetype.video && (
+                    <video
+                      src={archetype.video}
+                      poster={archetype.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
                   {/* Subtle bottom gradient for depth */}
                   <div
                     aria-hidden
-                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none z-10"
                     style={{
                       background: `linear-gradient(to top, ${colors.bg}cc, transparent)`,
                     }}

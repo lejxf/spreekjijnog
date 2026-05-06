@@ -113,6 +113,8 @@ export interface Archetype {
   colors: ArchetypeColors;
   /** Optional hero image path (e.g. /images/bakfietsouder.jpg). Falls back to color-only hero when absent. */
   image?: string;
+  /** Optional looping video path (e.g. /video/bakfietsouder.mp4). Renders on result page; falls back to image. */
+  video?: string;
   /** Optional per-archetype share copy used in WhatsApp/native share text. */
   shareCopy?: ArchetypeShareCopy;
 }
