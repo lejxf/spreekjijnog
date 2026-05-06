@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="SpreekJijNog">
+  <title>SpreekJijNog</title>
+  <path d="M 56 60 Q 40 60 40 76 L 40 280 Q 40 296 56 296 L 96 296 L 88 350 L 148 296 L 344 296 Q 360 296 360 280 L 360 76 Q 360 60 344 60 Z" fill="#f5a623"/>
+  <text x="200" y="142" text-anchor="middle" font-family="'Fraunces', 'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="78" font-weight="600" fill="#0f0d0a" letter-spacing="-2">Spreek</text>
+  <text x="200" y="216" text-anchor="middle" font-family="'Fraunces', 'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="78" font-style="italic" font-weight="500" fill="#0f0d0a" letter-spacing="-2">Jij</text>
+  <text x="200" y="290" text-anchor="middle" font-family="'Fraunces', 'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="78" font-weight="600" fill="#0f0d0a" letter-spacing="-2">Nog.nl?</text>
+</svg>
